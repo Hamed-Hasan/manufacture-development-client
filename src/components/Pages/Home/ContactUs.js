@@ -1,4 +1,5 @@
 import React from 'react';
+import TypeWriterForm from '../TypeWriterForm/TypeWriterForm';
 
 const ContactUs = () => {
     return (
@@ -12,7 +13,8 @@ const ContactUs = () => {
             </div>
             <div class="w-full md:w-1/2 py-10 px-5 md:px-10">
                 <div class="text-center mb-10">
-                    <h1 class="font-bold text-3xl text-gray-900">SubScribe !</h1>
+                    {/* <h1 class="font-bold text-3xl text-gray-900">SubScribe !</h1> */}
+                    <TypeWriterForm/>
                     <p>Enter your information to Message</p>
                 </div>
                 <div>

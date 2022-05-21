@@ -14,7 +14,7 @@ const Services = ({service}) => {
     return (
        
     <div className='mx-auto py-24 hidden md:block' style={{maxWidth: "1400px"}}>
-        <h1 className='md:text-6xl text-center py-6'>The Best Technologies Catagories</h1>
+        <h1 className='md:text-6xl text-center py-6 mb-5'>The Best Technologies Catagories</h1>
              <Swiper
         slidesPerView={4}
         spaceBetween={20}
