@@ -3,6 +3,7 @@ import React from 'react';
 const ContactUs = () => {
     return (
         <div>
+    
             <div class="min-w-screen min-h-screen bg-gray-900 flex items-center justify-center px-5 py-44">
     <div class="bg-gray-100 text-gray-500 rounded-3xl shadow-xl w-full overflow-hidden" style={{maxWidth: "1000px"}}>
         <div class="md:flex w-full">
