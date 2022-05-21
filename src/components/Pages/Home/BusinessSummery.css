@@ -1,0 +1,27 @@
+.countUp{
+    background-image: url("../../assets/images/bg-count.jpg"), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
+    background-blend-mode: overlay;
+    background-attachment: fixed;
+    background-size: cover;
+    position: relative;
+}
+
+/* .countUp::before {
+    content: '';
+    position: absolute;
+    background-image: url("../../../../images/count-bg.jpg"), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
+    background-size: cover;
+    background-position: center center;
+    background-blend-mode: overlay;
+    background-attachment: fixed;
+    background-size: cover;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    transform: skewY(-6deg);
+} */
+
+
+
