@@ -6,6 +6,7 @@ import Home from './components/Pages/Home/Home';
 import Purchase from './components/Pages/purchase/purchase'
 import Blog from './components/Pages/Blog/Blog';
 import Dashboard from './components/Pages/Dashboard/Dashboard';
+import Footer from './components/Pages/Shared/Footer';
 function App() {
   return (
     <div className="App">
@@ -16,6 +17,7 @@ function App() {
       <Route path="/blog" element={<Blog/>}/>
       <Route path="/dashboard" element={<Dashboard/>}/>
     </Routes>
+    <Footer/>
     </div>
   );
 }

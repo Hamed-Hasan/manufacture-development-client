@@ -6,7 +6,7 @@ const BusinessSummery = () => {
         <section className="text-gray-600 body-font countUp">
   <div className="container px-5 py-24 mx-auto">
     <div className="flex flex-col text-center w-full mb-20">
-      <h1 className="md:text-5xl font-medium title-font mb-4 text-gray-200">Millions Business Trust Us</h1>
+      <h1 className="md:text-5xl font-medium title-font mb-4 text-gray-200">MILLIONS BUSINESS TRUST US</h1>
     </div>
     <div className="flex flex-wrap -m-4 text-center">
       
