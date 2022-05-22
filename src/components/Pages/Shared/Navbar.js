@@ -1,8 +1,17 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, NavLink } from 'react-router-dom';
+import auth from '../../../firebase.init';
+
 import useNav from '../../hooks/useNav';
 import './Navbar.css'
 const Navbar = () => {
+  const [user] = useAuthState(auth);
+  const logout = () => {
+    signOut(auth);
+    localStorage.removeItem('accessToken')
+};
     const { navbar, navBarLogo } = useNav();
     window.onscroll = function() {scrollBar()};
     function scrollBar() {
@@ -41,7 +50,8 @@ const Navbar = () => {
           </ul>
         </div>
         <div class="navbar-end">
-    <Link to='/login' class="btn">Login</Link>
+    {/* <Link to='/login' class="btn">Login</Link> */}
+   {user ? <button className="btn " onClick={logout} >Sign Out</button> : <Link class="btn" to="/login">Login</Link>}
   </div>
       </div>
 

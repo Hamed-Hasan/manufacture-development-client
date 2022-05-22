@@ -7,6 +7,7 @@ import google from '../../assets/icons/google.svg'
 import facebook from '../../assets/icons/facebook.svg'
 import auth from '../../../firebase.init';
 import signup from '../../assets/icons/signup.svg'
+import useToken from '../../hooks/useToken';
 const SignUp = () => {
 
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -20,7 +21,7 @@ const SignUp = () => {
     ] = useCreateUserWithEmailAndPassword(auth);
 
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
-    // const [token]  = useToken(user || gUser);
+    const [token]  = useToken(user || gUser);
 
     const navigate = useNavigate();
 
@@ -35,9 +36,9 @@ const SignUp = () => {
     }
 
   
-    // if (token) {
-    //     navigate('/purchase');
-    // }
+    if (token) {
+        navigate('/purchase');
+    }
 
     const onSubmit = async data => {
         await createUserWithEmailAndPassword(data.email, data.password);

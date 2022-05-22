@@ -10,13 +10,18 @@ import Footer from './components/Pages/Shared/Footer';
 import NotFound from './components/Pages/Shared/NotFound/NotFound';
 import Login from './components/Pages/Auth/Login';
 import SignUp from './components/Pages/Auth/SignUp';
+import RequireAuth from './components/Pages/Auth/RequireAuth';
 function App() {
   return (
     <div className="App">
       <Navbar/>
     <Routes>
       <Route path="/" element={<Home/>}/>
-      <Route path="/purchase" element={<Purchase/>}/>
+      <Route path="/purchase" element={
+        <RequireAuth>
+          <Purchase/>
+        </RequireAuth>
+      }/>
       <Route path="/blog" element={<Blog/>}/>
       <Route path="/dashboard" element={<Dashboard/>}/>
 
