@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+		<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+		<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+		<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+		<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+		<head>
+			<meta charset="utf-8">
+			<meta http-equiv="X-UA-Compatible" content="IE=edge">
+			<title>Mountain Parallax Header - Slider Revolution</title>
+			<meta name="description" content="Slider Revolution Example" />
+			<meta name="keywords" content="fullscreen image, grid layout, flexbox grid, transition" />
+			<meta name="author" content="ThemePunch" />
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+
+			<!-- LOAD JQUERY LIBRARY -->
+			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
+			
+			<!-- LOADING FONTS AND ICONS -->
+			<link href="https://fonts.googleapis.com/css?family=Roboto:400%2C700%7CPoppins:700&display=swap" rel="stylesheet" property="stylesheet" media="all" type="text/css" >
+
+			
+			<link rel="stylesheet" type="text/css" href="fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
+			<link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.css">
+			
+			<!-- REVOLUTION STYLE SHEETS -->
+			<link rel="stylesheet" type="text/css" href="css/rs6.css">
+			<!-- REVOLUTION LAYERS STYLES -->
+						<!-- REVOLUTION JS FILES -->
+			
+		<script type="text/javascript">
+			window.RS_MODULES = window.RS_MODULES || {};
+			window.RS_MODULES.modules = window.RS_MODULES.modules || {};
+			window.RS_MODULES.waiting = window.RS_MODULES.waiting || [];
+			window.RS_MODULES.defered = true;
+			window.RS_MODULES.moduleWaiting = window.RS_MODULES.moduleWaiting || {};
+			window.RS_MODULES.type = 'compiled';
+		</script>
+					<script type="text/javascript" src="js/rbtools.min.js"></script>
+							<script type="text/javascript" src="js/rs6.min.js"></script>
+							
+			<script type="text/javascript">function setREVStartSize(e){
+			//window.requestAnimationFrame(function() {				 
+				window.RSIW = window.RSIW===undefined ? window.innerWidth : window.RSIW;	
+				window.RSIH = window.RSIH===undefined ? window.innerHeight : window.RSIH;	
+				try {								
+					var pw = document.getElementById(e.c).parentNode.offsetWidth,
+						newh;
+					pw = pw===0 || isNaN(pw) ? window.RSIW : pw;
+					e.tabw = e.tabw===undefined ? 0 : parseInt(e.tabw);
+					e.thumbw = e.thumbw===undefined ? 0 : parseInt(e.thumbw);
+					e.tabh = e.tabh===undefined ? 0 : parseInt(e.tabh);
+					e.thumbh = e.thumbh===undefined ? 0 : parseInt(e.thumbh);
+					e.tabhide = e.tabhide===undefined ? 0 : parseInt(e.tabhide);
+					e.thumbhide = e.thumbhide===undefined ? 0 : parseInt(e.thumbhide);
+					e.mh = e.mh===undefined || e.mh=="" || e.mh==="auto" ? 0 : parseInt(e.mh,0);		
+					if(e.layout==="fullscreen" || e.l==="fullscreen") 						
+						newh = Math.max(e.mh,window.RSIH);					
+					else{					
+						e.gw = Array.isArray(e.gw) ? e.gw : [e.gw];
+						for (var i in e.rl) if (e.gw[i]===undefined || e.gw[i]===0) e.gw[i] = e.gw[i-1];					
+						e.gh = e.el===undefined || e.el==="" || (Array.isArray(e.el) && e.el.length==0)? e.gh : e.el;
+						e.gh = Array.isArray(e.gh) ? e.gh : [e.gh];
+						for (var i in e.rl) if (e.gh[i]===undefined || e.gh[i]===0) e.gh[i] = e.gh[i-1];
+											
+						var nl = new Array(e.rl.length),
+							ix = 0,						
+							sl;					
+						e.tabw = e.tabhide>=pw ? 0 : e.tabw;
+						e.thumbw = e.thumbhide>=pw ? 0 : e.thumbw;
+						e.tabh = e.tabhide>=pw ? 0 : e.tabh;
+						e.thumbh = e.thumbhide>=pw ? 0 : e.thumbh;					
+						for (var i in e.rl) nl[i] = e.rl[i]<window.RSIW ? 0 : e.rl[i];
+						sl = nl[0];									
+						for (var i in nl) if (sl>nl[i] && nl[i]>0) { sl = nl[i]; ix=i;}															
+						var m = pw>(e.gw[ix]+e.tabw+e.thumbw) ? 1 : (pw-(e.tabw+e.thumbw)) / (e.gw[ix]);					
+						newh =  (e.gh[ix] * m) + (e.tabh + e.thumbh);
+					}
+					var el = document.getElementById(e.c);
+					if (el!==null && el) el.style.height = newh+"px";					
+					el = document.getElementById(e.c+"_wrapper");
+					if (el!==null && el) {
+						el.style.height = newh+"px";
+						el.style.display = "block";
+					}
+				} catch(e){
+					console.log("Failure at Presize of Slider:" + e)
+				}					   
+			//});
+		  };</script>
+
+			
+		</head>
+		
+		<body>
+		
+
+			<!-- START Mountain Parallax Header REVOLUTION SLIDER 6.5.11 --><p class="rs-p-wp-fix"></p>
+			<rs-module-wrap id="rev_slider_57_1_wrapper" data-alias="mountain-parallax-header" data-source="gallery" style="visibility:hidden;background:rgba(255,255,255,0);padding:0;">
+				<rs-module id="rev_slider_57_1" style="" data-version="6.5.11">
+					<rs-slides>
+						<rs-slide style="position: absolute;" data-key="rs-181" data-title="Slide" data-in="o:0;" data-out="a:false;">
+							<img src="//revolutioncdn-themepunchgbr.netdna-ssl.com/wp-content/uploads/revslider/mountainheader/mountainscene.jpg" class="rev-slidebg tp-rs-img" data-parallax="10" data-panzoom="d:5000;e:power4.out;ss:150;se:100;bs:20;" data-no-retina>
+<!--
+							--><rs-layer
+								id="slider-57-slide-181-layer-1" 
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:c;xo:-50px;y:m;yo:130px,130px,130px,80px;"
+								data-text="l:22;a:inherit;"
+								data-dim="w:1050px,1050px,861,689px;h:610px,610px,500px,400px;"
+								data-frame_0="sX:0.7;sY:0.7;blu:10px;"
+								data-frame_1="e:power4.out;st:50;sp:3000;sR:50;"
+								data-frame_999="o:0;st:w;sR:5950;"
+								style="z-index:6;"
+							><img src="assets/mountainpng-1.png" class="tp-rs-img" width="1050" height="610" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-57-slide-181-layer-2" 
+								class="blurslider-gradient rs-pxl-14"
+								data-type="text"
+								data-rsp_ch="on"
+								data-xy="x:c;xo:1px;y:m;yo:-229px,-229px,-189px,-149px;"
+								data-text="s:150,150,150,80;l:120,120,120,60;ls:-10px,-10px,-10px,-5px;fw:700;a:center;"
+								data-padding="t:20;r:10;l:10;"
+								data-frame_0="y:50px;sX:0.3;sY:0.3;blu:20px;"
+								data-frame_1="e:power4.out;st:50;sp:3000;sR:50;"
+								data-frame_999="o:0;st:w;sR:5950;"
+								style="z-index:5;font-family:'Poppins';"
+							>404<br/>NOT  FOUND 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-57-slide-181-layer-4" 
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="xo:100px;y:b;yo:10px;"
+								data-text="l:22;a:inherit;"
+								data-dim="w:['500px','500px','500px','500px'];h:['273px','273px','273px','273px'];"
+								data-basealign="slide"
+								data-frame_0="y:100px;sX:1.1;sY:1.1;rY:180;blu:10px;"
+								data-frame_1="rY:180;e:power4.out;st:300;sp:2000;sR:300;"
+								data-frame_999="o:0;st:w;sR:6700;"
+								data-loop_999="x:500;sp:80000;yym:t;yys:t;yyf:t;"
+								style="z-index:8;"
+							><img src="assets/cloud1.png" class="tp-rs-img" width="500" height="273" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-57-slide-181-layer-5" 
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:c;y:b;yo:10px;"
+								data-text="l:22;a:inherit;"
+								data-dim="w:['500px','500px','500px','500px'];h:['273px','273px','273px','273px'];"
+								data-basealign="slide"
+								data-frame_0="sX:1.1;sY:1.1;blu:10px;"
+								data-frame_1="e:power4.out;st:300;sp:2000;sR:300;"
+								data-frame_999="o:0;st:w;sR:6700;"
+								data-loop_999="x:500;sp:200000;yym:t;yys:t;yyf:t;"
+								style="z-index:9;"
+							><img src="assets/cloud2.png" class="tp-rs-img" width="600" height="278" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-57-slide-181-layer-6" 
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:r;xo:150px;y:b;yo:10px;"
+								data-text="l:22;a:inherit;"
+								data-dim="w:['500px','500px','500px','500px'];h:['273px','273px','273px','273px'];"
+								data-basealign="slide"
+								data-frame_0="sX:1.1;sY:1.1;blu:10px;"
+								data-frame_1="e:power4.out;st:300;sp:2000;sR:300;"
+								data-frame_999="o:0;st:w;sR:6700;"
+								data-loop_999="x:500;sp:240000;yym:t;yys:t;yyf:t;"
+								style="z-index:10;"
+							><img src="assets/cloud3.png" class="tp-rs-img" width="738" height="445" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-57-slide-181-layer-10" 
+								class="tp-shape tp-shapewrapper"
+								data-type="shape"
+								data-rsp_ch="on"
+								data-xy="x:c;y:b;"
+								data-text="fw:700;a:inherit;"
+								data-dim="w:100%;h:200px;"
+								data-basealign="slide"
+								data-frame_0="y:50px;"
+								data-frame_1="e:power4.out;st:50;sp:1000;sR:50;"
+								data-frame_999="o:0;st:w;sR:7950;"
+								style="z-index:7;background:linear-gradient(rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);"
+							> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-57-slide-181-layer-11" 
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="xo:-200px;y:b;yo:10px;"
+								data-text="l:22;a:inherit;"
+								data-dim="w:['500px','500px','500px','500px'];h:['273px','273px','273px','273px'];"
+								data-basealign="slide"
+								data-frame_0="sX:1.1;sY:1.1;blu:10px;"
+								data-frame_1="e:power4.out;st:300;sp:2000;sR:300;"
+								data-frame_999="o:0;st:w;sR:6700;"
+								data-loop_999="x:500;sp:160000;yym:t;yys:t;yyf:t;"
+								style="z-index:11;"
+							><img src="assets/cloud3.png" class="tp-rs-img" width="738" height="445" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-57-slide-181-layer-12" 
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:r;xo:-200px;y:b;yo:10px;"
+								data-text="l:22;a:inherit;"
+								data-dim="w:['500px','500px','500px','500px'];h:['273px','273px','273px','273px'];"
+								data-basealign="slide"
+								data-frame_0="y:100px;sX:1.1;sY:1.1;blu:10px;"
+								data-frame_1="e:power4.out;st:300;sp:2000;sR:300;"
+								data-frame_999="o:0;st:w;sR:6700;"
+								data-loop_999="x:500;sp:400000;yym:t;yys:t;yyf:t;"
+								style="z-index:12;"
+							><img src="assets/cloud1.png" class="tp-rs-img" width="500" height="273" data-no-retina> 
+							</rs-layer><!--
+-->						</rs-slide>
+					</rs-slides>
+				</rs-module>
+				<script type="text/javascript">
+					
+				</script>
+<script type="text/javascript">
+		if(typeof revslider_showDoubleJqueryError === "undefined") {function revslider_showDoubleJqueryError(sliderID) {console.log("You have some jquery.js library include that comes after the Slider Revolution files js inclusion.");console.log("To fix this, you can:");console.log("1. Set 'Module General Options' -> 'Advanced' -> 'jQuery & OutPut Filters' -> 'Put JS to Body' to on");console.log("2. Find the double jQuery.js inclusion and remove it");return "Double Included jQuery Library";}}
+</script>
+			</rs-module-wrap>
+			<!-- END REVOLUTION SLIDER -->
+
+				<script type="text/javascript">
+					var	tpj = jQuery;
+					if(window.RS_MODULES === undefined) window.RS_MODULES = {};
+					if(RS_MODULES.modules === undefined) RS_MODULES.modules = {};
+					RS_MODULES.modules["revslider571"] = {once: RS_MODULES.modules["revslider571"]!==undefined ? RS_MODULES.modules["revslider571"].once : undefined, init:function() {
+						window.revapi57 = window.revapi57===undefined || window.revapi57===null || window.revapi57.length===0  ? document.getElementById("rev_slider_57_1") : window.revapi57;
+						if(window.revapi57 === null || window.revapi57 === undefined || window.revapi57.length==0) { window.revapi57initTry = window.revapi57initTry ===undefined ? 0 : window.revapi57initTry+1; if (window.revapi57initTry<20) requestAnimationFrame(function() {RS_MODULES.modules["revslider571"].init()}); return;}
+						window.revapi57 = jQuery(window.revapi57);
+						if(window.revapi57.revolution==undefined){ revslider_showDoubleJqueryError("rev_slider_57_1"); return;}
+						revapi57.revolutionInit({
+								revapi:"revapi57",
+								sliderType:"hero",
+								DPR:"dpr",
+								sliderLayout:"fullscreen",
+								visibilityLevels:"1240,1024,778,480",
+								gridwidth:"1240,1024,778,480",
+								gridheight:"868,768,960,720",
+								spinner:"spinner3",
+								perspective:600,
+								perspectiveType:"local",
+								editorheight:"868,768,960,720",
+								responsiveLevels:"1240,1024,778,480",
+								fullScreenOffset:"60px",
+								progressBar:{disableProgressBar:true},
+								navigation: {
+									onHoverStop:false
+								},
+								parallax: {
+									levels:[1,2,3,4,5,6,7,8,9,10,15,48,49,50,51,55],
+									type:"scroll",
+									origo:"slidercenter"
+								},
+								viewPort: {
+									global:false,
+									globalDist:"-200px",
+									enable:false,
+									visible_area:"20%"
+								},
+								fallbacks: {
+									allowHTML5AutoPlayOnAndroid:true
+								},
+						});
+						
+					}} // End of RevInitScript
+					if (window.RS_MODULES.checkMinimal!==undefined) { window.RS_MODULES.checkMinimal();};
+				</script>
+
+
+
+<style type="text/css">.blurslider-gradient{background:-webkit-linear-gradient(left,#ff557c 0%,#f3823c 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}.tp-opacity{opacity:0.85}#rev_slider_57_1_wrapper rs-loader.spinner3 div{background-color:#FFFFFF !important}</style>
+		</body>
+				</html>
+		

@@ -1,5 +1,5 @@
 .countUp{
-    background-image: url("../../assets/images/bg-count.jpg"), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
+    background-image: url("../../assets/bg-count.jpg"), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
     background-blend-mode: overlay;
     background-attachment: fixed;
     background-size: cover;

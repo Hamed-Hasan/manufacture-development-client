@@ -7,6 +7,7 @@ import Purchase from './components/Pages/purchase/purchase'
 import Blog from './components/Pages/Blog/Blog';
 import Dashboard from './components/Pages/Dashboard/Dashboard';
 import Footer from './components/Pages/Shared/Footer';
+import NotFound from './components/Pages/Shared/NotFound/NotFound';
 function App() {
   return (
     <div className="App">
@@ -16,6 +17,7 @@ function App() {
       <Route path="/purchase" element={<Purchase/>}/>
       <Route path="/blog" element={<Blog/>}/>
       <Route path="/dashboard" element={<Dashboard/>}/>
+      <Route path="*" element={<NotFound/>}/>
     </Routes>
     <Footer/>
     </div>
