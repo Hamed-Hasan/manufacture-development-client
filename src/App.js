@@ -8,6 +8,8 @@ import Blog from './components/Pages/Blog/Blog';
 import Dashboard from './components/Pages/Dashboard/Dashboard';
 import Footer from './components/Pages/Shared/Footer';
 import NotFound from './components/Pages/Shared/NotFound/NotFound';
+import Login from './components/Pages/Auth/Login';
+import SignUp from './components/Pages/Auth/SignUp';
 function App() {
   return (
     <div className="App">
@@ -17,6 +19,9 @@ function App() {
       <Route path="/purchase" element={<Purchase/>}/>
       <Route path="/blog" element={<Blog/>}/>
       <Route path="/dashboard" element={<Dashboard/>}/>
+
+      <Route path='/login' element={<Login/>} />
+      <Route path='/signup' element={<SignUp/>} />
       <Route path="*" element={<NotFound/>}/>
     </Routes>
     <Footer/>

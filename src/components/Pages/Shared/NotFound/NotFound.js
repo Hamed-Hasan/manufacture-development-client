@@ -5,6 +5,7 @@ const NotFound = () => {
     return (
         <div>
             <Exercises/>
+       
         </div>
     );
 };
