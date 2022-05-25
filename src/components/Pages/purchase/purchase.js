@@ -60,7 +60,7 @@ fetch('http://localhost:5000/order', {
             handleOpen();
         }
         else{
-            toast.error(`Already have and Order on ${data.booking?.productName}`)
+            toast.error(`Already have and Order on ${data.order?.productName}`)
         }
        
     });
@@ -76,7 +76,7 @@ fetch('http://localhost:5000/order', {
           <div className="w-full md:w-1/2 md:pr-12 md:py-8 md:border-r md:border-b-0 mb-10 md:mb-0 pb-10 border-b border-gray-200">
             <div className="bg-gray-900 w-full shadow rounded p-8 sm:p-12">
               <p className="text-3xl font-bold leading-7 text-center text-white">
-                Add New Service !
+                Order Your Best Product !
               </p>
               <form onSubmit={handleOrder}>
                 <div className="md:flex items-center mt-8">

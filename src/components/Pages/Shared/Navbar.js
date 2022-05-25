@@ -22,7 +22,7 @@ const Navbar = () => {
     }
     const menuItems = <>
     <li> <NavLink to="/">Home</NavLink></li>
-   <li className="mx-4"> <NavLink to="/purchase">Purchase</NavLink></li>
+   <li className="mx-4"> <NavLink to="/myPortfolio">My Portfolio</NavLink></li>
    <li className="mx-4"> <NavLink to="/blog">Blog</NavLink></li>
    <li>    <NavLink to="/dashboard">Dashboard</NavLink></li>
 
@@ -52,6 +52,9 @@ const Navbar = () => {
         <div class="navbar-end">
     {/* <Link to='/login' class="btn">Login</Link> */}
    {user ? <button className="btn " onClick={logout} >Sign Out</button> : <Link class="btn" to="/login">Login</Link>}
+   <label tabIndex="1" for="dashboard-sidebar" className="btn btn-ghost lg:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                </label>
   </div>
       </div>
 
