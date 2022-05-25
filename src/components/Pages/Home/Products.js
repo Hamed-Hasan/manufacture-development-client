@@ -24,7 +24,7 @@ const Products = () => {
       
   <div className='pt-11'>
     {
-    loading ? <Loading/> :   <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+    loading ? <Loading/> :   <div className="grid grid-cols-1 md:grid-cols-3 gap-20">
     {services.map((service) => (
       <Product key={service._id} service={service} />
     ))}

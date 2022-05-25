@@ -1,0 +1,52 @@
+
+[
+    {
+      "name": "Car Wheel",
+      "price": 400,
+      "img": "https://i.ibb.co/zGf2RMv/carweel1.png",
+      "minimumQuantity": 100,
+      "quantity":400,
+      "description": "The chassis of an automobile has the frame, suspension system, axles, and wheel as the main compoents. The frame could be in the form of a conventional chassis or unit construction may be adopted main"
+    },
+    {
+      "name": "Auto Parts",
+      "price": 700,
+      "img": "https://i.ibb.co/9tdyTBd/autoparts2.png",
+      "minimumQuantity": 100,
+      "quantity": 200,
+       "description": "The automobile frame is usually made up of a number of members welded or riveted together to give the final shape. The engine is mounted on the frame with rubber pads which absorb vibrations and also "
+    },
+    {
+      "name": "Bettary Cartoon",
+       "img": "https://i.ibb.co/nr4Yx4X/bettarycartoon3.png",
+       "price": 240,
+       "minimumQuantity": 100,
+       "quantity": 190,
+      "description": "automobiles are powered by another kind of engine, known as the rotary valve, rotating combustion engine, or Wankel engine. The rotary valve engine also draws in a mixture of air and fuel, which is th "
+    },
+    {
+      "name": " Car Background Spanner",
+      "img": "https://i.ibb.co/DDGjKmG/backgroundspanner4.png",
+      "price": 1199,
+      "minimumQuantity": 100,
+      "quantity":500,
+          "description": "The main function of the transmission is to provide the necessary variation to the torque applied by the engine to the wheels. This is achieved by changing the gearing ratio between the engine output "
+    },
+    {
+      "name": "Gear Spare Parts",
+      "img": "https://i.ibb.co/PFSYmht/gearspareparts5.png",
+      "price": 1999,
+      "minimumQuantity": 100,
+      "quantity": 800,
+           "description": "The main purpose of the bodywork is to provide accommodation for the driver and passengers, with suitable protection against wind and weather. The degree of comfort provided depends upon the type of c"
+    },
+    {
+      "name": "Auto Oil",
+      "img": "https://i.ibb.co/C9ZH1yv/autooil6.png",
+       "price": 280,
+       "minimumQuantity": 100,
+    "quantity": 100,
+       "description": "The fuel tank on your car is typically located under the rear or middle of the vehicle. There can be a number of reasons why you would need to remove it; the most common reason is needing to replace t"
+    }
+  ]
+  
