@@ -157,56 +157,28 @@ fetch('http://localhost:5000/order', {
                   src={img}
                   alt=""
                 />
-                <div className="flex flex-col relative z-40 pb-10 justify-between p-4 leading-normal">
-                  <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                <div className="flex py-10 flex-col relative z-40 pb-10 justify-between p-4 leading-normal">
+                  <h5 className="mb-2 text-left text-xl font-bold tracking-tight text-emerald-500 dark:text-white">
                     {name}
                   </h5>
-                  <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                    ${price}
+                  <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900  text-left dark:text-white">
+                   Price $<small className="text-left text-emerald-500">{price}</small>
                   </h5>
-                  <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                    Quantity {quantity}
+                  <h5 className="mb-2 text-xl font-bold tracking-tight text-left  dark:text-white">
+                    Quantity <small className="text-emerald-500">{quantity}</small>
                   </h5>
-                  <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                   Minimum Order Quantity {minimumQuantity}
+                  <h5 className="mb-2 text-lg font-bold tracking-tight text-gray-900 text-left dark:text-white">
+                   Minimum Order Quantity <small className='text-emerald-500'>{minimumQuantity}</small>
                   </h5>
-                  <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                    {description}
+                  <p className="mb-6 font-normal text-left text-gray-700 dark:text-gray-400 text-sm">
+                   <small className='text-emerald-500'> {description}</small>
                   </p>
-                  <button
-                    // onClick={() => handleDelete(service._id)}
-                    type="button"
-                    className="flex items-center justify-center text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
-                  >
-                    Delivered
-                    <svg
-                      className="w-6 h-6 ml-1"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
-                      ></path>
-                    </svg>
-                  </button>
+                 
                 </div>
               </a>
               <svg
-                className="absolute bottom-0"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 1440 320"
-              >
-                <path
-                  fill="#F59E0B"
-                  fillOpacity="1"
-                  d="M0,96L80,117.3C160,139,320,181,480,197.3C640,213,800,203,960,218.7C1120,235,1280,277,1360,298.7L1440,320L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
-                ></path>
-              </svg>
+                 className="absolute left-0 bottom-0"
+              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#10B981" fill-opacity="1" d="M0,192L48,208C96,224,192,256,288,272C384,288,480,288,576,261.3C672,235,768,181,864,165.3C960,149,1056,171,1152,186.7C1248,203,1344,213,1392,218.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
             </div>
             {/* <ToastContainer /> */}
           </div>

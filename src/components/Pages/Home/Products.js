@@ -14,7 +14,7 @@ const Products = () => {
         });
     }, []);
     return (
-      <div id='service' className="container mx-auto my-24">
+      <div id='service' className="container mx-auto my-10">
         <div className="section-content mb-16">
           <h2 className="text-center py-10">
         <p className='text-sm md:text-2xl'>The Most Important </p>

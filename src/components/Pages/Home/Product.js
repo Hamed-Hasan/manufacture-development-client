@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import './product.css'
 const Product = ({service}) => {
     const navigate = useNavigate();
   const { _id, name, img, description, price, quantity } = service;
@@ -10,58 +10,37 @@ const Product = ({service}) => {
 
   return (
     <div>
-      <div
-        style={{ height: "100%" }}
-        className="home-card gradient-border w-full hover:-translate-y-5 transition-all bg-dark rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
-      >
-        <a href="#">
-          <img src={img} className="w-full" alt="" />
-        </a>
-        <div className="p-5">
-          <a href="#">
-            <h5 className="mb-2 text-2xl font-bold tracking-tight text-white dark:text-white">
-              {name}
-            </h5>
-            <h5 className="mb-2 font-bold tracking-tight text-white dark:text-white text-lg">
-              {/* Supplier {supplier} */}
-            </h5>
-            <h5 className="mb-2 text-2xl font-bold tracking-tight text-white dark:text-white">
-              $ {price}
-            </h5>
-            <h5 className="mb-2 text-2xl font-bold tracking-tight text-white dark:text-white">
-              Quantity {quantity}
-            </h5>
-          </a>
-          <p className="mb-3 font-normal text-gray-200 dark:text-gray-400">
-            {description}
-          </p>
-          <button
-            onClick={() => navigateToServiceDetail(_id)}
-            style={{
-              textDecoration: "none",
-              cursor: "pointer",
-              color: "white",
-            }}
-            className="text-white bg-gradient-to-r flex items-center from-amber-500  via-amber-400 to-amber-600 lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 shadow-lg shadow-lime-500/50 dark:shadow-lg dark:shadow-lime-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
-          >
-            Update
-            <svg
-              className="w-6 ml-2 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
-              ></path>
-            </svg>
-          </button>
-        </div>
+    <div class="card-wrapper">
+    <div class="img-area">
+      <div class="inner-area">
+        <img src={img} alt=""/>
       </div>
+    </div>
+    <div class="icon arrow"><i class="fas fa-arrow-left"></i></div>
+    <div class="icon dots"><i class="fas fa-ellipsis-v"></i></div>
+    <div class="name">{name}</div>
+    <div class="about text-sm text-gray-200 mb-3">{description}</div>
+
+    <div class="buttons">
+      <button onClick={() => navigateToServiceDetail(_id)} className='flex items-center justify-center gap-4'>Buy Now 
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+</svg>
+      </button>
+    </div>
+    <div class="social-share">
+      <div class="row">
+        <i class="far fa-heart"></i>
+        <i class="icon-2 fas fa-heart"></i>
+        <span>Price ${price}</span>
+      </div>
+      <div class="row">
+        <i class="far fa-comment"></i>
+        <i class="icon-2 fas fa-comment"></i>
+        <span>Quantity {quantity}</span>
+      </div>
+    </div>
+  </div>
     </div>
   );
 };
