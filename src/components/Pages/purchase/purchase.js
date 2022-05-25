@@ -1,11 +1,33 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useParams } from 'react-router-dom';
-import { toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 import auth from '../../../firebase.init';
-import useServiceDetail from '../../hooks/useServiceDetail'
+import useServiceDetail from '../../hooks/useServiceDetail';
+import './Purchase.css';
+import { FcAddDatabase } from "react-icons/fc";
+import { Modal } from "@mui/material";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import modal from '../../assets/icons/success-modal.svg'
+const style = {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: 400,
+    bgcolor: "background.paper",
+    borderRadius: "16px",
+    boxShadow: 24,
+    p: 4,
+  };
+
 const Purchase = () => {
     
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
+
   const { serviceId } = useParams();
   const [service] = useServiceDetail(serviceId);
   const [user] = useAuthState(auth);
@@ -33,8 +55,9 @@ fetch('http://localhost:5000/order', {
     .then(res => res.json())
     .then(data => {
         if(data.success){
-            toast(`You Are Order, ${name}`)
+            // toast(`You Are Order, ${name}`)
             event.target.reset()
+            handleOpen();
         }
         else{
             toast.error(`Already have and Order on ${data.booking?.productName}`)
@@ -44,10 +67,12 @@ fetch('http://localhost:5000/order', {
 
 
  }
+
+
     return (
         <div>
                <section id="card" className="text-gray-600 body-font mt-20">
-        <div className="container flex flex-wrap px-5 py-24 mx-auto items-center">
+        <div className="container flex flex-wrap px-5 py-10 mx-auto items-center">
           <div className="w-full md:w-1/2 md:pr-12 md:py-8 md:border-r md:border-b-0 mb-10 md:mb-0 pb-10 border-b border-gray-200">
             <div className="bg-gray-900 w-full shadow rounded p-8 sm:p-12">
               <p className="text-3xl font-bold leading-7 text-center text-white">
@@ -138,7 +163,7 @@ fetch('http://localhost:5000/order', {
                 <div className="flex items-center justify-center w-full">
                   <button className="mt-9 flex items-center  font-semibold leading-none text-white py-4 px-10 bg-blue-700 rounded hover:bg-blue-600 focus:ring-2 focus:ring-offset-2 focus:ring-blue-700  focus:outline-none">
                     ORDER NOW
-                    {/* <FcAddDatabase className="ml-2 text-lg" /> */}
+                    <FcAddDatabase className="ml-2 text-lg" />
                   </button>
                 </div>
               </form>
@@ -146,14 +171,14 @@ fetch('http://localhost:5000/order', {
           </div>
 
 
-          <div className="flex flex-col md:w-1/2 md:pl-12">
+          <div className="flex  flex-col md:w-1/2 md:pl-12">
             <div className="relative ">
               <a
                 href="#"
                 className="flex flex-col items-center bg-white z-50 relat rounded-lg border shadow-md md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
               >
                 <img
-                  className="object-cover w-full h-96 rounded-t-lg md:h-auto md:w-72 md:rounded-none md:rounded-l-lg"
+                  className=" object-cover w-full h-96 rounded-t-lg md:h-auto md:w-72 md:rounded-none md:rounded-l-lg"
                   src={img}
                   alt=""
                 />
@@ -173,15 +198,41 @@ fetch('http://localhost:5000/order', {
                   <p className="mb-6 font-normal text-left text-gray-700 dark:text-gray-400 text-sm">
                    <small className='text-emerald-500'> {description}</small>
                   </p>
-                 
+                
                 </div>
               </a>
               <svg
                  className="absolute left-0 bottom-0"
               xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#10B981" fill-opacity="1" d="M0,192L48,208C96,224,192,256,288,272C384,288,480,288,576,261.3C672,235,768,181,864,165.3C960,149,1056,171,1152,186.7C1248,203,1344,213,1392,218.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
             </div>
-            {/* <ToastContainer /> */}
+            <ToastContainer />
           </div>
+
+
+          <div>
+        <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+          <Box sx={style}>
+            <div className="text-center flex justify-center">
+              <img src={modal} className="h-24 " alt="" />
+            </div>
+            <Typography id="modal-modal-title" variant="h6" component="h2">
+                <p className='text-center'>You Are Order {name}</p>
+            </Typography>
+            <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+              {/* Check your service go to Home page & Manage service page &
+              Customize your service 😀 */}
+            </Typography>
+          </Box>
+        </Modal>
+      </div>
+
+
+
         </div>
       </section>
         </div>
