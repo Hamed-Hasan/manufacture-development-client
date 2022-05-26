@@ -1,76 +1,72 @@
 import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useQuery } from 'react-query';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
-import axiosPrivate from "../../Pages/api/axiosPrivate"
-const MyOrders = () => {
+import Loading from '../Shared/Loading';
+import DeleteConfirmModal from './DeleteConfirmModal';
 
-
-    // const [user] = useAuthState(auth);
-    // const [myItem, setMyItems] = useState([]);
-  
-    // const navigate = useNavigate();
-    // useEffect(() => {
-    //   const getOrders = async () => {
-    //     const email = user?.email;
-    //     const url = `http://localhost:5000/item?email=${email}`;
-    //     try {
-    //       const { data } = await axiosPrivate.get(url);
-    //       setMyItems(data);
-    //     } catch (error) {
-    //       console.log(error.message);
-    //       if (error.response.status === 401 || error.response.status === 403) {
-    //         signOut(auth);
-    //         navigate("/login");
-    //       }
-    //     }
-    //   };
-    //   getOrders();
-    // }, [user]);
-    
-  
-    const [order, setOrder] = useState([]);
-    console.log(order)
+const MyOrders = () => {    
+    const [deletingOrder, setDeletingOrder] = useState(null);
+    // const [order, setOrder] = useState([]);
     const [user] = useAuthState(auth);
     const navigate = useNavigate();
-
-    useEffect(() => {
-        
-    fetch(`http://localhost:5000/order?user=${user.email}`, {
-        // verify user 
-        method: 'GET',
+    const { data: order, isLoading, refetch } = useQuery('order', () => fetch(`http://localhost:5000/order?user=${user.email}`, {
         headers: {
-            'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+            authorization: `Bearer ${localStorage.getItem('accessToken')}`
         }
-    })
-        .then(res => {
-            console.log('res', res);
-            if (res.status === 401 || res.status === 403) {
-                // signOut(auth);
-                localStorage.removeItem('accessToken');
-                // navigate('/');
-            }
-            return res.json()
-        })
-        .then(data => {
+    }).then(res => {
+        if (res.status === 401 || res.status === 403) {
+                        signOut(auth);
+                        localStorage.removeItem('accessToken');
+                        navigate('/');
+                    }
+                    return res.json()
+    }));
 
-            setOrder(data);
-        });
-    }, [user]);
+    if (isLoading) {
+        return <Loading></Loading>
+    }
+
+    // console.log(order)
+
+    // useEffect(() => {
+        
+    // fetch(`http://localhost:5000/order?user=${user.email}`, {
+    //     // verify user 
+    //     method: 'GET',
+    //     headers: {
+    //         'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+    //     }
+    // })
+    //     .then(res => {
+    //         console.log('res', res);
+    //         if (res.status === 401 || res.status === 403) {
+    //             signOut(auth);
+    //             localStorage.removeItem('accessToken');
+    //             navigate('/');
+    //         }
+    //         return res.json()
+    //     })
+    //     .then(data => {
+
+    //         setOrder(data);
+    //     });
+    // }, [user]);
 
     return (
         <div>
-            <h2>My Order: {order.length}</h2>
+            <h2 className='text-left bg-slate-500 rounded-lg py-2 px-4 w-36 text-white'>My Order: {order.length}</h2>
             <div class="overflow-x-auto">
                 <table class="table w-full">
                     <thead>
                         <tr>
                             <th></th>
-                            <th>Name</th>
+                            <th>PRODUCT</th>
                             <th>Price</th>
-                            <th>Time</th>
-                            <th>Treatment</th>
+                            <th>NAME</th>
+                            <th>REMOVE ORDER</th>
                             <th>Payment</th>
                         </tr>
                     </thead>
@@ -82,7 +78,16 @@ const MyOrders = () => {
                                 <td>{a.productName}</td>
                                 <td>{a.price}</td>
                                 <td>{a.userName}</td>
-                                <td>{a.address}</td>
+                                <td>
+                                <label onClick={() => setDeletingOrder(a)} for="delete-confirm-modal" class="btn btn-xs btn-error">Delete</label>
+                                </td>
+                                <td>
+                                    {(a.price ) && <Link to={`/dashboard/payment/${a._id}`}><button className='btn btn-xs btn-success'>pay</button></Link>}
+                                    {(a.price && a.paid) && <div>
+                                        <p><span className='text-success'>Paid</span></p>
+                                        <p>Transaction id: <span className='text-success'>{a.transactionId}</span></p>
+                                    </div>}
+                                </td>
                                             </tr>)
                         }
                         
@@ -90,6 +95,11 @@ const MyOrders = () => {
                     </tbody>
                 </table>
             </div>
+            {deletingOrder && <DeleteConfirmModal
+                deletingOrder={deletingOrder}
+                refetch={refetch}
+                setDeletingOrder={setDeletingOrder}
+            ></DeleteConfirmModal>}
         </div>
     );
 };

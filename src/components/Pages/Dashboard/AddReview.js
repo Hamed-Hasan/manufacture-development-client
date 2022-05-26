@@ -107,6 +107,7 @@ pattern: {
 
 <textarea
 type="text"
+
 className="input input-bordered w-full max-w-xs"
 {...register("message", {
 required: {
@@ -134,7 +135,7 @@ required: {
 <label className="label">
 {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors.name.message}</span>}
 </label>
-<input className='btn bg-emerald-500 w-full max-w-xs text-white' type="submit" value="Add Review" />
+<input className='btn mt-3 bg-emerald-500 w-full max-w-xs text-white' type="submit" value="Add Review" />
 </div>
 
 </div>

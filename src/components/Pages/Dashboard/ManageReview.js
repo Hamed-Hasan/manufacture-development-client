@@ -4,7 +4,7 @@ import Loading from '../Shared/Loading';
 import ManagesReviews from './ManagesReviews';
 
 const ManageReview = () => {
-    const { data: reviews, isLoading, refetch } = useQuery('reviews', () => fetch('http://localhost:5000/doctors', {
+    const { data: reviews, isLoading, refetch } = useQuery('reviews', () => fetch('http://localhost:5000/review', {
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
         }
