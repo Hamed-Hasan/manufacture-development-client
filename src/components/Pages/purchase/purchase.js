@@ -58,6 +58,7 @@ fetch('http://localhost:5000/order', {
             // toast(`You Are Order, ${name}`)
             event.target.reset()
             handleOpen();
+
         }
        
     });
@@ -65,6 +66,9 @@ fetch('http://localhost:5000/order', {
 
  }
 
+ const handleChange = (e) => {
+
+}
 
     return (
         <div>
@@ -151,6 +155,7 @@ fetch('http://localhost:5000/order', {
                       required
                       type="number"
                       name="orderQuantity"
+                      onChange={handleChange}
                     //   value="50"
                       className="leading-none text-gray-50 p-3 focus:outline-none focus:border-blue-700 mt-4 border-0 bg-gray-800 rounded"
                     />

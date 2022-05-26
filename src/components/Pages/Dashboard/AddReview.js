@@ -54,7 +54,8 @@ const AddReview = () => {
             <div className='flex items-center justify-center'>
 
 <form onSubmit={handleSubmit(onSubmit)} className='mt-0 py-7 px-20 bg-slate-600 rounded-lg'>
-
+<div className='w-full'>
+    
 <div className="form-control w-full max-w-xs">
 <label className="label">
 <span className="label-text">Name</span>
@@ -116,12 +117,13 @@ required: {
 />
 </div>
 <div className="form-control w-full max-w-xs">
-<label className="label">
-<span className="label-text">Email</span>
-</label>
+<label htmlFor="image" class={loading ? "btn btn-primary loading mt-4" : "btn btn-primary mt-5"}>
+            Upload Image
+              </label>
 <input
 type="file"
-className="input input-bordered w-full max-w-xs"
+id='image'
+className="-mt-10 -z-50 relative"
 {...register("image", {
 required: {
     value: true,
@@ -135,6 +137,7 @@ required: {
 <input className='btn bg-emerald-500 w-full max-w-xs text-white' type="submit" value="Add Review" />
 </div>
 
+</div>
 </form>
             </div>
     

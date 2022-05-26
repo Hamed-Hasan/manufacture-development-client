@@ -77,13 +77,13 @@ const MyOrders = () => {
                     <tbody>
                         
                     {
-                            // order?.map((a, index) =><tr>
-                            //     <th>{index + 1}</th>
-                            //     <td>{a.productName}</td>
-                            //     <td>{a.price}</td>
-                            //     <td>{a.userName}</td>
-                            //     <td>{a.address}</td>
-                            //                 </tr>)
+                            order?.map((a, index) =><tr>
+                                <th>{index + 1}</th>
+                                <td>{a.productName}</td>
+                                <td>{a.price}</td>
+                                <td>{a.userName}</td>
+                                <td>{a.address}</td>
+                                            </tr>)
                         }
                         
                         
