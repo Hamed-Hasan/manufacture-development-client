@@ -29,31 +29,6 @@ const MyOrders = () => {
         return <Loading></Loading>
     }
 
-    // console.log(order)
-
-    // useEffect(() => {
-        
-    // fetch(`http://localhost:5000/order?user=${user.email}`, {
-    //     // verify user 
-    //     method: 'GET',
-    //     headers: {
-    //         'authorization': `Bearer ${localStorage.getItem('accessToken')}`
-    //     }
-    // })
-    //     .then(res => {
-    //         console.log('res', res);
-    //         if (res.status === 401 || res.status === 403) {
-    //             signOut(auth);
-    //             localStorage.removeItem('accessToken');
-    //             navigate('/');
-    //         }
-    //         return res.json()
-    //     })
-    //     .then(data => {
-
-    //         setOrder(data);
-    //     });
-    // }, [user]);
 
     return (
         <div>
@@ -79,10 +54,10 @@ const MyOrders = () => {
                                 <td>{a.price}</td>
                                 <td>{a.userName}</td>
                                 <td>
-                                <label onClick={() => setDeletingOrder(a)} for="delete-confirm-modal" class="btn btn-xs btn-error">Delete</label>
+                                <label disabled={a.paid === true } onClick={() => setDeletingOrder(a)} for="delete-confirm-modal" class="btn btn-xs btn-error">Delete</label>
                                 </td>
                                 <td>
-                                    {(a.price ) && <Link to={`/dashboard/payment/${a._id}`}><button className='btn btn-xs btn-success'>pay</button></Link>}
+                                {(a.price && !a.paid) && <Link to={`/dashboard/payment/${a._id}`}><button className='btn btn-xs btn-success'>pay</button></Link>}
                                     {(a.price && a.paid) && <div>
                                         <p><span className='text-success'>Paid</span></p>
                                         <p>Transaction id: <span className='text-success'>{a.transactionId}</span></p>
