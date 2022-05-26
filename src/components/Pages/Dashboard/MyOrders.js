@@ -30,14 +30,14 @@ const MyOrders = () => {
     // }, [user]);
     
   
-    const [appointments, setAppointments] = useState([]);
-    console.log(appointments)
+    const [order, setOrder] = useState([]);
+    console.log(order)
     const [user] = useAuthState(auth);
     const navigate = useNavigate();
 
     useEffect(() => {
         
-    fetch(`http://localhost:5000/booking?patient=${user.email}`, {
+    fetch(`http://localhost:5000/order?user=${user.email}`, {
         // verify user 
         method: 'GET',
         headers: {
@@ -47,21 +47,21 @@ const MyOrders = () => {
         .then(res => {
             console.log('res', res);
             if (res.status === 401 || res.status === 403) {
-                signOut(auth);
+                // signOut(auth);
                 localStorage.removeItem('accessToken');
-                navigate('/');
+                // navigate('/');
             }
             return res.json()
         })
         .then(data => {
 
-            setAppointments(data);
+            setOrder(data);
         });
     }, [user]);
 
     return (
         <div>
-            <h2>My Order: {appointments.length}</h2>
+            <h2>My Order: {order.length}</h2>
             <div class="overflow-x-auto">
                 <table class="table w-full">
                     <thead>
@@ -76,6 +76,15 @@ const MyOrders = () => {
                     </thead>
                     <tbody>
                         
+                    {
+                            // order?.map((a, index) =><tr>
+                            //     <th>{index + 1}</th>
+                            //     <td>{a.productName}</td>
+                            //     <td>{a.price}</td>
+                            //     <td>{a.userName}</td>
+                            //     <td>{a.address}</td>
+                            //                 </tr>)
+                        }
                         
                         
                     </tbody>
