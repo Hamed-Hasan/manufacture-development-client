@@ -59,9 +59,6 @@ fetch('http://localhost:5000/order', {
             event.target.reset()
             handleOpen();
         }
-        else{
-            toast.error(`Already have and Order on ${data.order?.productName}`)
-        }
        
     });
 
