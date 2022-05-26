@@ -72,3 +72,7 @@
     border-color: #1cc7d0;
     background: linear-gradient(375deg, transparent, transparent);
   }
+  .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
+    margin-top: 28px !important;
+    position: relative;
+}
