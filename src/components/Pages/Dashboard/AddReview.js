@@ -50,7 +50,7 @@ const AddReview = () => {
     }
     return (
         <div >
-            <h2 className='text-4xl'>Add Review</h2>
+            <h2 className='text-4xl my-5'>Add Review</h2>
             <div className='flex items-center justify-center'>
 
 <form onSubmit={handleSubmit(onSubmit)} className='mt-0 py-7 px-20 bg-slate-600 rounded-lg'>
