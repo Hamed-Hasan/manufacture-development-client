@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useParams } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
@@ -32,8 +32,20 @@ const Purchase = () => {
   const [service] = useServiceDetail(serviceId);
   const [user] = useAuthState(auth);
   const {_id,name, img, description, price, quantity, minimumQuantity} = service;
- const handleOrder = (event) => {
+
+
+  const [myOrderQuantity, setMyOrderQuantity] = useState(0);
+  let totalPrice =
+    myOrderQuantity * price === 0
+      ? minimumQuantity * price
+      : myOrderQuantity * price;
+ const handleOrder = async (event) => {
 event.preventDefault();
+
+
+await setMyOrderQuantity(minimumQuantity);
+await setMyOrderQuantity(Number.parseInt(event.target.myOrderQuantity.value));
+
 const order = {
     userId: _id,
     productName: name,
@@ -42,7 +54,7 @@ const order = {
     userName: user.displayName,
     address: event.target.address.value,
     phone: event.target.phone.value,
-    orderQuantity: event.target.orderQuantity.value
+    orderQuantity: event.target.myOrderQuantity.value
 }
 
 fetch('http://localhost:5000/order', {
@@ -154,14 +166,19 @@ fetch('http://localhost:5000/order', {
                     <input
                       required
                       type="number"
-                      name="orderQuantity"
-                      onChange={handleChange}
+                      name="myOrderQuantity"
+              min={minimumQuantity}
+              max={quantity}
+              defaultValue={minimumQuantity}
+              onChange={(e) => {
+                setMyOrderQuantity(e.target.value);
+              }}
                     //   value="50"
                       className="leading-none text-gray-50 p-3 focus:outline-none focus:border-blue-700 mt-4 border-0 bg-gray-800 rounded"
                     />
                   </div>
                 </div>
-
+                <p className="font-bold mt-3">Total Price: $ {totalPrice}</p>
                 <div className="flex items-center justify-center w-full">
                   <button className="mt-9 flex items-center  font-semibold leading-none text-white py-4 px-10 bg-blue-700 rounded hover:bg-blue-600 focus:ring-2 focus:ring-offset-2 focus:ring-blue-700  focus:outline-none">
                     ORDER NOW

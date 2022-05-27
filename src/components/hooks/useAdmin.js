@@ -1,7 +1,8 @@
 import { getAuth } from "firebase/auth";
 import { useState } from "react";
-import auth from "../firebase.init";
+
 import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
 
 const useAdmin = () => {
   const [user, loading] = useAuthState(auth);
