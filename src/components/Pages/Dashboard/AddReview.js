@@ -1,149 +1,107 @@
-import React, { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import { toast } from 'react-toastify';
 
-const AddReview = () => {
-    const [loading, setLoading] = useState(false);
-    const { register, formState: { errors }, handleSubmit, reset } = useForm();
-    const imageStorageKey = '0a489a5f81e1a77f2b17492e627939c3';
-    const onSubmit = async data => {
-        const image = data.image[0];
-        const formData = new FormData();
-        formData.append('image', image);
-      const url = `https://api.imgbb.com/1/upload?key=${imageStorageKey}`;
-      fetch(url, {
-        method: 'POST',
-        body: formData
-    })
-    .then(res => res.json()) 
-    .then(result => {
-      if(result.success){
-          const img = result.data.url;
-          const doctor = {
-              name: data.name,
-              email: data.email,
-              message: data.message,
-              img: img
-          }
-          // send to database 
-          fetch('http://localhost:5000/addReview', {   
-              method: 'POST',
-              headers: {
-                  'Content-Type': 'application/json',
-                  authorization: `Bearer ${localStorage.getItem('accessToken')}`
-              },
-              body: JSON.stringify(doctor)
-          })
-          .then(res => res.json())
-          .then(inserted => {
-              if(inserted.insertedId){
-                  toast.success('Review added successfully')
-                  reset();
-              }
-              else{
-                  toast.error('Failed to add the review');
-              }
-          })
-      }
-    })
-   
-    }
-    return (
-        <div >
-            <h2 className='text-4xl my-5'>Add Review</h2>
-            <div className='flex items-center justify-center'>
-
-<form onSubmit={handleSubmit(onSubmit)} className='mt-0 py-7 px-20 bg-slate-600 rounded-lg'>
-<div className='w-full'>
-    
-<div className="form-control w-full max-w-xs">
-<label className="label">
-<span className="label-text">Name</span>
-</label>
-<input
-type="text"
-placeholder="Your Name"
-className="input input-bordered w-full max-w-xs"
-{...register("name", {
-required: {
-    value: true,
-    message: 'Name is Required'
-}
-})}
-/>
-<label className="label">
-{errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors.name.message}</span>}
-</label>
-</div>
-
-<div className="form-control w-full max-w-xs">
-<label className="label">
-<span className="label-text">Email</span>
-</label>
-<input
-type="email"
-placeholder="Your Email"
-className="input input-bordered w-full max-w-xs"
-{...register("email", {
-required: {
-    value: true,
-    message: 'Email is Required'
-},
-pattern: {
-    value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
-    message: 'Provide a valid Email'
-}
-})}
-/>
-<label className="label">
-{errors.email?.type === 'required' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
-{errors.email?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
-</label>
-</div>
-<div className="form-control w-full max-w-xs">
-<label className="label">
-<span className="label-text">Message</span>
-</label>
-
-<textarea
-type="text"
-
-className="input input-bordered w-full max-w-xs"
-{...register("message", {
-required: {
-    value: true,
-    message: 'message is Required'
-}
-})}
-/>
-</div>
-<div className="form-control w-full max-w-xs">
-<label htmlFor="image" class={loading ? "btn btn-primary loading mt-4" : "btn btn-primary mt-5"}>
-            Upload Image
-              </label>
-<input
-type="file"
-id='image'
-className="-mt-10 -z-50 relative"
-{...register("image", {
-required: {
-    value: true,
-    message: 'Image is Required'
-}
-})}
-/>
-<label className="label">
-{errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors.name.message}</span>}
-</label>
-<input className='btn mt-3 bg-emerald-500 w-full max-w-xs text-white' type="submit" value="Add Review" />
-</div>
-
-</div>
-</form>
-            </div>
-    
-        </div>
-    );
+import React, { useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../../firebase.init";
+import Loading from "./../Shared/Loading";
+import { useForm } from "react-hook-form";
+import { FaStar } from "react-icons/fa";
+import { toast } from "react-toastify";
+const colors = {
+  orange: "#FFBA5A",
+  grey: "#a9a9a9",
 };
+const AddReview = () => {
+  const [user, loading, error] = useAuthState(auth);
+  const { register, handleSubmit, errors } = useForm();
 
+  //for rating
+  //rating start
+  const [rating, setRating] = useState(0);
+  const [hoverValue, setHoverValue] = useState(undefined);
+  const stars = Array(5).fill(0);
+
+  const handleClick = (value) => {
+    setRating(value);
+  };
+
+  const handleMouseOver = (newHoverValue) => {
+    setHoverValue(newHoverValue);
+  };
+
+  const handleMouseLeave = () => {
+    setHoverValue(undefined);
+  };
+  // rating end
+
+  if (loading) {
+    return <Loading />;
+  }
+  const imageStorageKey = '0a489a5f81e1a77f2b17492e627939c3';
+  const onSubmit = (data) => {
+    
+    const email = user.email;
+    const photoURL = user.photoURL;
+    const displayName = user.displayName;
+    const review = { ...data, rating, email, photoURL, displayName };
+    console.log(review);
+
+    // add review to database
+    fetch("http://localhost:5000/add-review", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        authorization: `Bearer ${localStorage.getItem('accessToken')}`
+      },
+      body: JSON.stringify(review),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.result === "data received!") {
+          toast.success("Review Added!", { theme: "colored" });
+        }
+        console.log(data);
+      });
+  };
+  return (
+    <div className="w-full p-10  lg:w-1/2 mx-auto">
+      <form onSubmit={handleSubmit(onSubmit)} className="card-body pb-0">
+        <div className="avatar mx-auto flex-col items-center gap-3">
+          <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+            <img src={user?.photoURL} alt={user?.displayName} />
+          </div>
+          <h2 className="text-2xl font-bold">{user?.displayName}</h2>
+        </div>
+
+        <div className="flex flex-row justify-center">
+          {stars.map((_, index) => {
+            return (
+              <FaStar
+                key={index}
+                size={24}
+                onClick={() => handleClick(index + 1)}
+                onMouseOver={() => handleMouseOver(index + 1)}
+                onMouseLeave={handleMouseLeave}
+                color={
+                  (hoverValue || rating) > index ? colors.orange : colors.grey
+                }
+                style={{
+                  marginRight: 10,
+                  cursor: "pointer",
+                }}
+              />
+            );
+          })}
+        </div>
+
+        <textarea
+          {...register("review", { required: false, maxLength: 500 })}
+          className="textarea textarea-primary h-40 my-3 w-full"
+          placeholder="Your Review"
+        ></textarea>
+        <input className="btn btn-primary" type="submit" value="Add Review" />
+      </form>
+    </div>
+  );
+};
 export default AddReview;

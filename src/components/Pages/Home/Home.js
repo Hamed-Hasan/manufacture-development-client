@@ -5,6 +5,7 @@ import BusinessSummery from './BusinessSummery';
 import ContactUs from './ContactUs';
 import Products from './Products';
 import Services from './Services';
+import Technology from './Technology/Technology';
 
 
 const Home = () => {
@@ -12,6 +13,7 @@ const Home = () => {
         <div>
            <Banner/>
         <Products/>
+        <Technology/>
           <Services/>
            <BusinessSummery/>
            <ManageReview/>

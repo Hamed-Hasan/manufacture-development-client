@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+		<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+		<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+		<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+		<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+		<head>
+			<meta charset="utf-8">
+			<meta http-equiv="X-UA-Compatible" content="IE=edge">
+			<title>Space Opera - Slider Revolution</title>
+			<meta name="description" content="Slider Revolution Example" />
+			<meta name="keywords" content="fullscreen image, grid layout, flexbox grid, transition" />
+			<meta name="author" content="ThemePunch" />
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+
+			<!-- LOAD JQUERY LIBRARY -->
+			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
+			
+			<!-- LOADING FONTS AND ICONS -->
+			<link href="https://fonts.googleapis.com/css?family=Quicksand:400%2C700&display=swap" rel="stylesheet" property="stylesheet" media="all" type="text/css" >
+
+			
+			<link rel="stylesheet" type="text/css" href="fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
+			<link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.css">
+			
+			<!-- REVOLUTION STYLE SHEETS -->
+			<link rel="stylesheet" type="text/css" href="css/rs6.css">
+			<!-- REVOLUTION LAYERS STYLES -->
+						<!-- REVOLUTION JS FILES -->
+			
+		<script type="text/javascript">
+			window.RS_MODULES = window.RS_MODULES || {};
+			window.RS_MODULES.modules = window.RS_MODULES.modules || {};
+			window.RS_MODULES.waiting = window.RS_MODULES.waiting || [];
+			window.RS_MODULES.defered = true;
+			window.RS_MODULES.moduleWaiting = window.RS_MODULES.moduleWaiting || {};
+			window.RS_MODULES.type = 'compiled';
+		</script>
+					<script type="text/javascript" src="js/rbtools.min.js"></script>
+							<script type="text/javascript" src="js/rs6.min.js"></script>
+							
+			<script type="text/javascript">function setREVStartSize(e){
+			//window.requestAnimationFrame(function() {				 
+				window.RSIW = window.RSIW===undefined ? window.innerWidth : window.RSIW;	
+				window.RSIH = window.RSIH===undefined ? window.innerHeight : window.RSIH;	
+				try {								
+					var pw = document.getElementById(e.c).parentNode.offsetWidth,
+						newh;
+					pw = pw===0 || isNaN(pw) ? window.RSIW : pw;
+					e.tabw = e.tabw===undefined ? 0 : parseInt(e.tabw);
+					e.thumbw = e.thumbw===undefined ? 0 : parseInt(e.thumbw);
+					e.tabh = e.tabh===undefined ? 0 : parseInt(e.tabh);
+					e.thumbh = e.thumbh===undefined ? 0 : parseInt(e.thumbh);
+					e.tabhide = e.tabhide===undefined ? 0 : parseInt(e.tabhide);
+					e.thumbhide = e.thumbhide===undefined ? 0 : parseInt(e.thumbhide);
+					e.mh = e.mh===undefined || e.mh=="" || e.mh==="auto" ? 0 : parseInt(e.mh,0);		
+					if(e.layout==="fullscreen" || e.l==="fullscreen") 						
+						newh = Math.max(e.mh,window.RSIH);					
+					else{					
+						e.gw = Array.isArray(e.gw) ? e.gw : [e.gw];
+						for (var i in e.rl) if (e.gw[i]===undefined || e.gw[i]===0) e.gw[i] = e.gw[i-1];					
+						e.gh = e.el===undefined || e.el==="" || (Array.isArray(e.el) && e.el.length==0)? e.gh : e.el;
+						e.gh = Array.isArray(e.gh) ? e.gh : [e.gh];
+						for (var i in e.rl) if (e.gh[i]===undefined || e.gh[i]===0) e.gh[i] = e.gh[i-1];
+											
+						var nl = new Array(e.rl.length),
+							ix = 0,						
+							sl;					
+						e.tabw = e.tabhide>=pw ? 0 : e.tabw;
+						e.thumbw = e.thumbhide>=pw ? 0 : e.thumbw;
+						e.tabh = e.tabhide>=pw ? 0 : e.tabh;
+						e.thumbh = e.thumbhide>=pw ? 0 : e.thumbh;					
+						for (var i in e.rl) nl[i] = e.rl[i]<window.RSIW ? 0 : e.rl[i];
+						sl = nl[0];									
+						for (var i in nl) if (sl>nl[i] && nl[i]>0) { sl = nl[i]; ix=i;}															
+						var m = pw>(e.gw[ix]+e.tabw+e.thumbw) ? 1 : (pw-(e.tabw+e.thumbw)) / (e.gw[ix]);					
+						newh =  (e.gh[ix] * m) + (e.tabh + e.thumbh);
+					}
+					var el = document.getElementById(e.c);
+					if (el!==null && el) el.style.height = newh+"px";					
+					el = document.getElementById(e.c+"_wrapper");
+					if (el!==null && el) {
+						el.style.height = newh+"px";
+						el.style.display = "block";
+					}
+				} catch(e){
+					console.log("Failure at Presize of Slider:" + e)
+				}					   
+			//});
+		  };</script>
+
+			
+		</head>
+		
+		<body>
+		
+
+			<!-- START Space Opera REVOLUTION SLIDER 6.5.11 --><p class="rs-p-wp-fix"></p>
+			<rs-module-wrap id="rev_slider_101_1_wrapper" data-alias="space-opera" data-source="gallery" style="visibility:hidden;background:#000000;padding:0;">
+				<rs-module id="rev_slider_101_1" style="" data-version="6.5.11">
+					<rs-slides>
+						<rs-slide style="position: absolute;" data-key="rs-296" data-title="Slide" data-thumb="assets/galaxy_2-180x40.jpg" data-anim="ms:3800;" data-in="o:0;" data-out="a:false;">
+							<img src="assets/dummy.png" class="rev-slidebg tp-rs-img rs-lazyload" data-lazyload="assets/galaxy_2.jpg" data-parallax="off" data-panzoom="d:30000;e:power1.out;ss:100;se:150;rs:2;re:-2;" data-no-retina>
+<!--
+							--><rs-layer
+								id="slider-101-slide-296-layer-3" 
+								data-type="text"
+								data-rsp_ch="on"
+								data-xy="x:c;y:m;"
+								data-text="w:normal;s:50,40,40,25;l:50,40,40,25;ls:20px,20px,20px,10px;a:center;"
+								data-dim="w:900px,720px,640px,360px;"
+								data-padding="l:20;"
+								data-frame_0="o:1;tp:600;blu:30px;"
+								data-frame_0_chars="d:20;y:cyc(-50|50);sX:0.9;sY:0.9;o:0;blu:30px;"
+								data-frame_1="tp:600;e:power2.inOut;st:500;sp:2000;sR:500;blu:0px;"
+								data-frame_1_chars="dir:random;d:20;"
+								data-frame_999="o:0;tp:600;e:power2.inOut;st:w;sp:1000;sR:14700;gra:0%;blu:30px;"
+								style="z-index:5;font-family:'Quicksand';"
+							>HORSEHEAD NEBULA 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-101-slide-296-layer-7" 
+								data-type="text"
+								data-rsp_ch="on"
+								data-xy="xo:30px,30px,30px,20px;y:b;yo:20px;"
+								data-text="w:normal;s:20,20,20,15;l:30,30,30,25;a:inherit;"
+								data-dim="w:800px,640px,480px,300px;"
+								data-frame_0="o:1;tp:600;"
+								data-frame_0_words="d:1;o:0;"
+								data-frame_1="tp:600;e:power2.inOut;st:3500;sp:1500;sR:3500;"
+								data-frame_1_words="d:1;"
+								data-frame_999="o:0;tp:600;e:power2.inOut;st:w;sp:1000;sR:14670;"
+								style="z-index:6;font-family:'Quicksand';"
+							>A dark nebula in the constellation Orion, located just to the south of the star Alnitak, which is farthest east on Orion's Belt, and is part of the much larger Orion Molecular Cloud Complex. 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-101-slide-296-layer-5" 
+								class="rev-btn"
+								data-type="button"
+								data-xy="x:r;xo:30px,30px,30px,20px;y:b;yo:20px;"
+								data-text="s:30;l:50;ls:10px;fw:700;a:center;"
+								data-dim="w:80px;"
+								data-actions='o:click;a:jumptoslide;slide:next;'
+								data-rsp_bd="off"
+								data-padding="r:20;b:5;l:30;"
+								data-border="bos:solid;boc:rgba(255, 255, 255, 0.25);bow:1px,1px,1px,1px;"
+								data-frame_0="o:1;tp:600;"
+								data-frame_0_sfx="se:blocktoright;"
+								data-frame_1="tp:600;st:4500;sp:1000;sR:4500;"
+								data-frame_1_sfx="se:blocktoright;"
+								data-frame_999="z:0;tp:600;e:power2.inOut;st:w;sp:500;sR:14500;"
+								data-frame_hover="c:#fff;bgc:rgba(255,255,255,0);boc:#fff;bor:0px,0px,0px,0px;bos:solid;bow:1px,1px,1px,1px;oX:50;oY:50;sp:500;e:power1.inOut;"
+								style="z-index:7;background-color:rgba(255,255,255,0);font-family:'Quicksand';cursor:pointer;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;"
+							><i class="fa-angle-right"></i> 
+							</rs-layer><!--
+-->						</rs-slide>
+						<rs-slide style="position: absolute;" data-key="rs-297" data-title="Slide" data-thumb="assets/galaxy_3-2-180x40.jpg" data-anim="ms:3800;" data-in="o:0;" data-out="a:false;">
+							<img src="assets/dummy.png" class="rev-slidebg tp-rs-img rs-lazyload" data-lazyload="assets/galaxy_3-2.jpg" data-parallax="off" data-panzoom="d:30000;e:power1.out;ss:130;se:100;" data-no-retina>
+<!--
+							--><rs-layer
+								id="slider-101-slide-297-layer-3" 
+								data-type="text"
+								data-rsp_ch="on"
+								data-xy="x:c;y:m;"
+								data-text="w:normal;s:50,40,40,25;l:50,40,40,25;ls:20px,20px,20px,10px;a:center;"
+								data-dim="w:901px,721px,640px,360px;"
+								data-padding="l:20;"
+								data-frame_0="o:1;tp:600;blu:30px;"
+								data-frame_0_chars="d:20;y:cyc(-50|50);sX:0.9;sY:0.9;o:0;blu:30px;"
+								data-frame_1="tp:600;e:power2.inOut;st:500;sp:2000;sR:500;blu:0px;"
+								data-frame_1_chars="dir:random;d:20;"
+								data-frame_999="o:0;tp:600;e:power2.inOut;st:w;sp:1000;sR:15900;gra:0%;blu:30px;"
+								style="z-index:5;font-family:'Quicksand';"
+							>SUPERNOVA 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-101-slide-297-layer-7" 
+								data-type="text"
+								data-rsp_ch="on"
+								data-xy="xo:30px,30px,30px,20px;y:b;yo:20px;"
+								data-text="w:normal;s:20,20,20,15;l:30,30,30,25;a:inherit;"
+								data-dim="w:800px,640px,480px,300px;"
+								data-frame_0="o:1;tp:600;"
+								data-frame_0_words="d:1;o:0;"
+								data-frame_1="tp:600;e:power2.inOut;st:3500;sp:1500;sR:3500;"
+								data-frame_1_words="d:1;"
+								data-frame_999="o:0;tp:600;e:power2.inOut;st:w;sp:1000;sR:14500;"
+								style="z-index:6;font-family:'Quicksand';"
+							>A supernova is an astronomical event that occurs during the last stellar evolutionary stages of a massive star's life, whose dramatic and catastrophic destruction is marked by one final titanic explosion. This causes the sudden appearance of a "new" bright star, before slowly fading from sight over several weeks or months. 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-101-slide-297-layer-5" 
+								class="rev-btn"
+								data-type="button"
+								data-xy="x:r;xo:30px,30px,30px,20px;y:b;yo:20px;"
+								data-text="s:30;l:50;ls:10px;fw:700;a:center;"
+								data-dim="w:80px;"
+								data-actions='o:click;a:jumptoslide;slide:next;'
+								data-rsp_bd="off"
+								data-padding="r:20;b:5;l:30;"
+								data-border="bos:solid;boc:rgba(255, 255, 255, 0.25);bow:1px,1px,1px,1px;"
+								data-frame_0="o:1;tp:600;"
+								data-frame_0_sfx="se:blocktoright;"
+								data-frame_1="tp:600;st:4500;sp:1000;sR:4500;"
+								data-frame_1_sfx="se:blocktoright;"
+								data-frame_999="z:0;tp:600;e:power2.inOut;st:w;sp:500;sR:14500;"
+								data-frame_hover="c:#fff;bgc:rgba(255,255,255,0);boc:#fff;bor:0px,0px,0px,0px;bos:solid;bow:1px,1px,1px,1px;oX:50;oY:50;sp:500;e:power1.inOut;"
+								style="z-index:7;background-color:rgba(255,255,255,0);font-family:'Quicksand';cursor:pointer;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;"
+							><i class="fa-angle-right"></i> 
+							</rs-layer><!--
+-->						</rs-slide>
+						<rs-slide style="position: absolute;" data-key="rs-298" data-title="Slide" data-thumb="assets/galaxy_4-180x40.jpg" data-anim="ms:3800;" data-in="o:0;" data-out="a:false;">
+							<img src="assets/dummy.png" class="rev-slidebg tp-rs-img rs-lazyload" data-lazyload="assets/galaxy_4.jpg" data-parallax="off" data-panzoom="d:30000;e:power1.out;ss:100;se:150;" data-no-retina>
+<!--
+							--><rs-layer
+								id="slider-101-slide-298-layer-3" 
+								data-type="text"
+								data-rsp_ch="on"
+								data-xy="x:c;y:m;"
+								data-text="w:normal;s:50,40,40,25;l:50,40,40,25;ls:20px,20px,20px,10px;a:center;"
+								data-dim="w:900px,720px,640px,360px;"
+								data-padding="l:20;"
+								data-frame_0="o:1;tp:600;blu:30px;"
+								data-frame_0_chars="d:15;y:cyc(-50|50);sX:0.9;sY:0.9;o:0;blu:30px;"
+								data-frame_1="tp:600;e:power2.inOut;st:500;sp:2000;sR:500;blu:0px;"
+								data-frame_1_chars="dir:random;d:15;"
+								data-frame_999="o:0;tp:600;e:power2.inOut;st:w;sp:1000;sR:14050;gra:0%;blu:30px;"
+								style="z-index:5;font-family:'Quicksand';"
+							>INTERSTELLAR CLOUDS OF DUST 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-101-slide-298-layer-7" 
+								data-type="text"
+								data-rsp_ch="on"
+								data-xy="xo:30px,30px,30px,20px;y:b;yo:20px;"
+								data-text="w:normal;s:20,20,20,15;l:30,30,30,25;a:inherit;"
+								data-dim="w:800px,640px,480px,300px;"
+								data-frame_0="o:1;tp:600;"
+								data-frame_0_words="d:1;o:0;"
+								data-frame_1="tp:600;e:power2.inOut;st:3500;sp:1500;sR:3500;"
+								data-frame_1_words="d:1;"
+								data-frame_999="o:0;tp:600;e:power2.inOut;st:w;sp:1000;sR:14510;"
+								style="z-index:6;font-family:'Quicksand';"
+							>Most nebulae are of vast size, even millions of light years in diameter. Contrary to fictional depictions where starships hide in nebulae as thick as cloud banks, in reality a nebula that is barely visible to the human eye from Earth would appear larger, but no brighter, from close by. 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-101-slide-298-layer-5" 
+								class="rev-btn"
+								data-type="button"
+								data-xy="x:r;xo:30px,30px,30px,20px;y:b;yo:20px;"
+								data-text="s:30;l:50;ls:10px;fw:700;a:center;"
+								data-dim="w:80px;"
+								data-actions='o:click;a:jumptoslide;slide:next;'
+								data-rsp_bd="off"
+								data-padding="r:20;b:5;l:30;"
+								data-border="bos:solid;boc:rgba(255, 255, 255, 0.25);bow:1px,1px,1px,1px;"
+								data-frame_0="o:1;tp:600;"
+								data-frame_0_sfx="se:blocktoright;"
+								data-frame_1="tp:600;st:4500;sp:1000;sR:4500;"
+								data-frame_1_sfx="se:blocktoright;"
+								data-frame_999="z:0;tp:600;e:power2.inOut;st:w;sp:500;sR:14500;"
+								data-frame_hover="c:#fff;bgc:rgba(255,255,255,0);boc:#fff;bor:0px,0px,0px,0px;bos:solid;bow:1px,1px,1px,1px;oX:50;oY:50;sp:500;e:power1.inOut;"
+								style="z-index:7;background-color:rgba(255,255,255,0);font-family:'Quicksand';cursor:pointer;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;"
+							><i class="fa-angle-right"></i> 
+							</rs-layer><!--
+-->						</rs-slide>
+						<rs-slide style="position: absolute;" data-key="rs-299" data-title="Slide" data-thumb="assets/galaxy_5-180x40.jpg" data-anim="ms:3800;" data-in="o:0;" data-out="a:false;">
+							<img src="assets/dummy.png" class="rev-slidebg tp-rs-img rs-lazyload" data-lazyload="assets/galaxy_5.jpg" data-parallax="off" data-panzoom="d:30000;e:power1.out;ss:100;se:150;" data-no-retina>
+<!--
+							--><rs-layer
+								id="slider-101-slide-299-layer-3" 
+								data-type="text"
+								data-rsp_ch="on"
+								data-xy="x:c;y:m;"
+								data-text="w:normal;s:50,40,40,25;l:50,40,40,25;ls:20px,20px,20px,10px;a:center;"
+								data-dim="w:900px,720px,640px,360px;"
+								data-padding="l:20;"
+								data-frame_0="o:1;tp:600;blu:30px;"
+								data-frame_0_chars="d:15;y:cyc(-50|50);sX:0.9;sY:0.9;o:0;blu:30px;"
+								data-frame_1="tp:600;e:power2.inOut;st:500;sp:2000;sR:500;blu:0px;"
+								data-frame_1_chars="dir:random;d:15;"
+								data-frame_999="o:0;tp:600;e:power2.inOut;st:w;sp:1000;sR:16000;gra:0%;blu:30px;"
+								style="z-index:5;font-family:'Quicksand';"
+							>HELIX NEBULA 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-101-slide-299-layer-7" 
+								data-type="text"
+								data-rsp_ch="on"
+								data-xy="xo:30px,30px,30px,20px;y:b;yo:20px;"
+								data-text="w:normal;s:20,20,20,15;l:30,30,30,25;a:inherit;"
+								data-dim="w:800px,640px,480px,300px;"
+								data-frame_0="o:1;tp:600;"
+								data-frame_0_words="d:1;o:0;"
+								data-frame_1="tp:600;e:power2.inOut;st:3500;sp:1500;sR:3500;"
+								data-frame_1_words="d:1;"
+								data-frame_999="o:0;tp:600;e:power2.inOut;st:w;sp:1000;sR:14560;"
+								style="z-index:6;font-family:'Quicksand';"
+							>The Helix Nebula, also known as The Helix, NGC 7293, is a large planetary nebula (PN) located in the constellation Aquarius. Discovered by Karl Ludwig Harding, probably before 1824, this object is one of the closest to the Earth of all the bright planetary nebulae. 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-101-slide-299-layer-5" 
+								class="rev-btn"
+								data-type="button"
+								data-xy="x:r;xo:30px,30px,30px,20px;y:b;yo:20px;"
+								data-text="s:30;l:50;ls:10px;fw:700;a:center;"
+								data-dim="w:80px;"
+								data-actions='o:click;a:jumptoslide;slide:next;'
+								data-rsp_bd="off"
+								data-padding="r:20;b:5;l:30;"
+								data-border="bos:solid;boc:rgba(255, 255, 255, 0.25);bow:1px,1px,1px,1px;"
+								data-frame_0="o:1;tp:600;"
+								data-frame_0_sfx="se:blocktoright;"
+								data-frame_1="tp:600;st:4500;sp:1000;sR:4500;"
+								data-frame_1_sfx="se:blocktoright;"
+								data-frame_999="z:0;tp:600;e:power2.inOut;st:w;sp:500;sR:14500;"
+								data-frame_hover="c:#fff;bgc:rgba(255,255,255,0);boc:#fff;bor:0px,0px,0px,0px;bos:solid;bow:1px,1px,1px,1px;oX:50;oY:50;sp:500;e:power1.inOut;"
+								style="z-index:7;background-color:rgba(255,255,255,0);font-family:'Quicksand';cursor:pointer;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;"
+							><i class="fa-angle-right"></i> 
+							</rs-layer><!--
+-->						</rs-slide>
+						<rs-slide style="position: absolute;" data-key="rs-300" data-title="Slide" data-thumb="assets/galaxy_6-180x40.jpg" data-anim="ms:3800;" data-in="o:0;" data-out="a:false;">
+							<img src="assets/dummy.png" class="rev-slidebg tp-rs-img rs-lazyload" data-lazyload="assets/galaxy_6.jpg" data-parallax="off" data-panzoom="d:30000;e:power1.out;ss:120;se:100;" data-no-retina>
+<!--
+							--><rs-layer
+								id="slider-101-slide-300-layer-3" 
+								data-type="text"
+								data-rsp_ch="on"
+								data-xy="x:c;y:m;"
+								data-text="w:normal;s:50,40,40,25;l:50,40,40,25;ls:20px,20px,20px,10px;a:center;"
+								data-dim="w:900px,720px,640px,360px;"
+								data-padding="l:20;"
+								data-frame_0="o:1;tp:600;blu:30px;"
+								data-frame_0_chars="d:20;y:cyc(-50|50);sX:0.9;sY:0.9;o:0;blu:30px;"
+								data-frame_1="tp:600;e:power2.inOut;st:500;sp:2000;sR:500;blu:0px;"
+								data-frame_1_chars="dir:random;d:20;"
+								data-frame_999="o:0;tp:600;e:power2.inOut;st:w;sp:1000;sR:16100;gra:0%;blu:30px;"
+								style="z-index:5;font-family:'Quicksand';"
+							>PLEIADES 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-101-slide-300-layer-7" 
+								data-type="text"
+								data-rsp_ch="on"
+								data-xy="xo:30px,30px,30px,20px;y:b;yo:20px;"
+								data-text="w:normal;s:20,20,20,15;l:30,30,30,25;a:inherit;"
+								data-dim="w:800px,640px,480px,300px;"
+								data-frame_0="o:1;tp:600;"
+								data-frame_0_words="d:1;o:0;"
+								data-frame_1="tp:600;e:power2.inOut;st:3500;sp:1500;sR:3500;"
+								data-frame_1_words="d:1;"
+								data-frame_999="o:0;tp:600;e:power2.inOut;st:w;sp:1000;sR:14510;"
+								style="z-index:6;font-family:'Quicksand';"
+							>In astronomy, the Pleiades, or Seven Sisters (Messier 45 or M45), is an open star cluster containing middle-aged, hot B-type stars located in the constellation of Taurus. It is among the nearest star clusters to Earth and is the cluster most obvious to the naked eye in the night sky. 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-101-slide-300-layer-5" 
+								class="rev-btn"
+								data-type="button"
+								data-xy="x:r;xo:30px,30px,30px,20px;y:b;yo:20px;"
+								data-text="s:30;l:50;ls:10px;fw:700;a:center;"
+								data-dim="w:80px;"
+								data-actions='o:click;a:jumptoslide;slide:next;'
+								data-rsp_bd="off"
+								data-padding="r:20;b:5;l:30;"
+								data-border="bos:solid;boc:rgba(255, 255, 255, 0.25);bow:1px,1px,1px,1px;"
+								data-frame_0="o:1;tp:600;"
+								data-frame_0_sfx="se:blocktoright;"
+								data-frame_1="tp:600;st:4500;sp:1000;sR:4500;"
+								data-frame_1_sfx="se:blocktoright;"
+								data-frame_999="z:0;tp:600;e:power2.inOut;st:w;sp:500;sR:14500;"
+								data-frame_hover="c:#fff;bgc:rgba(255,255,255,0);boc:#fff;bor:0px,0px,0px,0px;bos:solid;bow:1px,1px,1px,1px;oX:50;oY:50;sp:500;e:power1.inOut;"
+								style="z-index:7;background-color:rgba(255,255,255,0);font-family:'Quicksand';cursor:pointer;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;"
+							><i class="fa-angle-right"></i> 
+							</rs-layer><!--
+-->						</rs-slide>
+					</rs-slides>
+				</rs-module>
+				<script type="text/javascript">
+					
+				</script>
+<script type="text/javascript">
+		if(typeof revslider_showDoubleJqueryError === "undefined") {function revslider_showDoubleJqueryError(sliderID) {console.log("You have some jquery.js library include that comes after the Slider Revolution files js inclusion.");console.log("To fix this, you can:");console.log("1. Set 'Module General Options' -> 'Advanced' -> 'jQuery & OutPut Filters' -> 'Put JS to Body' to on");console.log("2. Find the double jQuery.js inclusion and remove it");return "Double Included jQuery Library";}}
+</script>
+			</rs-module-wrap>
+			<!-- END REVOLUTION SLIDER -->
+
+				<script type="text/javascript">
+					var	tpj = jQuery;
+					if(window.RS_MODULES === undefined) window.RS_MODULES = {};
+					if(RS_MODULES.modules === undefined) RS_MODULES.modules = {};
+					RS_MODULES.modules["revslider1011"] = {once: RS_MODULES.modules["revslider1011"]!==undefined ? RS_MODULES.modules["revslider1011"].once : undefined, init:function() {
+						window.revapi101 = window.revapi101===undefined || window.revapi101===null || window.revapi101.length===0  ? document.getElementById("rev_slider_101_1") : window.revapi101;
+						if(window.revapi101 === null || window.revapi101 === undefined || window.revapi101.length==0) { window.revapi101initTry = window.revapi101initTry ===undefined ? 0 : window.revapi101initTry+1; if (window.revapi101initTry<20) requestAnimationFrame(function() {RS_MODULES.modules["revslider1011"].init()}); return;}
+						window.revapi101 = jQuery(window.revapi101);
+						if(window.revapi101.revolution==undefined){ revslider_showDoubleJqueryError("rev_slider_101_1"); return;}
+						revapi101.revolutionInit({
+								revapi:"revapi101",
+								sliderLayout:"fullscreen",
+								duration:20000,
+								visibilityLevels:"1240,1024,778,480",
+								gridwidth:"1240,1024,778,480",
+								gridheight:"868,768,960,720",
+								lazyType:"single",
+								perspectiveType:"local",
+								responsiveLevels:"1240,1024,778,480",
+								fullScreenOffset:"60px",
+								progressBar:{disableProgressBar:true},
+								navigation: {
+									mouseScrollNavigation:false,
+									onHoverStop:false,
+									thumbnails: {
+										enable:true,
+										tmp:"<span class=\"tp-thumb-image\"></span>",
+										style:"bullet-bar",
+										hide_onmobile:true,
+										hide_under:778,
+										hide_onleave:true,
+										v_align:"top",
+										v_offset:0,
+										space:0,
+										width:180,
+										height:40,
+										min_width:180,
+										wrapper_padding:0,
+										wrapper_color:"rgba(0, 0, 0, 0.15)",
+										span:true
+									}
+								},
+								parallax: {
+									levels:[1,2,3,4,5,6,7,8,9,10,47,48,49,50,51,55],
+									type:"mouse",
+									origo:"slidercenter",
+									speed:1000
+								},
+								viewPort: {
+									global:false,
+									globalDist:"-200px",
+									enable:false,
+									visible_area:"20%"
+								},
+								fallbacks: {
+									allowHTML5AutoPlayOnAndroid:true
+								},
+						});
+						
+					}} // End of RevInitScript
+					if (window.RS_MODULES.checkMinimal!==undefined) { window.RS_MODULES.checkMinimal();};
+				</script>
+
+
+
+		</body>
+				</html>
+		

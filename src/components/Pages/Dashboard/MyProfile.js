@@ -1,32 +1,246 @@
-import React from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import auth from '../../../firebase.init';
-
+import React, { useState, useEffect } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../../firebase.init";
+import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
+import Loading from "../Shared/Loading";
 
 const MyProfile = () => {
-  const [user] = useAuthState(auth);
+  const [user, loading, error] = useAuthState(auth);
+  const [userInfo, setUserInfo] = useState({});
+  const [isEdit, setIsEdit] = useState(false);
 
-    return (
-        <div>
-     <div class="flex items-center justify-center gap-5 px-5">
-  <div class="w-3/5">
-      <img src='https://images.unsplash.com/photo-1499750310107-5fef28a66643?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470' alt="" />
-  </div>
-  <div class="w-2/5">
-<div class="card w-96 bg-base-100 shadow-xl image-full">
-  <figure><img src={user?.photoURL} alt="Shoes" /></figure>
-  <div class="card-body">
-    <h2 class="card-title">{user.displayName}</h2>
-    <p>{user.email}</p>
-    <div class="card-actions justify-end">
-      <button class="btn btn-primary">Update Now</button>
-    </div>
-  </div>
-</div>
-  </div>
-</div>
+  const { register, handleSubmit, errors } = useForm();
+
+  if (loading) {
+    return <Loading />;
+  }
+  if (user) {
+    const email = user.email;
+    fetch(`http://localhost:5000/userInfo/${email}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setUserInfo(data);
+      });
+  }
+
+  const handleEdit = () => {
+    setIsEdit(true);
+  };
+
+  const onSubmit = (data) => {
+    const email = user.email;
+    // send user Info to database
+    if (email !== null) {
+      fetch(`http://localhost:5000/newUser/${email}`, {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+          authorization: `Bearer ${localStorage.getItem('accessToken')}`
+        },
+        body: JSON.stringify(data),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          toast.info("Profile Updated!", { theme: "colored" });
+          // e.target.reset();
+          setIsEdit(false);
+        });
+    }
+  };
+
+  const saveForm = (e) => {};
+  return (
+    <div>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className=" mt-5 bg-base-200 flex-col flex items-center"
+      >
+        <div className="card flex-shrink-0 shadow-2xl bg-base-100 w-3/4 lg:w-2/3 justify-center items-center">
+          <div className="flex items-center bg-slate-200 w-full">
+            <div className="avatar p-5 pr-0 w-1/4">
+              <div className=" w-36 mask mask-hexagon">
+                <img src={userInfo?.photoURL} alt={userInfo?.displayName} />
+              </div>
+            </div>
+            {/* Name Section  */}
+            <div>
+              <h1 className="text-4xl font-bold">{userInfo?.displayName}</h1>
+              <p>{userInfo?.email}</p>
+            </div>
+          </div>
+
+          {/* Aditional Info  */}
+          <div className="overflow-x-auto w-full">
+            {/* <!-- row 1 --> */}
+            <div className="w-full flex flex-row">
+              <div className=" px-5 lg:px-10 w-1/6 lg:w-2/12 py-5">
+                <div className="font-bold">Address</div>
+                <div className="text-sm opacity-50">City</div>
+              </div>
+              <div className=" px-10 py-5 w-5/6 lg:w-10/12">
+                {isEdit ? (
+                  <input
+                    className="input input-bordered input-secondary w-full"
+                    name="address"
+                    defaultValue={userInfo?.address}
+                    {...register("address", {
+                      maxLength: 500,
+                    })}
+                  />
+                ) : (
+                  userInfo?.address
+                )}
+                <br />
+
+                {isEdit ? (
+                  <input
+                    className="input input-bordered w-full mt-1"
+                    defaultValue={userInfo?.city}
+                    {...register("city", { maxLength: 500 })}
+                  />
+                ) : (
+                  <span className="badge badge-ghost badge-sm">
+                    {userInfo?.city}
+                  </span>
+                )}
+              </div>
+            </div>
+            {/* <!-- row 2 --> */}
+            <div className="w-full flex flex-row">
+              <div className=" px-5 lg:px-10 w-1/6 lg:w-2/12 py-5">
+                <div className="font-bold">Phone</div>
+              </div>
+              <div className=" px-10 py-5 w-5/6 lg:w-10/12">
+                {isEdit ? (
+                  <input
+                    type="tel"
+                    className="input input-bordered input-secondary w-full"
+                    defaultValue={userInfo?.phone}
+                    {...register("phone", { maxLength: 15 })}
+                  />
+                ) : (
+                  userInfo?.phone
+                )}
+              </div>
+            </div>
+            {/* <!-- row 2 --> */}
+            <div className="w-full flex flex-row">
+              <div className=" px-5 lg:px-10 w-1/6 lg:w-2/12 py-5">
+                <div className="font-bold">Facebook</div>
+              </div>
+              <div className=" px-10 py-5 w-5/6 lg:w-10/12">
+                {isEdit ? (
+                  <input
+                    type="text"
+                    className="input input-bordered input-secondary w-full"
+                    defaultValue={userInfo?.facebook}
+                    {...register("facebook", { maxLength: 250 })}
+                  />
+                ) : (
+                  <a
+                    href={userInfo?.facebook}
+                    target="_blank"
+                    className=" text-primary hover:underline"
+                  >
+                    {userInfo?.facebook}
+                  </a>
+                )}
+              </div>
+            </div>
+            {/* <!-- row 2 --> */}
+            <div className="w-full flex flex-row">
+              <div className=" px-5 lg:px-10 w-1/6 lg:w-2/12 py-5">
+                <div className="font-bold">GitHub</div>
+              </div>
+              <div className=" px-10 py-5 w-5/6 lg:w-10/12">
+                {isEdit ? (
+                  <input
+                    type="text"
+                    className="input input-bordered input-secondary w-full"
+                    defaultValue={userInfo?.github}
+                    {...register("github", { maxLength: 250 })}
+                  />
+                ) : (
+                  <a
+                    href={userInfo?.github}
+                    className=" text-primary hover:underline"
+                    target="_blank"
+                  >
+                    {userInfo?.github}
+                  </a>
+                )}
+              </div>
+            </div>
+            {/* <!-- row 2 --> */}
+            <div className="w-full flex flex-row">
+              <div className=" px-5 lg:px-10 w-1/6 lg:w-2/12 py-5">
+                <div className="font-bold">Linkedin</div>
+              </div>
+              <div className=" px-10 py-5 w-5/6 lg:w-10/12">
+                {isEdit ? (
+                  <input
+                    type="text"
+                    className="input input-bordered input-secondary w-full"
+                    defaultValue={userInfo?.linkedin}
+                    {...register("linkedin", { maxLength: 250 })}
+                  />
+                ) : (
+                  <a
+                    href={userInfo?.linkedin}
+                    target="_blank"
+                    className=" text-primary hover:underline"
+                  >
+                    {userInfo?.linkedin}
+                  </a>
+                )}
+              </div>
+            </div>
+            {/* <!-- row 2 --> */}
+            <div className="w-full flex flex-row">
+              <div className=" px-5 lg:px-10 w-1/6 lg:w-2/12 py-5">
+                <div className="font-bold">Twitter</div>
+              </div>
+              <div className=" px-10 py-5 w-5/6 lg:w-10/12">
+                {isEdit ? (
+                  <input
+                    type="text"
+                    className="input input-bordered input-secondary w-full"
+                    defaultValue={userInfo?.twitter}
+                    {...register("twitter", { maxLength: 250 })}
+                  />
+                ) : (
+                  <a
+                    href={userInfo?.twitter}
+                    target="_blank"
+                    className=" text-primary hover:underline"
+                  >
+                    {userInfo?.twitter}
+                  </a>
+                )}
+              </div>
+            </div>
+            {/* <!-- row 2 --> */}
+            <div className=" flex flex-row justify-evenly items-center px-5 lg:px-10 py-5">
+              <button
+                className="btn btn-primary"
+                disabled={isEdit}
+                onClick={handleEdit}
+              >
+                Edit
+              </button>
+              <input
+                type="submit"
+                className="btn btn-secondary"
+                disabled={!isEdit}
+              />
+            </div>
+          </div>
         </div>
-    );
+      </form>
+    </div>
+  );
 };
 
 export default MyProfile;
