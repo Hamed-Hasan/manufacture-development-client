@@ -23,12 +23,14 @@ import ManageOrder from './components/Pages/Dashboard/ManageOrder';
 import ManageAllOrders from './components/Pages/Dashboard/ManageAllOrders';
 import RequireAdmin from './components/Pages/Auth/RequireAdmin';
 import RequireNonAdmin from './components/Pages/Auth/RequireNonAdmin';
+import BlogNext from './components/Pages/Blog/BlogNext';
 function App() {
   return (
     <div className="App">
       <Navbar/>
     <Routes>
       <Route path="/" element={<Home/>}/>
+      
       <Route path="/purchase/:serviceId" element={
         <RequireAuth>
           <Purchase/>
@@ -46,18 +48,27 @@ function App() {
          
       <Route index element={<RequireAuth><MyOrders/></RequireAuth>}></Route>
    
-      <Route path="review" element={<RequireAuth><AddReview/></RequireAuth>}></Route>
+      <Route path="review" element={<RequireNonAdmin><AddReview/></RequireNonAdmin>}></Route>
 
 
 
       <Route path="makeAdmin" element={
-       
-          <MakeAdmin/>
+     
+         <MakeAdmin/>
         
       }></Route>
-      <Route path="addOrder" element={<AddOrder></AddOrder>}></Route>
-      <Route path="manageOrder" element={<ManageOrder></ManageOrder>}></Route>
-      <Route path="manageAllOrder" element={<ManageAllOrders></ManageAllOrders>}></Route>
+      <Route path="addOrder" element={
+      
+          <AddOrder/>
+      }></Route>
+      <Route path="manageOrder" element={
+     
+          <ManageOrder/>
+      }></Route>
+      <Route path="manageAllOrder" element={
+    
+          <ManageAllOrders/>
+      }></Route>
 
 
          
@@ -69,6 +80,8 @@ function App() {
 
       
       <Route path="/blog" element={<Blog/>}/>
+      <Route path="/blogNext" element={<BlogNext/>}/>
+
       <Route path="/myPortfolio" element={<Blog/>}/>
       <Route path="/dashboard" element={<Dashboard/>}/>
 
