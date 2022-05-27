@@ -55,7 +55,7 @@ const MyProfile = () => {
     <div>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className=" mt-5 bg-base-200 flex-col flex items-center"
+        className=" mt-5 bg-base-200 flex-col flex items-center py-11"
       >
         <div className="card flex-shrink-0 shadow-2xl bg-base-100 w-3/4 lg:w-2/3 justify-center items-center">
           <div className="flex items-center bg-slate-200 w-full">
