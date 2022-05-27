@@ -34,7 +34,7 @@ const MakeAdmin = () => {
   const removeAdmin = (email) => {
     if (email === user.email) {
       toast.error("Can't Remove Your Self!");
-    } else if (email == 'hamedhasan422421@gmail.com') {
+    } else if (email == process.env.REACT_APP_ceoEmail) {
       toast.error("Can't Remove CEO", { theme: "dark" });
     } else {
       const updateUser = { isAdmin: false };
@@ -100,7 +100,7 @@ const MakeAdmin = () => {
                       <div>
                         <div className="font-bold">
                           {displayName}
-                          {email === 'hamedhasan422421@gmail.com' ? (
+                          {email === process.env.REACT_APP_ceoEmail ? (
                             <div className="badge badge-secondary ml-3">
                               CEO
                             </div>
