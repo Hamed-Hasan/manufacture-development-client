@@ -76,7 +76,7 @@ const AddOrder = () => {
                         class="w-full lg:w-1/2 xl:w-6/12 px-4" data-aos="fade-up" 
                         data-aos-delay="200"
                     >
-                  <img src={addUser} alt="" />
+                  <img className='-mt-60' src={addUser} alt="" />
                     </div>
                     <div class="w-full lg:w-1/2 xl:w-5/12 px-4" data-aos="fade-up" data-aos-delay="500" data-aos-duration="2000">
                         <div class="bg-gray-100 dark:bg-slate-800 relative rounded-lg p-8 sm:p-12 shadow-lg">
