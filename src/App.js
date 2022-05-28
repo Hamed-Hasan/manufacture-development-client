@@ -26,7 +26,16 @@ import RequireNonAdmin from './components/Pages/Auth/RequireNonAdmin';
 import BlogNext from './components/Pages/Blog/BlogNext';
 import MyPortfolio from './components/Pages/MyPortfolio/MyPortfolio'
 import ScrollToTop from './components/Pages/Shared/ScrollToTop/ScrollToTop';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
+
 function App() {
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <div className="App">
       <Navbar/>

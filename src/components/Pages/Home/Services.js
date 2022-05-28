@@ -14,7 +14,8 @@ const Services = ({ service }) => {
       className="mx-auto py-24 hidden md:block"
       style={{ maxWidth: "1400px" }}
     >
-      <h1 className="md:text-6xl text-center py-6 mb-5">
+      <h1 className="md:text-6xl text-center py-6 mb-5" data-aos="fade-right"
+     data-aos-duration="2000">
         The Best Technologies Catagories
       </h1>
       <Swiper
@@ -29,6 +30,8 @@ const Services = ({ service }) => {
           clickable: true,
         }}
         className="mySwiper"
+        data-aos="zoom-in"
+     data-aos-duration="3000"
       >
         <SwiperSlide>
           <div className="wrapper">

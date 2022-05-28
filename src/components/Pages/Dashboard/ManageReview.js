@@ -10,7 +10,8 @@ const ReviewSec = () => {
     <div>
       <div className=" grid grid-cols-1 gap-3 justify-items-center  items-center py-20 bg-slate-100 mx-auto">
         <div className="w-full lg:w-2/5">
-          <h1 className="text-5xl font-bold text-center mb-20 lg:mb-0 py-4">
+          <h1 className="text-5xl font-bold text-center mb-20 lg:mb-0 py-4" data-aos="zoom-in"
+     data-aos-duration="2000">
             Our Client’s Speak
           </h1>
         </div>
@@ -62,6 +63,8 @@ const ReviewSec = () => {
             sliderclassName=""
             slidesToSlide={1}
             swipeable
+            data-aos="fade-up"
+     data-aos-duration="1000"
           >
             {reviews.map((review) => {
               return (

@@ -1,67 +1,23 @@
 import React from "react";
-import Exercises from "./Exercises";
-import TechWriter from "./TechWriter";
 
 const Technology = () => {
   return (
-    <div className="container mx-auto my-5">
-      <div className="md:flex gap-x-9 gap-y-9">
-        <div className="md:w-1/2 mb-6 md:mb-0">
-          <Exercises />
-        </div>
-        <div className="md:w-1/2">
-          <div className="mockup-code text-left">
-            <pre data-prefix="$">
-              <code>some TechNology</code>
-            </pre>
-            <pre data-prefix=">" className="text-warning">
-              <code>
-                <TechWriter />
-              </code>
-            </pre>
-            <pre data-prefix=">" className="text-success">
-              <code>process.env.ACCESS_TOKEN_SECRET</code>
-            </pre>
-            <pre data-prefix=">" className="text-warning">
-              <code>
-                await userCollection.updateOne(filter, updateDoc, options)
-              </code>
-            </pre>
-            <pre data-prefix=">" className="text-success">
-              <code>
-                service.slots.filter(slot === !bookedSlots.includes(slot))
-              </code>
-            </pre>
-            <pre data-prefix=">" className="text-warning">
-              <code>DataSource.removeChangeListener(this.handleChange);</code>
-            </pre>
-            <pre data-prefix=">" className="text-success">
-              <code>this.$el.off('change', this.handleChange);</code>
-            </pre>
-            <pre data-prefix=">" className="text-warning">
-              <code>this.reactRoot = ReactDOM.createRoot(this.el);</code>
-            </pre>
-            <pre data-prefix=">" className="text-success">
-              <code>container = document.createElement("div");</code>
-            </pre>
-            <pre data-prefix=">" className="text-warning">
-              <code>unmountComponentAtNode(container);</code>
-            </pre>
-            <pre data-prefix=">" className="text-success">
-              <code>
-                expect(container.textContent).toContain(fakeUser.address);
-              </code>
-            </pre>
-            <pre data-prefix=">" className="text-warning">
-              <code>() = this.tick(),</code>
-            </pre>
-            <pre data-prefix=">" className="text-success">
-              <code>clearInterval(this.timerID);</code>
-            </pre>
+    <div class="py-16 bg-white">  
+    <div class="container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
+        <div class="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12">
+          <div class="md:5/12 lg:w-5/12"data-aos="fade-right"
+     data-aos-duration="1500" >
+            <img src="https://tailus.io/sources/blocks/left-image/preview/images/startup.png" alt="image" loading="lazy" width="" height=""/>
+          </div>
+          <div class="md:7/12 lg:w-6/12" data-aos="fade-left"
+     data-aos-duration="2000">
+            <h2 class="text-2xl text-gray-900 font-bold md:text-4xl">Nuxt development is carried out by passionate developers</h2>
+            <p class="mt-6 text-gray-600">Converting these raw materials into something more useful adds value. This added value increases the price of finished products, making manufacturing a very profitable part of the business.!</p>
+            <p class="mt-4 text-gray-600">  chain. Some people specialize in the skills required to manufacture goods, while others provide the funds that businesses need to purchase the tools and materials</p>
           </div>
         </div>
-      </div>
     </div>
+  </div>
   );
 };
 

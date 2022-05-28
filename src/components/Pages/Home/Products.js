@@ -16,9 +16,9 @@ const Products = () => {
   return (
     <div id="service" className="container mx-auto my-10">
       <div className="section-content mb-16">
-        <h2 className="text-center py-10">
-          <p className="text-sm md:text-2xl">The Most Important </p>
-          <p className="pt-2 text-sm md:text-2xl">
+        <h2 className="text-center" data-aos="zoom-in-up">
+          <p className="text-sm md:text-6xl font-bold pb-2 ">Most Important </p>
+          <p className="text-sm md:text-4xl">
             {" "}
             Things We Offer Aren't Manufactured
           </p>

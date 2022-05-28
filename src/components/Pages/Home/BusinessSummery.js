@@ -6,7 +6,8 @@ const BusinessSummery = () => {
     <section className="text-gray-600 body-font countUp">
       <div className="container px-5 py-24 mx-auto">
         <div className="flex flex-col text-center w-full mb-20">
-          <h1 className="md:text-5xl font-medium title-font mb-4 text-gray-200">
+          <h1 className="md:text-5xl font-medium title-font mb-4 text-gray-200" data-aos="fade-right"
+     data-aos-duration="3000">
             MILLIONS BUSINESS TRUST US
           </h1>
         </div>
@@ -14,7 +15,8 @@ const BusinessSummery = () => {
           <div className="container  mx-auto grid">
             <div className="flex justify-around">
               <div className="grid gap-14 mb-8 md:grid-cols-2 xl:grid-cols-4">
-                <div className="flex items-center p-4 count bg-transparent rounded-lg shadow-xs dark:bg-gray-800">
+                <div className="flex items-center p-4 count bg-transparent rounded-lg shadow-xs dark:bg-gray-800" data-aos="zoom-in"
+     data-aos-duration="1000">
                   <div className="p-3 mr-4 text-orange-500 bg-orange-100 rounded-full dark:text-orange-100 dark:bg-orange-500">
                     <svg
                       className="w-5 h-5"
@@ -34,7 +36,8 @@ const BusinessSummery = () => {
                   </div>
                 </div>
 
-                <div className="flex items-center count  p-4 bg-transparent rounded-lg shadow-xs dark:bg-gray-800">
+                <div className="flex items-center count  p-4 bg-transparent rounded-lg shadow-xs dark:bg-gray-800" data-aos="zoom-in"
+     data-aos-duration="1500">
                   <div className="p-3 mr-4 text-green-500 bg-green-100 rounded-full dark:text-green-100 dark:bg-green-500">
                     <svg
                       className="w-5 h-5"
@@ -58,7 +61,8 @@ const BusinessSummery = () => {
                   </div>
                 </div>
 
-                <div className="flex items-center count  p-4 bg-transparent rounded-lg shadow-xs dark:bg-gray-800">
+                <div className="flex items-center count  p-4 bg-transparent rounded-lg shadow-xs dark:bg-gray-800" data-aos="zoom-in"
+     data-aos-duration="2000">
                   <div className="p-3 mr-4 text-teal-500 bg-teal-100 rounded-full dark:text-teal-100 dark:bg-teal-500">
                     <svg
                       className="w-5 h-5"
@@ -82,7 +86,8 @@ const BusinessSummery = () => {
                   </div>
                 </div>
 
-                <div className="flex items-center count  p-4 bg-transparent rounded-lg shadow-xs dark:bg-gray-800">
+                <div className="flex items-center count  p-4 bg-transparent rounded-lg shadow-xs dark:bg-gray-800" data-aos="zoom-in"
+     data-aos-duration="3000">
                   <div className="p-3 mr-4 text-teal-500 bg-teal-100 rounded-full dark:text-teal-100 dark:bg-teal-500">
                     <svg
                       className="w-5 h-5"
