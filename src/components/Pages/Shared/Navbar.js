@@ -7,18 +7,20 @@ import auth from '../../../firebase.init';
 import useNav from '../../hooks/useNav';
 import './Navbar.css'
 const Navbar = () => {
+  
   const [user] = useAuthState(auth);
   const logout = () => {
     signOut(auth);
     localStorage.removeItem('accessToken')
 };
     const { navbar, navBarLogo } = useNav();
+    
     window.onscroll = function() {scrollBar()};
     function scrollBar() {
-      // var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-      // var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      // var scrolled = (winScroll / height) * 100;
-      // document.getElementById("myBar").style.width = scrolled + "%";
+      var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      var scrolled = (winScroll / height) * 100;
+      document.getElementById("myBar").style.width = scrolled + "%";
     }
     const menuItems = <>
     <li> <NavLink to="/">Home</NavLink></li>
@@ -29,7 +31,7 @@ const Navbar = () => {
     </>
     return (
     <>
-    <div className={`navbar border-gray-200 px-2 sm:px-8 py-2.5 w-full sticky top-0 z-50 transition-all ${
+    <div  className={`navbar border-gray-200 px-2 sm:px-8 py-2.5 w-full sticky top-0 z-50 transition-all ${
             navbar && "bg-white shadow-lg set-border"
           }`}>
         <div class="navbar-start">
@@ -58,9 +60,9 @@ const Navbar = () => {
   </div>
       </div>
 
-      {/* <div className="progress-container">
+      <div className="progress-container">
     <div className="progress-bar" id="myBar"></div>
-  </div>   */}
+  </div>   
     </>
     );
 };

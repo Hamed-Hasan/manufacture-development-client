@@ -24,6 +24,8 @@ import ManageAllOrders from './components/Pages/Dashboard/ManageAllOrders';
 import RequireAdmin from './components/Pages/Auth/RequireAdmin';
 import RequireNonAdmin from './components/Pages/Auth/RequireNonAdmin';
 import BlogNext from './components/Pages/Blog/BlogNext';
+import MyPortfolio from './components/Pages/MyPortfolio/MyPortfolio'
+import ScrollToTop from './components/Pages/Shared/ScrollToTop/ScrollToTop';
 function App() {
   return (
     <div className="App">
@@ -82,7 +84,7 @@ function App() {
       <Route path="/blog" element={<Blog/>}/>
       <Route path="/blogNext" element={<BlogNext/>}/>
 
-      <Route path="/myPortfolio" element={<Blog/>}/>
+      <Route path="/myPortfolio" element={<MyPortfolio/>}/>
       <Route path="/dashboard" element={<Dashboard/>}/>
 
       <Route path='/login' element={<Login/>} />
@@ -90,6 +92,7 @@ function App() {
       <Route path="*" element={<NotFound/>}/>
     </Routes>
     <Footer/>
+    <ScrollToTop/>
     <ToastContainer/>
     </div>
   );

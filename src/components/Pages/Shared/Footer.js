@@ -1,8 +1,10 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 
 const Footer = () => {
+    const {pathname} = useLocation()
     return (
-        <div>
+        <div style={pathname.includes('myPortfolio') ? {display: 'none'} : {display: 'block'}}>
 
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#1f2937" fill-opacity="1" d="M0,224L60,218.7C120,213,240,203,360,213.3C480,224,600,256,720,234.7C840,213,960,139,1080,128C1200,117,1320,171,1380,197.3L1440,224L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>

@@ -13,7 +13,7 @@ const Blog = () => {
                     <div tabindex="0" class="focus:outline-none" aria-label="card 1">
                         <img role="img" aria-label="code editor" tabindex="0" class="focus:outline-none w-full" src="https://cdn.tuk.dev/assets/components/111220/Blg-6/blog(1).png" alt="code editor" />
                         <div class="py-4 px-8 w-full flex justify-between bg-indigo-700">
-                            <p  tabindex="0" class="focus:outline-none text-sm text-white font-semibold tracking-wide">Bruce Wayne</p>
+                            <p  tabindex="0" class="focus:outline-none text-sm text-white font-semibold tracking-wide">Inditex (Zara)	</p>
                             <p tabindex="0" class="focus:outline-none text-sm text-white font-semibold tracking-wide">13TH Oct, 2020</p>
                         </div>
                         <div class="bg-white px-10 py-6 rounded-bl-3xl rounded-br-3xl">
@@ -66,7 +66,7 @@ const Blog = () => {
                             <div tabindex="0" class="focus:outline-none " aria-label="card 2" >
                                 <img tabindex="0" role="img" aria-label="gaming" class="focus:outline-none w-full" src="https://cdn.tuk.dev/assets/components/111220/Blg-6/blog(2).png" alt="games" />
                                 <div class="py-2 px-4 w-full flex justify-between bg-indigo-700">
-                                    <p tabindex="0" class="focus:outline-none  text-sm text-white font-semibold tracking-wide">Bruce Wayne</p>
+                                    <p tabindex="0" class="focus:outline-none  text-sm text-white font-semibold tracking-wide">Cutter & buck	</p>
                                     <p tabindex="0" class="focus:outline-none text-sm text-white font-semibold tracking-wide">13TH Oct, 2020</p>
                                 </div>
                                 <div class="bg-white px-3 lg:px-6 py-4 rounded-bl-3xl rounded-br-3xl">
@@ -77,7 +77,7 @@ const Blog = () => {
                             <div  tabindex="0" class="focus:outline-none" aria-label="card 3">
                                 <img tabindex="0" role="img" aria-label="gaming" class="focus:outline-none focus:outline-none w-full" src="https://cdn.tuk.dev/assets/components/111220/Blg-6/blog(3).png" alt="notes" />
                                 <div class="py-2 px-4 w-full flex justify-between bg-indigo-700">
-                                    <p tabindex="0" class="focus:outline-none text-sm text-white font-semibold tracking-wide">Bruce Wayne</p>
+                                    <p tabindex="0" class="focus:outline-none text-sm text-white font-semibold tracking-wide">Adidas</p>
                                     <p tabindex="0" class="focus:outline-none text-sm text-white font-semibold tracking-wide">13TH Oct, 2020</p>
                                 </div>
                                 <div class="bg-white px-3 lg:px-6 py-4 rounded-bl-3xl rounded-br-3xl">

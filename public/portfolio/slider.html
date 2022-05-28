@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+		<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+		<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+		<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+		<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+		<head>
+			<meta charset="utf-8">
+			<meta http-equiv="X-UA-Compatible" content="IE=edge">
+			<title>Blur Effect Slider - Slider Revolution</title>
+			<meta name="description" content="Slider Revolution Example" />
+			<meta name="keywords" content="fullscreen image, grid layout, flexbox grid, transition" />
+			<meta name="author" content="ThemePunch" />
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+
+			<!-- LOAD JQUERY LIBRARY -->
+			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
+			
+			<!-- LOADING FONTS AND ICONS -->
+			<link href="https://fonts.googleapis.com/css?family=Poppins:300%2C600%2C400%2C500%7CRoboto:300%2C700%2C400&display=swap" rel="stylesheet" property="stylesheet" media="all" type="text/css" >
+
+			
+			<link rel="stylesheet" type="text/css" href="fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
+			<link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.css">
+			
+			<!-- REVOLUTION STYLE SHEETS -->
+			<link rel="stylesheet" type="text/css" href="css/rs6.css">
+			<!-- REVOLUTION LAYERS STYLES -->
+						<!-- REVOLUTION JS FILES -->
+			
+		<script type="text/javascript">
+			window.RS_MODULES = window.RS_MODULES || {};
+			window.RS_MODULES.modules = window.RS_MODULES.modules || {};
+			window.RS_MODULES.waiting = window.RS_MODULES.waiting || [];
+			window.RS_MODULES.defered = true;
+			window.RS_MODULES.moduleWaiting = window.RS_MODULES.moduleWaiting || {};
+			window.RS_MODULES.type = 'compiled';
+		</script>
+					<script type="text/javascript" src="js/rbtools.min.js"></script>
+							<script type="text/javascript" src="js/rs6.min.js"></script>
+							
+			<script type="text/javascript">function setREVStartSize(e){
+			//window.requestAnimationFrame(function() {				 
+				window.RSIW = window.RSIW===undefined ? window.innerWidth : window.RSIW;	
+				window.RSIH = window.RSIH===undefined ? window.innerHeight : window.RSIH;	
+				try {								
+					var pw = document.getElementById(e.c).parentNode.offsetWidth,
+						newh;
+					pw = pw===0 || isNaN(pw) ? window.RSIW : pw;
+					e.tabw = e.tabw===undefined ? 0 : parseInt(e.tabw);
+					e.thumbw = e.thumbw===undefined ? 0 : parseInt(e.thumbw);
+					e.tabh = e.tabh===undefined ? 0 : parseInt(e.tabh);
+					e.thumbh = e.thumbh===undefined ? 0 : parseInt(e.thumbh);
+					e.tabhide = e.tabhide===undefined ? 0 : parseInt(e.tabhide);
+					e.thumbhide = e.thumbhide===undefined ? 0 : parseInt(e.thumbhide);
+					e.mh = e.mh===undefined || e.mh=="" || e.mh==="auto" ? 0 : parseInt(e.mh,0);		
+					if(e.layout==="fullscreen" || e.l==="fullscreen") 						
+						newh = Math.max(e.mh,window.RSIH);					
+					else{					
+						e.gw = Array.isArray(e.gw) ? e.gw : [e.gw];
+						for (var i in e.rl) if (e.gw[i]===undefined || e.gw[i]===0) e.gw[i] = e.gw[i-1];					
+						e.gh = e.el===undefined || e.el==="" || (Array.isArray(e.el) && e.el.length==0)? e.gh : e.el;
+						e.gh = Array.isArray(e.gh) ? e.gh : [e.gh];
+						for (var i in e.rl) if (e.gh[i]===undefined || e.gh[i]===0) e.gh[i] = e.gh[i-1];
+											
+						var nl = new Array(e.rl.length),
+							ix = 0,						
+							sl;					
+						e.tabw = e.tabhide>=pw ? 0 : e.tabw;
+						e.thumbw = e.thumbhide>=pw ? 0 : e.thumbw;
+						e.tabh = e.tabhide>=pw ? 0 : e.tabh;
+						e.thumbh = e.thumbhide>=pw ? 0 : e.thumbh;					
+						for (var i in e.rl) nl[i] = e.rl[i]<window.RSIW ? 0 : e.rl[i];
+						sl = nl[0];									
+						for (var i in nl) if (sl>nl[i] && nl[i]>0) { sl = nl[i]; ix=i;}															
+						var m = pw>(e.gw[ix]+e.tabw+e.thumbw) ? 1 : (pw-(e.tabw+e.thumbw)) / (e.gw[ix]);					
+						newh =  (e.gh[ix] * m) + (e.tabh + e.thumbh);
+					}
+					var el = document.getElementById(e.c);
+					if (el!==null && el) el.style.height = newh+"px";					
+					el = document.getElementById(e.c+"_wrapper");
+					if (el!==null && el) {
+						el.style.height = newh+"px";
+						el.style.display = "block";
+					}
+				} catch(e){
+					console.log("Failure at Presize of Slider:" + e)
+				}					   
+			//});
+		  };</script>
+
+			
+		</head>
+		
+		<body>
+		
+
+			<!-- START Blur Effect Slider REVOLUTION SLIDER 6.5.11 --><p class="rs-p-wp-fix"></p>
+			<rs-module-wrap id="rev_slider_14_1_wrapper" data-alias="blur-effect-slider" data-source="gallery" style="visibility:hidden;background:#2d3032;padding:0;margin:0px auto;margin-top:0;margin-bottom:0;max-width:;">
+				<rs-module id="rev_slider_14_1" style="" data-version="6.5.11">
+					<rs-slides>
+						<rs-slide style="position: absolute;" data-key="rs-34" data-title="One" data-thumb="assets/blur1-100x50.jpg" data-anim="p:transparent;" data-in="o:0;" data-out="o:0;">
+							<img src="assets/blurbg13.jpg" class="rev-slidebg tp-rs-img" data-parallax="6" data-no-retina>
+<!--						--><rs-zone id="rrzt_34" class="rev_row_zone_top" style="z-index: 19;"><!--
+
+								--><rs-row
+									id="slider-14-slide-34-layer-14" 
+									data-type="row"
+									data-xy="xo:100px;yo:100px;"
+									data-text="l:22;a:inherit;"
+									data-basealign="slide"
+									data-rsp_bd="off"
+									data-padding="t:150,100,50,50;r:100,50,40,40;l:100,50,40,40;"
+									data-frame_1="sR:10;"
+									data-frame_999="o:0;st:w;sR:8690;sA:9000;"
+									style="z-index:1;"
+								><!--
+									--><rs-column
+										id="slider-14-slide-34-layer-15" 
+										data-type="column"
+										data-xy="xo:100px;yo:100px;"
+										data-text="l:22;a:inherit,inherit,center,center;"
+										data-rsp_bd="off"
+										data-column="w:100%;"
+										data-frame_999="o:0;st:w;sR:8690;sA:9000;"
+										style="z-index:2;width:100%;"
+									><!--
+										--><rs-layer
+											id="slider-14-slide-34-layer-7" 
+											class="blurslider-gradient"
+											data-type="text"
+											data-color="rgba(255,255,255,1)"
+											data-rsp_ch="on"
+											data-xy="x:l,l,c,c;yo:0,0,230px,110px;"
+											data-text="w:nowrap,nowrap,nowrap,normal;s:110,90,100,70;l:100,90,100,70;a:inherit,inherit,center,center;"
+											data-dim="w:auto,auto,auto,399px;"
+											data-basealign="slide"
+											data-disp="inline-block"
+											data-margin="b:30,20,30,30;"
+											data-padding="r:0,0,40,40;l:0,0,40,40;"
+											data-frame_0="y:50px;blu:20px;"
+											data-frame_1="e:power4.out;st:300;sp:2000;sR:290;"
+											data-frame_999="o:0;st:w;sR:8990;"
+											style="z-index:3;font-family:'Poppins';display:inline-block;"
+										>Visit My <br/>
+Awesome Projects. 
+										</rs-layer><!--
+
+										--><rs-layer
+											id="slider-14-slide-34-layer-2" 
+											data-type="text"
+											data-color="rgba(255,255,255,1)"
+											data-rsp_ch="on"
+											data-xy="x:l,l,c,c;xo:0,50px,0,0;yo:0,430px,460px,290px;"
+											data-text="w:normal;s:29,30,40,25;l:37,40,50,30;fw:300;a:inherit,inherit,center,center;"
+											data-dim="w:572,360px,100%,100%;"
+											data-basealign="slide"
+											data-margin="b:40,30,20,20;"
+											data-frame_0="y:37px;blu:20px;"
+											data-frame_1="e:power4.out;st:500;sp:2000;sR:490;"
+											data-frame_999="o:0;st:w;sR:6500;"
+											style="z-index:4;font-family:'Poppins';"
+										>Implement My Project With <br/>
+HTML CSS JAVASCRIPT REACT JS NODE JS MONGO DB FIREBASE ETC. 
+										</rs-layer><!--
+
+										--><a
+											id="slider-14-slide-34-layer-13" 
+											class="rs-layer rev-btn"
+											href="https://react-router-shop.netlify.app/" target="_blank" rel="noopener"
+											data-type="button"
+											data-color="rgba(255,255,255,1)"
+											data-rsp_ch="on"
+											data-xy="x:l,l,c,c;xo:0,50px,0,0;yo:0,540px,590px,400px;"
+											data-text="w:normal,nowrap,nowrap,nowrap;s:17;l:50;fw:600;a:inherit;"
+											data-basealign="slide"
+											data-disp="inline-block"
+											data-padding="r:35;l:35;"
+											data-border="bos:solid;boc:rgba(255,255,255,1);bow:0px,0px,1px,0px;bor:30px,30px,30px,30px;"
+											data-frame_0="y:50px;blu:20px;"
+											data-frame_1="e:power4.out;st:700;sp:2000;sR:690;"
+											data-frame_999="o:0;st:w;sR:6300;"
+											data-frame_hover="c:#000;bgc:#fff;boc:#fff;bor:30px,30px,30px,30px;bos:solid;bow:1px,1px,1px,1px;oX:50;oY:50;sp:0;e:none;"
+											style="z-index:5;font-family:'Poppins';cursor:pointer;display:inline-block;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;"
+										>Happy Shopping 
+										</a><!--
+
+										--><a
+											id="slider-14-slide-34-layer-5" 
+											class="rs-layer rev-btn"
+											href="https://landing-pages-portfolio.netlify.app" target="_blank" rel="noopener"
+											data-type="button"
+											data-color="rgba(255,255,255,1)"
+											data-rsp_ch="on"
+											data-xy="x:c;y:m;"
+											data-text="w:normal,nowrap,nowrap,nowrap;s:17;l:50;fw:600;a:inherit;"
+											data-basealign="slide"
+											data-disp="inline-block"
+											data-margin="r:20,0,0,0;b:20,0,0,0;l:20,0,0,0;"
+											data-padding="r:35;l:35;"
+											data-border="bos:solid;boc:rgba(255,255,255,1);bow:0px,0px,1px,0px;bor:30px,30px,30px,30px;"
+											data-frame_0="y:50px;blu:20px;"
+											data-frame_1="e:power4.out;st:700;sp:2000;sR:690;"
+											data-frame_999="o:0;st:w;sR:6300;"
+											data-frame_hover="c:#000;bgc:#fff;boc:#fff;bor:30px,30px,30px,30px;bos:solid;bow:1px,1px,1px,1px;oX:50;oY:50;sp:0;e:none;"
+											style="z-index:6;font-family:'Poppins';cursor:pointer;display:inline-block;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;"
+										>Simple Portfolio 
+										</a><!--
+
+										--><a
+											id="slider-14-slide-34-layer-4" 
+											class="rs-layer rev-btn"
+											href="https://electronics-zone.web.app/" target="_blank" rel="noopener"
+											data-type="button"
+											data-color="rgba(255,255,255,1)"
+											data-rsp_ch="on"
+											data-xy="x:c;y:m;"
+											data-text="w:normal,nowrap,nowrap,nowrap;s:17;l:50;fw:600;a:inherit;"
+											data-basealign="slide"
+											data-disp="inline-block"
+											data-margin="r:11,0,0,0;"
+											data-padding="r:35;l:35;"
+											data-border="bos:solid;boc:rgba(255,255,255,1);bow:0px,0px,1px,0px;bor:30px,30px,30px,30px;"
+											data-frame_0="y:50px;blu:20px;"
+											data-frame_1="e:power4.out;st:700;sp:2000;sR:690;"
+											data-frame_999="o:0;st:w;sR:6300;"
+											data-frame_hover="c:#000;bgc:#fff;boc:#fff;bor:30px,30px,30px,30px;bos:solid;bow:1px,1px,1px,1px;oX:50;oY:50;sp:0;e:none;"
+											style="z-index:7;font-family:'Poppins';cursor:pointer;display:inline-block;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;"
+										>Electronics Zone 
+										</a><!--
+
+										--><a
+											id="slider-14-slide-34-layer-3" 
+											class="rs-layer rev-btn"
+											href="https://first-class-travel.netlify.app/" target="_blank" rel="noopener"
+											data-type="button"
+											data-color="rgba(255,255,255,1)"
+											data-rsp_ch="on"
+											data-xy="x:c;y:m;"
+											data-text="w:normal,nowrap,nowrap,nowrap;s:17;l:50;fw:600;a:inherit;"
+											data-basealign="slide"
+											data-disp="inline-block"
+											data-padding="r:35;l:35;"
+											data-border="bos:solid;boc:rgba(255,255,255,1);bow:0px,0px,1px,0px;bor:30px,30px,30px,30px;"
+											data-frame_0="y:50px;blu:20px;"
+											data-frame_1="e:power4.out;st:700;sp:2000;sR:690;"
+											data-frame_999="o:0;st:w;sR:6300;"
+											data-frame_hover="c:#000;bgc:#fff;boc:#fff;bor:30px,30px,30px,30px;bos:solid;bow:1px,1px,1px,1px;oX:50;oY:50;sp:0;e:none;"
+											style="z-index:8;font-family:'Poppins';cursor:pointer;display:inline-block;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;"
+										>First Class Travel 
+										</a><!--
+									--></rs-column><!--
+								--></rs-row><!--
+							--></rs-zone><!--
+
+							--><rs-layer
+								id="slider-14-slide-34-layer-9" 
+								class="blurslider-line tp-shape tp-shapewrapper"
+								data-type="shape"
+								data-xy="y:b;"
+								data-text="fw:300;a:inherit;"
+								data-dim="w:380px,380px,240px,100%;h:100px,100px,152px,152px;"
+								data-basealign="slide"
+								data-rsp_o="off"
+								data-rsp_bd="off"
+								data-blendmode="overlay"
+								data-frame_0="y:50px;blu:20px;"
+								data-frame_1="e:power4.inOut;st:1000;sp:1000;sR:1000;"
+								data-frame_999="o:0;e:power4.out;st:w;sp:600;sR:7000;blu:20px;"
+								style="z-index:13;background-color:rgba(255,255,255,0.15);cursor:pointer;"
+							> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-14-slide-34-layer-10" 
+								data-type="text"
+								data-color="rgba(255,255,255,1)"
+								data-xy="x:l,l,l,c;xo:100px,100px,45px,0;y:b;yo:40px,40px,83px,88px;"
+								data-text="l:22;fw:700;a:inherit;"
+								data-basealign="slide"
+								data-rsp_o="off"
+								data-rsp_bd="off"
+								data-frame_0="y:50px;blu:10px;"
+								data-frame_1="e:power4.inOut;st:1000;sp:1000;sR:1000;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:700;sR:7000;blu:10px;"
+								style="z-index:14;font-family:'Georgia', 'serif';font-style:italic;"
+							>Start Scrolling 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-14-slide-34-layer-11" 
+								class="tp-shape tp-shapewrapper"
+								data-type="shape"
+								data-xy="x:l,l,l,c;xo:278px,278px,120px,0;y:b;yo:32px,32px,35px,36px;"
+								data-text="fw:700;a:inherit;"
+								data-dim="w:1px;h:40px;"
+								data-basealign="slide"
+								data-rsp_o="off"
+								data-rsp_bd="off"
+								data-blendmode="overlay"
+								data-frame_0="y:50px;"
+								data-frame_1="e:power4.inOut;st:1100;sp:1000;sR:1100;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:700;sR:6900;blu:10px;"
+								style="z-index:15;background-color:rgba(255,255,255,1);"
+							> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-14-slide-34-layer-12" 
+								data-type="image"
+								data-xy="x:l,l,l,c;xo:272px,272px,114px,0;y:b;yo:32px,32px,34px,35px;"
+								data-text="l:22;a:inherit;"
+								data-dim="w:['13px','13px','13px','13px'];h:['7px','7px','7px','7px'];"
+								data-basealign="slide"
+								data-rsp_o="off"
+								data-rsp_bd="off"
+								data-frame_0="y:50px;"
+								data-frame_1="e:power4.inOut;st:1100;sp:1000;sR:1100;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:700;sR:6900;blu:10px;"
+								data-loop_0="y:-34;"
+								data-loop_999="sp:2000;e:power2.inOut;yym:t;yys:t;yyf:t;"
+								style="z-index:16;"
+							><img src="assets/arrow2x.png" class="tp-rs-img" width="26" height="14" data-no-retina> 
+							</rs-layer><!--
+-->						</rs-slide>
+						<rs-slide style="position: absolute;" data-key="rs-35" data-title="Two" data-thumb="assets/blurbg14-100x50.jpg" data-anim="p:transparent;" data-in="o:0;" data-out="o:0;">
+							<img src="assets/blurbg14.jpg" class="rev-slidebg tp-rs-img" data-parallax="6" data-no-retina>
+<!--						--><rs-zone id="rrzt_35" class="rev_row_zone_top" style="z-index: 11;"><!--
+
+								--><rs-row
+									id="slider-14-slide-35-layer-14" 
+									data-type="row"
+									data-xy="xo:100px;yo:100px;"
+									data-text="l:22;a:inherit;"
+									data-basealign="slide"
+									data-rsp_bd="off"
+									data-padding="t:150,100,50,50;r:100,50,40,40;l:100,50,40,40;"
+									data-frame_1="sR:10;"
+									data-frame_999="o:0;st:w;sR:8690;sA:9000;"
+									style="z-index:1;"
+								><!--
+									--><rs-column
+										id="slider-14-slide-35-layer-15" 
+										data-type="column"
+										data-xy="xo:100px;yo:100px;"
+										data-text="l:22;a:inherit,inherit,center,center;"
+										data-rsp_bd="off"
+										data-column="w:100%;"
+										data-frame_999="o:0;st:w;sR:8990;sA:9000;"
+										style="z-index:2;width:100%;"
+									><!--
+										--><rs-layer
+											id="slider-14-slide-35-layer-1" 
+											class="blurslider-gradient"
+											data-type="text"
+											data-color="rgba(255,255,255,1)"
+											data-rsp_ch="on"
+											data-xy="x:l,l,c,c;yo:0,0,230px,110px;"
+											data-text="w:nowrap,nowrap,nowrap,normal;s:110,90,100,70;l:100,90,100,70;a:inherit,inherit,center,center;"
+											data-dim="w:auto,auto,auto,399px;"
+											data-basealign="slide"
+											data-disp="inline-block"
+											data-margin="b:30,20,30,30;"
+											data-padding="r:0,0,40,40;l:0,0,40,40;"
+											data-frame_0="y:50px;blu:20px;"
+											data-frame_1="e:power4.out;st:300;sp:2000;sR:290;"
+											data-frame_999="o:0;st:w;sR:8990;"
+											style="z-index:3;font-family:'Poppins';display:inline-block;"
+										>About<br/>
+My Self. 
+										</rs-layer><!--
+
+										--><rs-layer
+											id="slider-14-slide-35-layer-2" 
+											data-type="text"
+											data-color="rgba(255,255,255,1)"
+											data-rsp_ch="on"
+											data-xy="x:l,l,c,c;xo:0,50px,0,0;yo:0,430px,460px,290px;"
+											data-text="w:normal;s:24,30,40,25;l:30,40,50,30;fw:300;a:inherit,inherit,center,center;"
+											data-dim="w:586px,360px,100%,100%;"
+											data-basealign="slide"
+											data-margin="b:40,30,20,20;"
+											data-frame_0="y:30px;blu:20px;"
+											data-frame_1="e:power4.out;st:500;sp:2000;sR:490;"
+											data-frame_999="o:0;st:w;sR:8990;"
+											style="z-index:4;font-family:'Poppins';"
+										>Recent bachelor's degree recipient with a background in web design and development. W3C web developer certification. Over 2 years of experience working on personal blogs, 
+										</rs-layer><!--
+									--></rs-column><!--
+								--></rs-row><!--
+							--></rs-zone><!--
+
+							--><rs-layer
+								id="slider-14-slide-35-layer-16" 
+								class="blurslider-line tp-shape tp-shapewrapper"
+								data-type="shape"
+								data-xy="y:b;"
+								data-text="fw:300;a:inherit;"
+								data-dim="w:380px,380px,240px,100%;h:100px,100px,152px,152px;"
+								data-basealign="slide"
+								data-rsp_o="off"
+								data-rsp_bd="off"
+								data-blendmode="overlay"
+								data-frame_0="y:50px;blu:20px;"
+								data-frame_1="e:power4.inOut;st:1000;sp:1000;sR:1000;"
+								data-frame_999="o:0;e:power4.out;st:w;sp:600;sR:7000;blu:20px;"
+								style="z-index:13;background-color:rgba(255,255,255,0.15);cursor:pointer;"
+							> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-14-slide-35-layer-17" 
+								data-type="text"
+								data-color="rgba(255,255,255,1)"
+								data-xy="x:l,l,l,c;xo:100px,100px,45px,0;y:b;yo:40px,40px,83px,88px;"
+								data-text="l:22;fw:700;a:inherit;"
+								data-basealign="slide"
+								data-rsp_o="off"
+								data-rsp_bd="off"
+								data-frame_0="y:50px;blu:10px;"
+								data-frame_1="e:power4.inOut;st:1000;sp:1000;sR:1000;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:700;sR:7000;blu:10px;"
+								style="z-index:14;font-family:'Georgia', 'serif';font-style:italic;"
+							>Start Scrolling 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-14-slide-35-layer-18" 
+								class="tp-shape tp-shapewrapper"
+								data-type="shape"
+								data-xy="x:l,l,l,c;xo:278px,278px,120px,0;y:b;yo:32px,32px,35px,36px;"
+								data-text="fw:700;a:inherit;"
+								data-dim="w:1px;h:40px;"
+								data-basealign="slide"
+								data-rsp_o="off"
+								data-rsp_bd="off"
+								data-blendmode="overlay"
+								data-frame_0="y:50px;"
+								data-frame_1="e:power4.inOut;st:1100;sp:1000;sR:1100;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:700;sR:6900;blu:10px;"
+								style="z-index:15;background-color:rgba(255,255,255,1);"
+							> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-14-slide-35-layer-19" 
+								data-type="image"
+								data-xy="x:l,l,l,c;xo:272px,272px,114px,0;y:b;yo:32px,32px,34px,35px;"
+								data-text="l:22;a:inherit;"
+								data-dim="w:['13px','13px','13px','13px'];h:['7px','7px','7px','7px'];"
+								data-basealign="slide"
+								data-rsp_o="off"
+								data-rsp_bd="off"
+								data-frame_0="y:50px;"
+								data-frame_1="e:power4.inOut;st:1100;sp:1000;sR:1100;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:700;sR:6900;blu:10px;"
+								data-loop_0="y:-34;"
+								data-loop_999="sp:2000;e:power2.inOut;yym:t;yys:t;yyf:t;"
+								style="z-index:16;"
+							><img src="assets/arrow2x.png" class="tp-rs-img" width="26" height="14" data-no-retina> 
+							</rs-layer><!--
+-->						</rs-slide>
+						<rs-slide style="position: absolute;" data-key="rs-36" data-title="Three" data-thumb="assets/4-hamed-hasan-scaled-100x50.jpg" data-anim="p:transparent;" data-in="o:0;" data-out="o:0;">
+							<img src="assets/4-hamed-hasan-scaled.jpg" title="hamed-hasan" width="2560" height="2453" class="rev-slidebg tp-rs-img" data-bg="f:contain;" data-parallax="6" data-no-retina>
+<!--						--><rs-zone id="rrzt_36" class="rev_row_zone_top" style="z-index: 9;"><!--
+
+								--><rs-row
+									id="slider-14-slide-36-layer-14" 
+									data-type="row"
+									data-xy="xo:100px;yo:100px;"
+									data-text="l:22;a:inherit;"
+									data-cbreak="1"
+									data-basealign="slide"
+									data-rsp_bd="off"
+									data-padding="t:150,100,50,50;r:100,50,40,40;l:100,50,40,40;"
+									data-frame_1="sR:10;"
+									data-frame_999="o:0;st:w;sR:8690;sA:9000;"
+									style="z-index:1;"
+								><!--
+									--><rs-column
+										id="slider-14-slide-36-layer-15" 
+										data-type="column"
+										data-xy="xo:100px;yo:100px;"
+										data-text="l:22;a:inherit,inherit,center,center;"
+										data-rsp_bd="off"
+										data-column="w:100%;"
+										data-frame_999="o:0;st:w;sR:8990;sA:9000;"
+										style="z-index:2;width:100%;"
+									><!--									--></rs-column><!--
+								--></rs-row><!--
+							--></rs-zone><!--
+
+							--><rs-layer
+								id="slider-14-slide-36-layer-1" 
+								class="blurslider-gradient"
+								data-type="text"
+								data-color="rgba(255,255,255,1)"
+								data-rsp_ch="on"
+								data-xy="x:l,l,c,c;xo:-6px,0,0,0;yo:389px,0,230px,110px;"
+								data-text="s:89,90,100,70;l:81,90,100,70;a:inherit,inherit,center,center;"
+								data-basealign="slide"
+								data-padding="r:0,0,40,40;l:0,0,40,40;"
+								data-frame_0="y:41px;blu:20px;"
+								data-frame_1="e:power4.out;st:300;sp:2000;sR:290;"
+								data-frame_999="o:0;st:w;sR:8990;"
+								style="z-index:10;font-family:'Poppins';"
+							>why not<br/>start now. 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-14-slide-36-layer-16" 
+								class="blurslider-line tp-shape tp-shapewrapper"
+								data-type="shape"
+								data-xy="y:b;"
+								data-text="fw:300;a:inherit;"
+								data-dim="w:380px,380px,240px,100%;h:100px,100px,152px,152px;"
+								data-basealign="slide"
+								data-rsp_o="off"
+								data-rsp_bd="off"
+								data-blendmode="overlay"
+								data-frame_0="y:50px;blu:20px;"
+								data-frame_1="e:power4.inOut;st:1000;sp:1000;sR:1000;"
+								data-frame_999="o:0;e:power4.out;st:w;sp:600;sR:7000;blu:20px;"
+								style="z-index:11;background-color:rgba(255,255,255,0.15);cursor:pointer;"
+							> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-14-slide-36-layer-17" 
+								data-type="text"
+								data-color="rgba(255,255,255,1)"
+								data-xy="x:l,l,l,c;xo:100px,100px,45px,0;y:b;yo:40px,40px,83px,88px;"
+								data-text="l:22;fw:700;a:inherit;"
+								data-basealign="slide"
+								data-rsp_o="off"
+								data-rsp_bd="off"
+								data-frame_0="y:50px;blu:10px;"
+								data-frame_1="e:power4.inOut;st:1000;sp:1000;sR:1000;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:700;sR:7000;blu:10px;"
+								style="z-index:12;font-family:'Georgia', 'serif';font-style:italic;"
+							>Start Scrolling 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-14-slide-36-layer-18" 
+								class="tp-shape tp-shapewrapper"
+								data-type="shape"
+								data-xy="x:l,l,l,c;xo:278px,278px,120px,0;y:b;yo:32px,32px,35px,36px;"
+								data-text="fw:700;a:inherit;"
+								data-dim="w:1px;h:40px;"
+								data-basealign="slide"
+								data-rsp_o="off"
+								data-rsp_bd="off"
+								data-blendmode="overlay"
+								data-frame_0="y:50px;"
+								data-frame_1="e:power4.inOut;st:1100;sp:1000;sR:1100;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:700;sR:6900;blu:10px;"
+								style="z-index:13;background-color:rgba(255,255,255,1);"
+							> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-14-slide-36-layer-19" 
+								data-type="image"
+								data-xy="x:l,l,l,c;xo:272px,272px,114px,0;y:b;yo:32px,32px,34px,35px;"
+								data-text="l:22;a:inherit;"
+								data-dim="w:['13px','13px','13px','13px'];h:['7px','7px','7px','7px'];"
+								data-basealign="slide"
+								data-rsp_o="off"
+								data-rsp_bd="off"
+								data-frame_0="y:50px;"
+								data-frame_1="e:power4.inOut;st:1100;sp:1000;sR:1100;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:700;sR:6900;blu:10px;"
+								data-loop_0="y:-34;"
+								data-loop_999="sp:2000;e:power2.inOut;yym:t;yys:t;yyf:t;"
+								style="z-index:14;"
+							><img src="assets/arrow2x.png" class="tp-rs-img" width="26" height="14" data-no-retina> 
+							</rs-layer><!--
+-->						</rs-slide>
+					</rs-slides>
+					<rs-static-layers class="rs-stl-visible"><!--
+
+							--><rs-layer
+								id="slider-14-slide-9-layer-29" 
+								class="rs-layer-static"
+								data-type="text"
+								data-color="rgba(255,255,255,1)"
+								data-xy="x:r;y:m,m,b,b;yo:-50px,-50px,119px,119px;"
+								data-text="s:15;l:15;fw:500;a:inherit;"
+								data-dim="w:260px,260px,200px,70px;"
+								data-vbility="t,t,t,f"
+								data-basealign="slide"
+								data-rsp_o="off"
+								data-rsp_bd="off"
+								data-onslides="s:1;"
+								data-frame_0="tp:600;"
+								data-frame_1="tp:600;sR:10;"
+								data-frame_999="o:0;tp:600;st:w;sR:8690;"
+								style="z-index:17;font-family:'Poppins';"
+							>1 <div class="blurslider-line" style="display:inline-block;width:40px;height:1px;background:#fff;margin: 10px 20px 4px 15px;"></div>solutions 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-14-slide-9-layer-22" 
+								class="tp-shape tp-shapewrapper rs-layer-static"
+								data-type="shape"
+								data-xy="x:r;y:m,m,b,b;yo:-50px,-50px,102px,102px;"
+								data-text="fw:500;a:inherit;"
+								data-dim="w:300px,300px,240px,30%;h:50px;"
+								data-vbility="t,t,t,f"
+								data-basealign="slide"
+								data-rsp_o="off"
+								data-rsp_bd="off"
+								data-onslides="s:1;"
+								data-blendmode="overlay"
+								data-frame_0="x:-100%;o:1;tp:600;"
+								data-frame_0_mask="u:t;"
+								data-frame_1="tp:600;e:power4.out;sp:800;sR:10;st:a;"
+								data-frame_1_mask="u:t;"
+								data-frame_999="x:-100%;o:1;tp:600;e:power4.out;st:a;sp:500;sR:8190;"
+								data-frame_999_mask="u:t;"
+								style="z-index:18;background-color:rgba(0,0,0,0.25);cursor:pointer;"
+							> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-14-slide-9-layer-21" 
+								class="tp-shape tp-shapewrapper rs-layer-static"
+								data-type="shape"
+								data-xy="x:r;y:m,m,b,b;yo:-50px,-50px,102px,102px;"
+								data-text="fw:500;a:inherit;"
+								data-dim="w:300px,300px,240px,30%;h:50px;"
+								data-vbility="t,t,t,f"
+								data-actions='o:mouseenter;a:startlayer;layer:slider-14-slide-9-layer-22;||o:mouseleave;a:stoplayer;layer:slider-14-slide-9-layer-22;||o:click;a:jumptoslide;slide:rs-34;'
+								data-basealign="slide"
+								data-rsp_o="off"
+								data-rsp_bd="off"
+								data-onslides="s:1;"
+								data-blendmode="overlay"
+								data-frame_0="x:-100%;o:1;tp:600;"
+								data-frame_0_mask="u:t;"
+								data-frame_1="tp:600;e:power4.out;sp:1000;sR:10;"
+								data-frame_1_mask="u:t;"
+								data-frame_999="o:0;tp:600;st:w;sR:7990;"
+								data-frame_hover="c:#000;bgc:rgba(255,255,255,0.05);bor:0px,0px,0px,0px;bos:solid;oX:50;oY:50;sp:0;e:power4.out;"
+								style="z-index:19;background-color:rgba(255,255,255,0.05);cursor:pointer;"
+							> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-14-slide-9-layer-28" 
+								class="rs-layer-static"
+								data-type="text"
+								data-color="rgba(255,255,255,1)"
+								data-xy="x:r;y:m,m,b,b;yo:0,0,68px,68px;"
+								data-text="s:15;l:15;fw:500;a:inherit;"
+								data-dim="w:260px,260px,200px,70px;"
+								data-vbility="t,t,t,f"
+								data-basealign="slide"
+								data-rsp_o="off"
+								data-rsp_bd="off"
+								data-onslides="s:1;"
+								data-frame_0="tp:600;"
+								data-frame_1="tp:600;sR:10;"
+								data-frame_999="o:0;tp:600;st:w;sR:8690;"
+								style="z-index:20;font-family:'Poppins';"
+							>2 <div class="blurslider-line" style="display:inline-block;width:40px;height:1px;background:#fff;margin: 10px 20px 4px 15px;"></div>explore 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-14-slide-9-layer-24" 
+								class="tp-shape tp-shapewrapper rs-layer-static"
+								data-type="shape"
+								data-xy="x:r;y:m,m,b,b;yo:1px,1px,51px,51px;"
+								data-text="fw:500;a:inherit;"
+								data-dim="w:300px,300px,240px,30%;h:50px;"
+								data-vbility="t,t,t,f"
+								data-basealign="slide"
+								data-rsp_o="off"
+								data-rsp_bd="off"
+								data-onslides="s:1;"
+								data-blendmode="overlay"
+								data-frame_0="x:-100%;o:1;tp:600;"
+								data-frame_0_mask="u:t;"
+								data-frame_1="tp:600;e:power4.out;sp:800;sR:10;st:a;"
+								data-frame_1_mask="u:t;"
+								data-frame_999="x:-100%;o:1;tp:600;e:power4.out;st:a;sp:500;sR:8190;"
+								data-frame_999_mask="u:t;"
+								style="z-index:21;background-color:rgba(0,0,0,0.25);cursor:pointer;"
+							> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-14-slide-9-layer-23" 
+								class="tp-shape tp-shapewrapper rs-layer-static"
+								data-type="shape"
+								data-xy="x:r;y:m,m,b,b;yo:1px,1px,51px,51px;"
+								data-text="fw:500;a:inherit;"
+								data-dim="w:300px,300px,240px,30%;h:50px;"
+								data-vbility="t,t,t,f"
+								data-actions='o:mouseenter;a:startlayer;layer:slider-14-slide-9-layer-24;||o:mouseleave;a:stoplayer;layer:slider-14-slide-9-layer-24;||o:click;a:jumptoslide;slide:rs-35;'
+								data-basealign="slide"
+								data-rsp_o="off"
+								data-rsp_bd="off"
+								data-onslides="s:1;"
+								data-blendmode="overlay"
+								data-frame_0="x:-100%;o:1;tp:600;"
+								data-frame_0_mask="u:t;"
+								data-frame_1="tp:600;e:power4.out;sp:1000;sR:10;"
+								data-frame_1_mask="u:t;"
+								data-frame_999="o:0;tp:600;st:w;sR:7990;"
+								data-frame_hover="c:#000;bgc:rgba(255,255,255,0.05);bor:0px,0px,0px,0px;bos:solid;oX:50;oY:50;sp:0;e:power4.out;"
+								style="z-index:22;background-color:rgba(255,255,255,0.05);cursor:pointer;"
+							> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-14-slide-9-layer-27" 
+								class="rs-layer-static"
+								data-type="text"
+								data-color="rgba(255,255,255,1)"
+								data-xy="x:r;y:m,m,b,b;yo:50px,50px,17px,17px;"
+								data-text="s:15;l:15;fw:500;a:inherit;"
+								data-dim="w:260px,260px,200px,70px;"
+								data-vbility="t,t,t,f"
+								data-basealign="slide"
+								data-rsp_o="off"
+								data-rsp_bd="off"
+								data-onslides="s:1;"
+								data-frame_0="tp:600;"
+								data-frame_1="tp:600;sR:10;"
+								data-frame_999="o:0;tp:600;st:w;sR:8690;"
+								style="z-index:23;font-family:'Poppins';"
+							>3 <div class="blurslider-line" style="display:inline-block;width:40px;height:1px;background:#fff;margin: 10px 20px 4px 15px;"></div>get started 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-14-slide-9-layer-26" 
+								class="tp-shape tp-shapewrapper rs-layer-static"
+								data-type="shape"
+								data-xy="x:r;y:m,m,b,b;yo:52px,52px,0,0;"
+								data-text="fw:500;a:inherit;"
+								data-dim="w:300px,300px,240px,30%;h:50px;"
+								data-vbility="t,t,t,f"
+								data-basealign="slide"
+								data-rsp_o="off"
+								data-rsp_bd="off"
+								data-onslides="s:1;"
+								data-blendmode="overlay"
+								data-frame_0="x:-100%;o:1;tp:600;"
+								data-frame_0_mask="u:t;"
+								data-frame_1="tp:600;e:power4.out;sp:800;sR:10;st:a;"
+								data-frame_1_mask="u:t;"
+								data-frame_999="x:-100%;o:1;tp:600;e:power4.out;st:a;sp:500;sR:8190;"
+								data-frame_999_mask="u:t;"
+								style="z-index:24;background-color:rgba(0,0,0,0.25);cursor:pointer;"
+							> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-14-slide-9-layer-25" 
+								class="tp-shape tp-shapewrapper rs-layer-static"
+								data-type="shape"
+								data-xy="x:r;y:m,m,b,b;yo:52px,52px,0,0;"
+								data-text="fw:500;a:inherit;"
+								data-dim="w:300px,300px,240px,30%;h:50px;"
+								data-vbility="t,t,t,f"
+								data-actions='o:mouseenter;a:startlayer;layer:slider-14-slide-9-layer-26;||o:mouseleave;a:stoplayer;layer:slider-14-slide-9-layer-26;||o:click;a:jumptoslide;slide:rs-36;'
+								data-basealign="slide"
+								data-rsp_o="off"
+								data-rsp_bd="off"
+								data-onslides="s:1;"
+								data-blendmode="overlay"
+								data-frame_0="x:-100%;o:1;tp:600;"
+								data-frame_0_mask="u:t;"
+								data-frame_1="tp:600;e:power4.out;sp:1000;sR:10;"
+								data-frame_1_mask="u:t;"
+								data-frame_999="o:0;tp:600;st:w;sR:7990;"
+								data-frame_hover="c:#000;bgc:rgba(255,255,255,0.05);bor:0px,0px,0px,0px;bos:solid;oX:50;oY:50;sp:0;e:power4.out;"
+								style="z-index:25;background-color:rgba(255,255,255,0.05);cursor:pointer;"
+							> 
+							</rs-layer><!--
+					--></rs-static-layers>
+				</rs-module>
+				<script type="text/javascript">
+					
+				</script>
+<script type="text/javascript">
+		if(typeof revslider_showDoubleJqueryError === "undefined") {function revslider_showDoubleJqueryError(sliderID) {console.log("You have some jquery.js library include that comes after the Slider Revolution files js inclusion.");console.log("To fix this, you can:");console.log("1. Set 'Module General Options' -> 'Advanced' -> 'jQuery & OutPut Filters' -> 'Put JS to Body' to on");console.log("2. Find the double jQuery.js inclusion and remove it");return "Double Included jQuery Library";}}
+</script>
+			</rs-module-wrap>
+			<!-- END REVOLUTION SLIDER -->
+
+				<script type="text/javascript">
+					var	tpj = jQuery;
+					if(window.RS_MODULES === undefined) window.RS_MODULES = {};
+					if(RS_MODULES.modules === undefined) RS_MODULES.modules = {};
+					RS_MODULES.modules["revslider141"] = {once: RS_MODULES.modules["revslider141"]!==undefined ? RS_MODULES.modules["revslider141"].once : undefined, init:function() {
+						window.revapi14 = window.revapi14===undefined || window.revapi14===null || window.revapi14.length===0  ? document.getElementById("rev_slider_14_1") : window.revapi14;
+						if(window.revapi14 === null || window.revapi14 === undefined || window.revapi14.length==0) { window.revapi14initTry = window.revapi14initTry ===undefined ? 0 : window.revapi14initTry+1; if (window.revapi14initTry<20) requestAnimationFrame(function() {RS_MODULES.modules["revslider141"].init()}); return;}
+						window.revapi14 = jQuery(window.revapi14);
+						if(window.revapi14.revolution==undefined){ revslider_showDoubleJqueryError("rev_slider_14_1"); return;}
+						revapi14.revolutionInit({
+								revapi:"revapi14",
+								DPR:"dpr",
+								visibilityLevels:"1240,1024,778,480",
+								gridwidth:"1240,1024,778,480",
+								gridheight:"868,768,960,720",
+								spinner:"spinner3",
+								perspective:600,
+								perspectiveType:"local",
+								editorheight:"868,768,960,720",
+								responsiveLevels:"1240,1024,778,480",
+								progressBar: {
+									color:"rgba(255,255,255,0.25)",
+									vertical:"top",
+									size:10,
+									x:0,
+									y:0
+									},
+								navigation: {
+									keyboard_direction:"vertical",
+									mouseScrollNavigation:false,
+									wheelCallDelay:1000,
+									onHoverStop:false,
+									touch: {
+										touchenabled:true
+									},
+									arrows: {
+										enable:true,
+										style:"uranus",
+										hide_over:479,
+										left: {
+											h_offset:0
+										},
+										right: {
+											h_offset:0
+										}
+									}
+								},
+								parallax: {
+									levels:[5,10,15,20,25,30,35,40,45,46,47,48,49,50,51,55],
+									type:"scroll",
+									origo:"slidercenter"
+								},
+								fanim: {
+									in:{"o":0},
+									out:{"a":false},
+									speed:1000
+								},
+								scrolleffect: {
+									set:true,
+									blur:true,
+									maxblur:20,
+									slide:true,
+									direction:"top",
+									multiplicator:2,
+									multiplicator_layers:2,
+									tilt:10
+								},
+								viewPort: {
+									global:false,
+									globalDist:"-200px",
+									enable:false,
+									visible_area:"20%"
+								},
+								fallbacks: {
+									allowHTML5AutoPlayOnAndroid:true
+								},
+						});
+						
+					}} // End of RevInitScript
+					if (window.RS_MODULES.checkMinimal!==undefined) { window.RS_MODULES.checkMinimal();};
+				</script>
+
+
+
+<style type="text/css">.blurslider-gradient{background:-webkit-linear-gradient(left,#9357cc 0%,#2989d8 50%,#2cc99d 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}.blurslider-line{background:-webkit-linear-gradient(left,#9357cc 0%,#2989d8 50%,#2cc99d 100%) !important}#rev_slider_14_1_wrapper .uranus.tparrows{width:50px; height:50px; background:rgba(255,255,255,0)}#rev_slider_14_1_wrapper .uranus.tparrows:before{width:50px; height:50px; line-height:50px; font-size:40px; transition:all 0.3s;-webkit-transition:all 0.3s}#rev_slider_14_1_wrapper .uranus.tparrows.rs-touchhover:before{opacity:0.75}#rev_slider_14_1_wrapper rs-loader.spinner3 div{background-color:#333333 !important}</style>
+		</body>
+				</html>
+		
