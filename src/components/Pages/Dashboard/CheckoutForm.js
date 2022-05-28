@@ -10,8 +10,8 @@ const CheckoutForm = ({ order }) => {
   const [transactionId, setTransactionId] = useState("");
   const [clientSecret, setClientSecret] = useState("");
 
-  const { _id, price, userName, productName } = order;
-
+  const { _id, price, userName,  user, productName } = order;
+  console.log(order)
   useEffect(() => {
     fetch("https://agile-castle-61471.herokuapp.com/create-payment-intent", {
       method: "POST",
@@ -57,7 +57,7 @@ const CheckoutForm = ({ order }) => {
           card: card,
           billing_details: {
             name: productName,
-            email: userName,
+            email: user,
           },
         },
       });
