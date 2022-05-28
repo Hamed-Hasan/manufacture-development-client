@@ -1,15 +1,14 @@
 .card-wrapper,
 .card-wrapper .img-area,
 .social-icons a,
-.buttons button{
+.buttons button {
   background: #ecf0f3;
-  box-shadow: -3px -3px 7px #ffffff,
-               3px 3px 5px #ceced1;
+  box-shadow: -3px -3px 7px #ffffff, 3px 3px 5px #ceced1;
 }
-.card-wrapper:hover{
-    transform: translateY(-20px)
+.card-wrapper:hover {
+  transform: translateY(-20px);
 }
-.card-wrapper{
+.card-wrapper {
   position: relative;
   width: 100%;
   padding: 30px;
@@ -19,9 +18,9 @@
   justify-content: center;
   flex-direction: column;
   height: 100%;
-  transition: .5s;
+  transition: 0.5s;
 }
-.card-wrapper .icon{
+.card-wrapper .icon {
   font-size: 17px;
   color: #31344b;
   position: absolute;
@@ -35,17 +34,17 @@
   border-radius: 50%;
   font-size: 16px;
 }
-.card-wrapper .icon i{
+.card-wrapper .icon i {
   position: relative;
   z-index: 9;
 }
-.card-wrapper .icon.arrow{
+.card-wrapper .icon.arrow {
   left: 15px;
 }
-.card-wrapper .icon.dots{
+.card-wrapper .icon.dots {
   right: 15px;
 }
-.card-wrapper .img-area{
+.card-wrapper .img-area {
   height: 150px;
   width: 150px;
   border-radius: 50%;
@@ -53,42 +52,40 @@
   align-items: center;
   justify-content: center;
 }
-.img-area .inner-area{
+.img-area .inner-area {
   height: calc(100% - 25px);
   width: calc(100% - 25px);
   border-radius: 50%;
 }
-.inner-area img{
+.inner-area img {
   height: 100%;
   width: 100%;
   border-radius: 50%;
   object-fit: cover;
 }
-.card-wrapper .name{
+.card-wrapper .name {
   font-size: 23px;
   font-weight: 500;
   color: #31344b;
   margin: 10px 0 5px 0;
 }
-.card-wrapper .about{
+.card-wrapper .about {
   color: #44476a;
   font-weight: 400;
   font-size: 16px;
 }
 
-
-
-.buttons button:hover:before{
+.buttons button:hover:before {
   z-index: -1;
   border-radius: 5px;
 }
 
-.card-wrapper .buttons{
+.card-wrapper .buttons {
   display: flex;
   width: 100%;
   justify-content: space-between;
 }
-.buttons button{
+.buttons button {
   position: relative;
   width: 100%;
   border: none;
@@ -101,26 +98,26 @@
   cursor: pointer;
   z-index: 4;
 }
-.buttons button:first-child{
+.buttons button:first-child {
   margin-right: 10px;
 }
-.buttons button:last-child{
+.buttons button:last-child {
   margin-left: 10px;
 }
-.card-wrapper .social-share{
+.card-wrapper .social-share {
   display: flex;
   width: 100%;
   margin-top: 30px;
   padding: 0 5px;
   justify-content: space-between;
 }
-.social-share .row{
+.social-share .row {
   color: #31344b;
   font-size: 17px;
   cursor: pointer;
   position: relative;
 }
-.social-share .row::before{
+.social-share .row::before {
   position: absolute;
   content: "";
   height: 100%;
@@ -128,10 +125,10 @@
   background: #e0e6eb;
   margin-left: -25px;
 }
-.row:first-child::before{
+.row:first-child::before {
   background: none;
 }
-.social-share .row i.icon-2{
+.social-share .row i.icon-2 {
   position: absolute;
   left: 0;
   top: 50%;
@@ -142,7 +139,7 @@
   transition: all 0.3s ease;
 }
 .row:nth-child(1):hover i.fa-heart,
-.row:nth-child(2):hover i.fa-comment{
+.row:nth-child(2):hover i.fa-comment {
   opacity: 1;
   pointer-events: auto;
 }

@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 
-
 const useNav = () => {
   const [navbar, setNavbar] = useState(false);
   const [navBarLogo, setNavBarLogo] = useState();
@@ -18,9 +17,17 @@ const useNav = () => {
   }, []);
   const changeLogo = () => {
     if (window.scrollY >= 300) {
-      setNavBarLogo(<span className="font-bold text-2xl">Manufac <span className="text-amber-500 ">Turing</span></span>);
+      setNavBarLogo(
+        <span className="font-bold text-2xl">
+          Manufac <span className="text-amber-500 ">Turing</span>
+        </span>
+      );
     } else {
-      setNavBarLogo(<span className="text-amber-500 ">Deve<span className="font-bold text-2xl text-black">Lop</span></span>);
+      setNavBarLogo(
+        <span className="text-amber-500 ">
+          Deve<span className="font-bold text-2xl text-black">Lop</span>
+        </span>
+      );
     }
   };
   useEffect(() => {

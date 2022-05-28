@@ -6,6 +6,7 @@ import { FaFacebook, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import useUsers from "../../hooks/useUsers";
 import auth from "../../../firebase.init";
 import Loading from "../Shared/Loading";
+import ReactHelmet from "../Shared/ReactHelmet/ReactHelmet";
 const MakeAdmin = () => {
   const [user, loading] = useAuthState(auth);
   const [users, setUsers] = useUsers();
@@ -19,7 +20,7 @@ const MakeAdmin = () => {
       method: "PUT",
       headers: {
         "content-type": "application/json",
-        authorization: `Bearer ${localStorage.getItem('accessToken')}`
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },
       body: JSON.stringify(user),
     })
@@ -42,7 +43,7 @@ const MakeAdmin = () => {
         method: "PUT",
         headers: {
           "content-type": "application/json",
-          authorization: `Bearer ${localStorage.getItem('accessToken')}`
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
         },
         body: JSON.stringify(updateUser),
       })
@@ -87,6 +88,7 @@ const MakeAdmin = () => {
               //   console.log(user);
               return (
                 <tr key={_id}>
+                  <ReactHelmet title="Make Admin"></ReactHelmet>
                   <td>
                     <div className="flex items-center space-x-3">
                       <div className="avatar">

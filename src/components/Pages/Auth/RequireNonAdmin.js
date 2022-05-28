@@ -9,11 +9,11 @@ const RequireNonAdmin = ({ children }) => {
   const [admin, adminLoading] = useAdmin();
   const location = useLocation();
   if (adminLoading) {
-    return <Loading/>
+    return <Loading />;
   }
   if (admin) {
     signOut(auth);
-    localStorage.removeItem('accessToken');
+    localStorage.removeItem("accessToken");
     return <Navigate to="/login" state={{ from: location }} replace></Navigate>;
   }
   return children;

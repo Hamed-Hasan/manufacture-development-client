@@ -4,6 +4,7 @@ import auth from "../../../firebase.init";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import Loading from "../Shared/Loading";
+import ReactHelmet from "../Shared/ReactHelmet/ReactHelmet";
 
 const MyProfile = () => {
   const [user, loading, error] = useAuthState(auth);
@@ -36,7 +37,7 @@ const MyProfile = () => {
         method: "PUT",
         headers: {
           "content-type": "application/json",
-          authorization: `Bearer ${localStorage.getItem('accessToken')}`
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
         },
         body: JSON.stringify(data),
       })
@@ -53,6 +54,7 @@ const MyProfile = () => {
   const saveForm = (e) => {};
   return (
     <div>
+      <ReactHelmet title="My Profile"></ReactHelmet>
       <form
         onSubmit={handleSubmit(onSubmit)}
         className=" mt-5 bg-base-200 flex-col flex items-center py-11"

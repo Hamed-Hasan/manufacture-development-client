@@ -1,7 +1,7 @@
 import React from "react";
-import {FaStar} from 'react-icons/fa'
-const ManagesReviews = ({onePersonReview}) => {
-  const {displayName, email, photoURL, rating, review, _id} = onePersonReview;
+import { FaStar } from "react-icons/fa";
+const ManagesReviews = ({ onePersonReview }) => {
+  const { displayName, email, photoURL, rating, review, _id } = onePersonReview;
   return (
     <div>
       <div className="card card-compact w-64 h-[400px] bg-base-100 shadow-xl flex py-10 items-center mx-16 md:mx-28 lg:mx-0">
@@ -16,21 +16,31 @@ const ManagesReviews = ({onePersonReview}) => {
             {review}
           </p>
           <div className="flex">
-          { 
-            rating>=1 ? <FaStar className="text-orange-400"/> : <FaStar  className="text-orange-100"/>
-          }
-          { 
-            rating>=2 ? <FaStar className="text-orange-400"/> : <FaStar  className="text-orange-100"/>
-          }
-          { 
-            rating>=3 ? <FaStar className="text-orange-400"/> : <FaStar  className="text-orange-100"/>
-          }
-          { 
-            rating>=4 ? <FaStar className="text-orange-400"/> : <FaStar  className="text-orange-100"/>
-          }
-          { 
-            rating>=5 ? <FaStar className="text-orange-400"/> : <FaStar  className="text-orange-100"/>
-          }
+            {rating >= 1 ? (
+              <FaStar className="text-orange-400" />
+            ) : (
+              <FaStar className="text-orange-100" />
+            )}
+            {rating >= 2 ? (
+              <FaStar className="text-orange-400" />
+            ) : (
+              <FaStar className="text-orange-100" />
+            )}
+            {rating >= 3 ? (
+              <FaStar className="text-orange-400" />
+            ) : (
+              <FaStar className="text-orange-100" />
+            )}
+            {rating >= 4 ? (
+              <FaStar className="text-orange-400" />
+            ) : (
+              <FaStar className="text-orange-100" />
+            )}
+            {rating >= 5 ? (
+              <FaStar className="text-orange-400" />
+            ) : (
+              <FaStar className="text-orange-100" />
+            )}
           </div>
         </div>
       </div>

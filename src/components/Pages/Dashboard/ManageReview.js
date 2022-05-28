@@ -1,6 +1,6 @@
 import React from "react";
 import Carousel from "react-multi-carousel";
-import 'react-multi-carousel/lib/styles.css';
+import "react-multi-carousel/lib/styles.css";
 import useReviews from "../../hooks/useReviews";
 import ManagesReviews from "./ManagesReviews";
 
@@ -63,11 +63,11 @@ const ReviewSec = () => {
             slidesToSlide={1}
             swipeable
           >
-            {
-              reviews.map(review=>{
-                return <ManagesReviews key={review._id} onePersonReview={review}/>
-              })
-            }
+            {reviews.map((review) => {
+              return (
+                <ManagesReviews key={review._id} onePersonReview={review} />
+              );
+            })}
           </Carousel>
         </div>
       </div>

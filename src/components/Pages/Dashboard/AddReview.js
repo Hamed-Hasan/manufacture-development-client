@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
@@ -6,6 +5,7 @@ import Loading from "./../Shared/Loading";
 import { useForm } from "react-hook-form";
 import { FaStar } from "react-icons/fa";
 import { toast } from "react-toastify";
+import ReactHelmet from "../Shared/ReactHelmet/ReactHelmet";
 const colors = {
   orange: "#FFBA5A",
   grey: "#a9a9a9",
@@ -36,9 +36,8 @@ const AddReview = () => {
   if (loading) {
     return <Loading />;
   }
-  const imageStorageKey = '0a489a5f81e1a77f2b17492e627939c3';
+  const imageStorageKey = "0a489a5f81e1a77f2b17492e627939c3";
   const onSubmit = (data) => {
-    
     const email = user.email;
     const photoURL = user.photoURL;
     const displayName = user.displayName;
@@ -50,7 +49,7 @@ const AddReview = () => {
       method: "POST",
       headers: {
         "content-type": "application/json",
-        authorization: `Bearer ${localStorage.getItem('accessToken')}`
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },
       body: JSON.stringify(review),
     })
@@ -65,6 +64,7 @@ const AddReview = () => {
   };
   return (
     <div className="w-full p-10  lg:w-1/2 mx-auto">
+      <ReactHelmet title="Add Review"></ReactHelmet>
       <form onSubmit={handleSubmit(onSubmit)} className="card-body pb-0">
         <div className="avatar mx-auto flex-col items-center gap-3">
           <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
