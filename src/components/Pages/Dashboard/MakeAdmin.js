@@ -16,7 +16,7 @@ const MakeAdmin = () => {
 
   const createAdmin = (email) => {
     const user = { isAdmin: true };
-    fetch(`http://localhost:5000/newUser/${email}`, {
+    fetch(`https://agile-castle-61471.herokuapp.com/newUser/${email}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -39,7 +39,7 @@ const MakeAdmin = () => {
       toast.error("Can't Remove CEO", { theme: "dark" });
     } else {
       const updateUser = { isAdmin: false };
-      fetch(`http://localhost:5000/newUser/${email}`, {
+      fetch(`https://agile-castle-61471.herokuapp.com/newUser/${email}`, {
         method: "PUT",
         headers: {
           "content-type": "application/json",

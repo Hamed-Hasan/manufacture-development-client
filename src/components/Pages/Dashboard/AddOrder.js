@@ -36,7 +36,7 @@ const AddOrder = () => {
     const description = event.target.description.value;
     const user = { name, email, img, quantity, price, description };
     console.log(user);
-    const url = `http://localhost:5000/addNewOrder`;
+    const url = `https://agile-castle-61471.herokuapp.com/addNewOrder`;
     fetch(url, {
       method: "POST",
       headers: {

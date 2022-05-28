@@ -45,7 +45,7 @@ const AddReview = () => {
     console.log(review);
 
     // add review to database
-    fetch("http://localhost:5000/add-review", {
+    fetch("https://agile-castle-61471.herokuapp.com/add-review", {
       method: "POST",
       headers: {
         "content-type": "application/json",

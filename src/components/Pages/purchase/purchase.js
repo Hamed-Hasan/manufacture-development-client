@@ -57,7 +57,7 @@ const Purchase = () => {
       orderQuantity: event.target.myOrderQuantity.value,
     };
 
-    fetch("http://localhost:5000/order", {
+    fetch("https://agile-castle-61471.herokuapp.com/order", {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -4,7 +4,7 @@ const useUsers = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/users`)
+    fetch(`https://agile-castle-61471.herokuapp.com/users`)
       .then((res) => res.json())
       .then((data) => setUsers(data));
   }, [users]);

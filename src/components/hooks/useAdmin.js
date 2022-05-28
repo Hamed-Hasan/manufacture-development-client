@@ -11,7 +11,7 @@ const useAdmin = () => {
 
   if (user) {
     const email = user.email;
-    fetch(`http://localhost:5000/userInfo/${email}`)
+    fetch(`https://agile-castle-61471.herokuapp.com/userInfo/${email}`)
       .then((res) => res.json())
       .then((data) => {
         if (data.isAdmin === true) {
