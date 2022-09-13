@@ -66,7 +66,7 @@ const ReviewSec = () => {
             data-aos="fade-up"
      data-aos-duration="1000"
           >
-            {reviews.map((review) => {
+            {reviews?.map((review) => {
               return (
                 <ManagesReviews key={review._id} onePersonReview={review} />
               );

@@ -74,7 +74,7 @@ const AddReview = () => {
         </div>
 
         <div className="flex flex-row justify-center">
-          {stars.map((_, index) => {
+          {stars?.map((_, index) => {
             return (
               <FaStar
                 key={index}

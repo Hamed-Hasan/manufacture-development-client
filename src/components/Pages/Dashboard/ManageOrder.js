@@ -61,7 +61,7 @@ const ManageService = () => {
               </tr>
             </thead>
             <tbody>
-              {services.map((service) => (
+              {services?.map((service) => (
                 <tr
                   key={service._id}
                   className="bg-white border-b bg-gray-800  hover:bg-gray-50 "

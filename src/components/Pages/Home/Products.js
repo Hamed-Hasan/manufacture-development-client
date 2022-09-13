@@ -30,7 +30,7 @@ const Products = () => {
           <Loading />
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-20">
-            {services.map((service) => (
+            {services?.map((service) => (
               <Product key={service._id} service={service} />
             ))}
           </div>
