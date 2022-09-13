@@ -37,7 +37,7 @@ const Banner = () => {
               Find the best prices for Insurance_Protection and its related products at our Manufacture website
               </p>
               <Link
-                to='https://manufacture-development.web.app/myPortfolio'
+                to='/myPortfolio'
                 aria-label=""
                 className="inline-flex items-center font-semibold tracking-wider transition-colors duration-200 text-teal-accent-400 hover:text-teal-accent-700 text-white hover:border-blue-600   hover:bg-blue-600 hover:text-white border-2 p-2 float-left"
                 data-aos="fade-right"
