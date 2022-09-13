@@ -17,6 +17,7 @@ const SignUp = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
   const [signInWithFacebook, fUser, fLoading, fError] =
     useSignInWithFacebook(auth);
+    console.log(fUser)
   const {
     register,
     formState: { errors },
@@ -77,12 +78,12 @@ const SignUp = () => {
               >
                 <img className="w-10 h-10" src={google} alt="" />
               </div>
-              <div
+              {/* <div
                 className="w-11 h-11 items-center justify-center inline-flex rounded-2xl hover:shadow-lg cursor-pointer transition ease-in duration-300"
                 onClick={() => signInWithFacebook()}
               >
                 <img className="w-10 h-10" src={facebook} alt="" />
-              </div>
+              </div> */}
             </div>
             <div className="flex items-center justify-center space-x-2">
               <span className="h-px w-16 bg-gray-200"></span>

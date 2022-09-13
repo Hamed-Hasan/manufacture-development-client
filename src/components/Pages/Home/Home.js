@@ -8,10 +8,12 @@ import Services from "./Services";
 import Technology from "./Technology/Technology";
 import ReactHelmet from "../Shared/ReactHelmet/ReactHelmet";
 
+
 const Home = () => {
   return (
     <div>
       <ReactHelmet title="Home"></ReactHelmet>
+      
       <Banner />
       <Products />
       <Technology />

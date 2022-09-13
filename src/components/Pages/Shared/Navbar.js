@@ -1,12 +1,13 @@
 import { signOut } from "firebase/auth";
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import auth from "../../../firebase.init";
 
 import useNav from "../../hooks/useNav";
 import "./Navbar.css";
 const Navbar = () => {
+  const {pathname} = useLocation();
   const [user] = useAuthState(auth);
   const logout = () => {
     signOut(auth);
@@ -96,6 +97,10 @@ const Navbar = () => {
             </Link>
           )}
           <label
+         style={
+          pathname.includes("dashboard") ? {display: 'block'} :
+          {display: 'none'}
+        }
             tabIndex="1"
             htmlFor="dashboard-sidebar"
             className="btn btn-ghost lg:hidden"

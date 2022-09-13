@@ -70,9 +70,9 @@ const AddOrder = () => {
           </div>
           <div className="flex flex-col lg:flex-row lg:items-center text-slate-900 dark:text-gray-200 lg:justify-between -mx-4">
             <div
-              className="w-full lg:w-1/2 xl:w-6/12 px-4"
-              data-aos="fade-up"
-              data-aos-delay="200"
+              className="w-full lg:w-1/2 xl:w-6/12 px-4 hidden md:block"
+           
+              
             >
               <img className="-mt-60" src={addUser} alt="" />
             </div>
@@ -229,7 +229,7 @@ const AddOrder = () => {
                                     hover:bg-yellow-300
                                     "
                     >
-                      Send Message
+                      Add Order
                     </button>
                   </div>
                 </form>

@@ -14,3 +14,9 @@
     background: #2c60ef;
     width: 0%;
   }
+  @media only screen and (max-width: 479px){
+    
+.progress-container {
+  top: 84px;
+}
+}
