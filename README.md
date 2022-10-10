@@ -1,8 +1,12 @@
 # Getting Started with Manufacture Development Ltd.
+>Admin Access
+>> - User: example@example.com
+>> - password: example123
+
 
 This project was React NodeMongoDB,React with TailWindCss [visit Now](https://manufacture-development.web.app/).
 
-* This site have been makes by react router nodeMongoDB jwt
+* This site have been makes by react router nodeMongoDB jwt payment Gatway Integrate
 * I have been using This site: css framework tailwind & flowbite etc...
 * I have been using This site More packages: motion-react,material-ui,testing-library,axios,firebase,flowbite,framer-motion,react-counterup,react-router,react-firebase-hooks,react-helmet,react-icons,react-modal,react-query,react-scroll,react-typeWriter,react-toastify,react-hooks-from, react-multi-carousel,react-query  etc....
 
