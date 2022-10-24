@@ -1,12 +1,8 @@
 import React from 'react';
-// import Exercises from './Exercises';
 import { Link } from "react-router-dom";
 const NotFound = () => {
     return (
         <div>
-            {/* <Exercises/> */}
-       
-
 
             <div class="h-screen  bg-gray-50 flex items-center">
     <div class="container flex flex-col md:flex-row items-center justify-between px-5 text-gray-700">

@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 import {  ToastContainer } from "react-toastify";
 import auth from "../../../firebase.init";
 import useServiceDetail from "../../hooks/useServiceDetail";
-import "./Purchase.css";
 import { FcAddDatabase } from "react-icons/fc";
 import { Modal } from "@mui/material";
 import Box from "@mui/material/Box";

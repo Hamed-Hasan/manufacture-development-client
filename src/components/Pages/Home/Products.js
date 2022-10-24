@@ -3,7 +3,6 @@ import Loading from "../Shared/Loading";
 import Product from "../Home/Product";
 import { useQuery } from "react-query";
 const Products = () => {
-  // const [services, setServices] = useState([]);
   const [loading, setLoading] = useState(false);
 
   const { data: services, isLoading, refetch } = useQuery('services', () => fetch('https://agile-castle-61471.herokuapp.com/product', {
@@ -19,15 +18,7 @@ const Products = () => {
       return <Loading/>
     }
   
-  // useEffect(() => {
-  //   setLoading(true);
-  //   fetch("https://agile-castle-61471.herokuapp.com/product")
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setServices(data);
-  //       setLoading(false);
-  //     });
-  // }, []);
+ 
   return (
     <div id="service" className="container mx-auto my-10">
       <div className="section-content mb-16">
@@ -41,15 +32,6 @@ const Products = () => {
       </div>
 
       <div className="pt-11">
-        {/* {loading ? (
-          <Loading />
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-20">
-            {services?.map((service) => (
-              <Product key={service._id} service={service} />
-            ))}
-          </div>
-        )} */}
 
     <div className="grid grid-cols-1 md:grid-cols-3 gap-20">
                 {services?.map((service) => (
