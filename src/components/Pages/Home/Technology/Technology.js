@@ -1,5 +1,5 @@
 import React from "react";
-
+import tech from "../../../assets/images/tech.png"
 const Technology = () => {
   return (
     <div class="py-16 bg-white">  
@@ -7,7 +7,7 @@ const Technology = () => {
         <div class="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12">
           <div class="md:5/12 lg:w-5/12"data-aos="fade-right"
      data-aos-duration="1500" >
-            <img src="https://tailus.io/sources/blocks/left-image/preview/images/startup.png" alt="image" loading="lazy" width="" height=""/>
+            <img src={tech} alt="image" loading="lazy"/>
           </div>
           <div class="md:7/12 lg:w-6/12" data-aos="fade-right"
      data-aos-duration="2000">

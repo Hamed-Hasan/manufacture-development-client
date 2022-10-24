@@ -1,4 +1,4 @@
-import { getAuth } from "firebase/auth";
+
 import { useState } from "react";
 
 import { useAuthState } from "react-firebase-hooks/auth";

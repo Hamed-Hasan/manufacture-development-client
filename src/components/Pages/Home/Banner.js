@@ -1,14 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import banner from "../../assets/images/banner-bg.png.png"
+import bannerMan from "../../assets/images/banner-man.png"
 
 const Banner = () => {
   return (
     <>
  <div className="relative">
       <img
-        src="https://images.unsplash.com/photo-1598599462728-02161125ad0a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=872&q=80"
+        src={banner}
         className="absolute inset-0 object-cover w-full h-full"
-        alt=""
+        alt="banner"
       />
       <div className="relative bg-opacity-70 bg-blue-700">
       <svg xmlns="http://www.w3.org/2000/svg"
@@ -57,7 +59,7 @@ const Banner = () => {
             </div>
             <div className="w-full max-w-xl xl:px-8 xl:w-5/12">
               <div className="bg-white rounded pl-5 pt-4 shadow-2xl">
-               <img src="https://i.ibb.co/9qmqSj1/manufacture-hero.png" className='h-auto w-auto' alt="" />
+               <img src={bannerMan} className='h-auto w-auto' alt="bannerMan" />
               
               </div>
             </div>
