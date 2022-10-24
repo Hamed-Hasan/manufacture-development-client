@@ -36,7 +36,7 @@ const Banner = () => {
                 data-aos-easing="ease-in-sine">
               Keep Your Insurance_Protection Shopping Spree Alive with Manufacture
               product
-              Find the best prices for Insurance_Protection and its related products at our Manufacture website
+              Find the best prices for Insurance_Protection and its related products at our Manufacture websites
               </p>
               <Link
                 to='/myPortfolio'
