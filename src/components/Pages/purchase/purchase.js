@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useParams } from "react-router-dom";
-import { toast, ToastContainer } from "react-toastify";
+import {  ToastContainer } from "react-toastify";
 import auth from "../../../firebase.init";
 import useServiceDetail from "../../hooks/useServiceDetail";
 import "./Purchase.css";
@@ -73,8 +73,6 @@ const Purchase = () => {
         }
       });
   };
-
-  const handleChange = (e) => {};
 
   return (
     <div>
@@ -167,7 +165,6 @@ const Purchase = () => {
                       onChange={(e) => {
                         setMyOrderQuantity(e.target.value);
                       }}
-                      //   value="50"
                       className="leading-none text-gray-50 p-3 focus:outline-none focus:border-blue-700 mt-4 border-0 bg-gray-800 rounded"
                     />
                   </div>
@@ -247,10 +244,6 @@ const Purchase = () => {
                 </div>
                 <Typography id="modal-modal-title" variant="h6" component="h2">
                   <p className="text-center">You Are Order {name}</p>
-                </Typography>
-                <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                  {/* Check your service go to Home page & Manage service page &
-              Customize your service 😀 */}
                 </Typography>
               </Box>
             </Modal>

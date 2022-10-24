@@ -1,6 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import ReactHelmet from "../Shared/ReactHelmet/ReactHelmet";
+import blog1 from "../../assets/blog/blog1.png"
+import blog2 from "../../assets/blog/blog2.png"
+import blog3 from "../../assets/blog/blog3.png"
+import blog4 from "../../assets/blog/blog4.png"
+import blog5 from "../../assets/blog/blog5.jpg"
 
 const Blog = () => {
   return (
@@ -31,7 +36,7 @@ const Blog = () => {
                 aria-label="code editor"
                 tabIndex="0"
                 className="focus:outline-none w-full"
-                src="https://cdn.tuk.dev/assets/components/111220/Blg-6/blog(1).png"
+                src={blog1}
                 alt="code editor"
               />
               <div className="py-4 px-8 w-full flex justify-between bg-indigo-700">
@@ -162,7 +167,7 @@ const Blog = () => {
                     role="img"
                     aria-label="gaming"
                     className="focus:outline-none w-full"
-                    src="https://cdn.tuk.dev/assets/components/111220/Blg-6/blog(2).png"
+                    src={blog2}
                     alt="games"
                   />
                   <div className="py-2 px-4 w-full flex justify-between bg-indigo-700">
@@ -220,7 +225,7 @@ const Blog = () => {
                     role="img"
                     aria-label="gaming"
                     className="focus:outline-none focus:outline-none w-full"
-                    src="https://cdn.tuk.dev/assets/components/111220/Blg-6/blog(3).png"
+                    src={blog3}
                     alt="notes"
                   />
                   <div className="py-2 px-4 w-full flex justify-between bg-indigo-700">
@@ -279,7 +284,7 @@ const Blog = () => {
                     role="img"
                     aria-label="laptop"
                     className="focus:outline-none w-full"
-                    src="https://cdn.tuk.dev/assets/components/111220/Blg-6/blog(4).png"
+                    src={blog4}
                     alt="laptop"
                   />
                   <div className="py-2 px-4 w-full flex justify-between bg-indigo-700">
@@ -330,7 +335,7 @@ const Blog = () => {
                     role="img"
                     aria-label="worker"
                     className="rounded-t-3xl focus:outline-none w-full"
-                    src="https://images.unsplash.com/photo-1496065187959-7f07b8353c55?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870"
+                    src={blog5}
                     alt="worker"
                   />
                   <div className="py-2 px-4 w-full flex justify-between bg-indigo-700">

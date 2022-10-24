@@ -1,4 +1,6 @@
 import React from "react";
+import blog6 from "../../assets/blog/blog6.jpg"
+import blog7 from "../../assets/blog/blog7.jpg"
 
 const BlogNext = () => {
   return (
@@ -6,7 +8,7 @@ const BlogNext = () => {
       <div className="relative -mx-4 top-0 pt-[17%] overflow-hidden">
         <img
           className="absolute inset-0 object-cover object-top w-full h-full filter blur"
-          src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8Y29uY2VydCUyMHBvc3RlcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80"
+          src={blog6}
           alt=""
         />
       </div>
@@ -15,7 +17,7 @@ const BlogNext = () => {
         <div className="relative pt-[56.25%] overflow-hidden rounded-2xl">
           <img
             className="w-full h-full absolute inset-0 object-cover"
-            src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8Y29uY2VydCUyMHBvc3RlcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80"
+            src={blog7}
             alt=""
           />
         </div>

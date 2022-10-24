@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 import Navbar from './components/Pages/Shared/Navbar';
 import { Route, Routes } from 'react-router-dom';
@@ -10,7 +10,7 @@ import NotFound from './components/Pages/Shared/NotFound/NotFound';
 import Login from './components/Pages/Auth/Login';
 import SignUp from './components/Pages/Auth/SignUp';
 import RequireAuth from './components/Pages/Auth/RequireAuth';
-import Purchase from './components/Pages/Purchase/Purchase';
+
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import MyOrders from './components/Pages/Dashboard/MyOrders';
@@ -21,7 +21,7 @@ import MakeAdmin from './components/Pages/Dashboard/MakeAdmin';
 import AddOrder from './components/Pages/Dashboard/AddOrder';
 import ManageOrder from './components/Pages/Dashboard/ManageOrder';
 import ManageAllOrders from './components/Pages/Dashboard/ManageAllOrders';
-import RequireAdmin from './components/Pages/Auth/RequireAdmin';
+
 import RequireNonAdmin from './components/Pages/Auth/RequireNonAdmin';
 import BlogNext from './components/Pages/Blog/BlogNext';
 import MyPortfolio from './components/Pages/MyPortfolio/MyPortfolio'
@@ -29,6 +29,9 @@ import ScrollToTop from './components/Pages/Shared/ScrollToTop/ScrollToTop';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
+import Purchase from './components/Pages/purchase/Purchase';
+
+
 
 function App() {
 

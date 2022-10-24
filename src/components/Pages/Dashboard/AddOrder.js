@@ -2,13 +2,10 @@ import { Modal } from "@mui/material";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
-import { toast, ToastContainer } from "react-toastify";
 import svg from "../../assets/icons/success-modal.svg";
 import addUser from "../../assets/icons/addUser.svg";
 import ReactHelmet from "../Shared/ReactHelmet/ReactHelmet";
 
-import { FcAddDatabase } from "react-icons/fc";
 const style = {
   position: "absolute",
   top: "50%",
@@ -47,8 +44,6 @@ const AddOrder = () => {
     })
       .then((res) => res.json())
       .then((result) => {
-        //   console.log(result);
-        //  toast.success('user added successfully')
         handleOpen();
         event.target.reset();
       });
