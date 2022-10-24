@@ -8,6 +8,20 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Autoplay, Navigation, Pagination } from "swiper";
+
+import service1 from "../../assets/services/service1.png"
+import service2 from "../../assets/services/service2.png"
+import service3 from "../../assets/services/service3.png"
+import service4 from "../../assets/services/service4.png"
+import service5 from "../../assets/services/service5.png"
+import service6 from "../../assets/services/service6.png"
+import service7 from "../../assets/services/service7.png"
+import service8 from "../../assets/services/service8.png"
+import service9 from "../../assets/services/service9.png"
+import service10 from "../../assets/services/service10.png"
+import service11 from "../../assets/services/service11.png"
+import service12 from "../../assets/services/service12.png"
+
 const Services = ({ service }) => {
   return (
     <div
@@ -36,10 +50,10 @@ const Services = ({ service }) => {
         <SwiperSlide>
           <div className="wrapper">
             <div className="card front-face">
-              <img src="https://images.unsplash.com/photo-1602837385569-08ac19ec83af?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=326" />
+              <img src={service1} />
             </div>
             <div className="card back-face">
-              <img src="https://images.unsplash.com/photo-1555617981-dac3880eac6e?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870" />
+              <img src={service2} />
               <div className="info">
                 <div className="title">Acer</div>
                 <p>
@@ -56,10 +70,10 @@ const Services = ({ service }) => {
           {" "}
           <div className="wrapper">
             <div className="card front-face">
-              <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387" />
+              <img src={service3} />
             </div>
             <div className="card back-face">
-              <img src="https://images.unsplash.com/photo-1555618565-9f2b0323a10d?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870" />
+              <img src={service4} />
               <div className="info">
                 <div className="title">AGB Supreme Technology</div>
                 <p>
@@ -73,10 +87,10 @@ const Services = ({ service }) => {
           {" "}
           <div className="wrapper">
             <div className="card front-face">
-              <img src="https://images.unsplash.com/photo-1551739440-5dd934d3a94a?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464" />
+              <img src={service5} />
             </div>
             <div className="card back-face">
-              <img src="https://images.unsplash.com/photo-1547394765-185e1e68f34e?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870" />
+              <img src={service6} />
               <div className="info">
                 <div className="title">Alienware</div>
                 <p>
@@ -92,10 +106,10 @@ const Services = ({ service }) => {
           {" "}
           <div className="wrapper">
             <div className="card front-face">
-              <img src="https://images.unsplash.com/photo-1563796021847-59711ad1dbd5?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387" />
+              <img src={service7} />
             </div>
             <div className="card back-face">
-              <img src="https://images.unsplash.com/photo-1573053986275-840ffc7cc685?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387" />
+              <img src={service8} />
               <div className="info">
                 <div className="title">Bmax</div>
                 <p>
@@ -110,10 +124,10 @@ const Services = ({ service }) => {
           {" "}
           <div className="wrapper">
             <div className="card front-face">
-              <img src="https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464" />
+              <img src={service9} />
             </div>
             <div className="card back-face">
-              <img src="https://images.unsplash.com/photo-1548092372-6fa982d00458?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870" />
+              <img src={service10} />
               <div className="info">
                 <div className="title">Eluktronics</div>
                 <p>
@@ -129,10 +143,10 @@ const Services = ({ service }) => {
           {" "}
           <div className="wrapper">
             <div className="card front-face">
-              <img src="https://images.unsplash.com/photo-1596697939537-bf55495f7630?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387" />
+              <img src={service11} />
             </div>
             <div className="card back-face">
-              <img src="https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435" />
+              <img src={service12} />
               <div className="info">
                 <div className="title">Hyundai Technology</div>
                 <p>
