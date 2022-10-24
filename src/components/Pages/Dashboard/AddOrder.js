@@ -69,7 +69,7 @@ const AddOrder = () => {
            
               
             >
-              <img className="-mt-60" src={addUser} alt="" />
+              <img className="-mt-60" src={addUser} alt="user" />
             </div>
             <div
               className="w-full lg:w-1/2 xl:w-5/12 px-4"
@@ -1051,7 +1051,7 @@ const AddOrder = () => {
         >
           <Box sx={style}>
             <div className="text-center flex justify-center">
-              <img src={svg} className="h-24 " alt="" />
+              <img src={svg} className="h-24 " alt="service" />
             </div>
             <Typography id="modal-modal-title" variant="h6" component="h2">
               Service Added Successfully

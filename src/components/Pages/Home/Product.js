@@ -13,7 +13,7 @@ const Product = ({ service }) => {
       <div className="card-wrapper" data-aos="zoom-in">
         <div className="img-area">
           <div className="inner-area">
-            <img src={img} alt="" />
+            <img src={img} alt="area" />
           </div>
         </div>
         <div className="icon arrow">

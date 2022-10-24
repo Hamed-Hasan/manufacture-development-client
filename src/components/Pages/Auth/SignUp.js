@@ -61,7 +61,7 @@ const SignUp = () => {
     <div className="relative min-h-screen flex ">
       <div className="flex flex-col sm:flex-row items-center md:items-start sm:justify-center md:justify-start flex-auto min-w-0 bg-white">
         <div className="sm:w-1/2 xl:w-3/5 h-full hidden md:flex flex-auto items-center justify-center p-10 overflow-hidden  text-white bg-no-repeat bg-cover relative">
-          <img src={signup} alt="" />
+          <img src={signup} alt="signup" />
         </div>
         <div className="md:flex md:items-center md:justify-center w-full mx-auto md:h-full xl:w-2/5 p-8  md:p-10 lg:p-14 sm:rounded-lg md:rounded-none bg-white ">
           <div className="max-w-lg w-full space-y-8">
@@ -76,14 +76,9 @@ const SignUp = () => {
                 className="w-11 h-11 items-center justify-center inline-flex rounded-2xl  hover:shadow-lg cursor-pointer transition ease-in duration-300"
                 onClick={() => signInWithGoogle()}
               >
-                <img className="w-10 h-10" src={google} alt="" />
+                <img className="w-10 h-10" src={google} alt="google" />
               </div>
-              {/* <div
-                className="w-11 h-11 items-center justify-center inline-flex rounded-2xl hover:shadow-lg cursor-pointer transition ease-in duration-300"
-                onClick={() => signInWithFacebook()}
-              >
-                <img className="w-10 h-10" src={facebook} alt="" />
-              </div> */}
+            
             </div>
             <div className="flex items-center justify-center space-x-2">
               <span className="h-px w-16 bg-gray-200"></span>

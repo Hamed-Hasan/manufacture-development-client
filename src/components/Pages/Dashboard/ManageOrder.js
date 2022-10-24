@@ -99,7 +99,7 @@ const ManageService = () => {
                       src={service?.img}
                       style={{ borderRadius: "50%" }}
                       className=" w-10 h-10"
-                      alt=""
+                      alt="product"
                     />
                   </td>
                   <td className="px-6 py-4"> ${service?.price}</td>

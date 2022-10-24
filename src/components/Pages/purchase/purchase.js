@@ -188,7 +188,7 @@ const Purchase = () => {
                 <img
                   className=" object-cover w-full h-96 rounded-t-lg md:h-auto md:w-72 md:rounded-none md:rounded-l-lg"
                   src={img}
-                  alt=""
+                  alt="purchase"
                 />
                 <div className="flex py-10 flex-col relative z-40 pb-10 justify-between p-4 leading-normal">
                   <h5 className="mb-2 text-left text-xl font-bold tracking-tight text-emerald-500 dark:text-white">
@@ -239,7 +239,7 @@ const Purchase = () => {
             >
               <Box sx={style}>
                 <div className="text-center flex justify-center">
-                  <img src={modal} className="h-24 " alt="" />
+                  <img src={modal} className="h-24 " alt="order product" />
                 </div>
                 <Typography id="modal-modal-title" variant="h6" component="h2">
                   <p className="text-center">You Are Order {name}</p>

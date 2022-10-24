@@ -9,7 +9,7 @@ const BlogNext = () => {
         <img
           className="absolute inset-0 object-cover object-top w-full h-full filter blur"
           src={blog6}
-          alt=""
+          alt="blogs"
         />
       </div>
 
@@ -18,7 +18,7 @@ const BlogNext = () => {
           <img
             className="w-full h-full absolute inset-0 object-cover"
             src={blog7}
-            alt=""
+            alt="blogs"
           />
         </div>
       </div>

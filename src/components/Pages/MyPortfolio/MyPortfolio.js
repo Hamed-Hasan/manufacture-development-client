@@ -127,7 +127,7 @@ const MyPortfolio = () => {
               <img
                 className="w-[28rem] h-[28rem] object-cover xl:w-[34rem] xl:h-[34rem] rounded-full"
                 src={author}
-                alt=""
+                alt="hamed-hasan"
               />
             </div>
           </div>
