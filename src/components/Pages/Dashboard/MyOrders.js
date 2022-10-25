@@ -18,7 +18,7 @@ const MyOrders = () => {
     isLoading,
     refetch,
   } = useQuery("order", () =>
-    fetch(`https://manufacture-developement-server.onrender.com/order?user=${user.email}`, {
+    fetch(`https://agile-castle-61471.herokuapp.com/order?user=${user.email}`, {
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },

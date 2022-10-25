@@ -5,7 +5,7 @@ import { useQuery } from "react-query";
 const Products = () => {
   const [loading, setLoading] = useState(false);
 
-  const { data: services, isLoading, refetch } = useQuery('services', () => fetch('https://manufacture-developement-server.onrender.com/product', {
+  const { data: services, isLoading, refetch } = useQuery('services', () => fetch('https://agile-castle-61471.herokuapp.com/product', {
     method: 'GET',
     headers: {
         authorization: `Bearer ${localStorage.getItem('accessToken')}`

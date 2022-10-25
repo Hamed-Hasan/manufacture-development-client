@@ -18,7 +18,7 @@ const MyProfile = () => {
   }
   if (user) {
     const email = user.email;
-    fetch(`https://manufacture-developement-server.onrender.com/userInfo/${email}`)
+    fetch(`https://agile-castle-61471.herokuapp.com/userInfo/${email}`)
       .then((res) => res.json())
       .then((data) => {
         setUserInfo(data);
@@ -33,7 +33,7 @@ const MyProfile = () => {
     const email = user.email;
     // send user Info to database
     if (email !== null) {
-      fetch(`https://manufacture-developement-server.onrender.com/newUser/${email}`, {
+      fetch(`https://agile-castle-61471.herokuapp.com/newUser/${email}`, {
         method: "PUT",
         headers: {
           "content-type": "application/json",

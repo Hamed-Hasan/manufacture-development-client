@@ -33,7 +33,7 @@ const AddOrder = () => {
     const description = event.target.description.value;
     const user = { name, email, img, quantity, price, description };
     console.log(user);
-    const url = `https://manufacture-developement-server.onrender.com/addNewOrder`;
+    const url = `https://agile-castle-61471.herokuapp.com/addNewOrder`;
     fetch(url, {
       method: "POST",
       headers: {
@@ -57,7 +57,7 @@ const AddOrder = () => {
         id="contact"
       >
         <ReactHelmet title="Add Order"></ReactHelmet>
-        {/* <div className="container">
+        <div className="container">
           <div className="mb-5 flex items-center max-w-md">
             <h2 className="text-slate-900 dark:text-gray-200 text-3xl font-bold">
               Add New Product
@@ -1039,7 +1039,7 @@ const AddOrder = () => {
               </div>
             </div>
           </div>
-        </div> */}
+        </div>
       </section>
 
       <div>

@@ -1,9 +1,9 @@
-
+import React, { lazy } from 'react';
 import './App.css';
 import Navbar from './components/Pages/Shared/Navbar';
 import { Route, Routes } from 'react-router-dom';
 import Home from './components/Pages/Home/Home';
-import Blog from './components/Pages/Blog/Blog';
+// import Blog from './components/Pages/Blog/Blog';
 import Dashboard from './components/Pages/Dashboard/Dashboard';
 import Footer from './components/Pages/Shared/Footer';
 import NotFound from './components/Pages/Shared/NotFound/NotFound';
@@ -18,7 +18,7 @@ import AddReview from './components/Pages/Dashboard/AddReview';
 import MyProfile from './components/Pages/Dashboard/MyProfile';
 import Payment from './components/Pages/Dashboard/Payment';
 import MakeAdmin from './components/Pages/Dashboard/MakeAdmin';
-import AddOrder from './components/Pages/Dashboard/AddOrder';
+// import AddOrder from './components/Pages/Dashboard/AddOrder';
 import ManageOrder from './components/Pages/Dashboard/ManageOrder';
 import ManageAllOrders from './components/Pages/Dashboard/ManageAllOrders';
 
@@ -29,9 +29,11 @@ import ScrollToTop from './components/Pages/Shared/ScrollToTop/ScrollToTop';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
-import Purchase from './components/Pages/purchase/Purchase';
+// import Purchase from './components/Pages/purchase/Purchase';
 
-
+const AddOrder = lazy(() => import('./components/Pages/Dashboard/AddOrder'));
+const Blog = lazy(() => import('./components/Pages/Blog/Blog'));
+const Purchase = lazy(() => import('./components/Pages/purchase/Purchase'));
 
 function App() {
 

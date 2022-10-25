@@ -17,7 +17,7 @@ const ManageService = () => {
       "Are you sure you want to delete this service"
     );
     if (proceed) {
-      const url = `https://manufacture-developement-server.onrender.com/manage/${id}`;
+      const url = `https://agile-castle-61471.herokuapp.com/manage/${id}`;
       fetch(url, {
         method: "DELETE",
       })
