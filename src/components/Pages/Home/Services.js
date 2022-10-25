@@ -50,10 +50,10 @@ const Services = ({ service }) => {
         <SwiperSlide>
           <div className="wrapper">
             <div className="card front-face">
-              <img src={service1} />
+              <img data-sizes="auto" data-src={service1} class="lazyload"  />
             </div>
             <div className="card back-face">
-              <img src={service2} />
+              <img data-sizes="auto" data-src={service2} class="lazyload" />
               <div className="info">
                 <div className="title">Acer</div>
                 <p>
@@ -70,10 +70,10 @@ const Services = ({ service }) => {
           {" "}
           <div className="wrapper">
             <div className="card front-face">
-              <img src={service3} />
+              <img data-sizes="auto" data-src={service3} class="lazyload"  />
             </div>
             <div className="card back-face">
-              <img src={service4} />
+              <img data-sizes="auto" data-src={service4} class="lazyload"  />
               <div className="info">
                 <div className="title">AGB Supreme Technology</div>
                 <p>
@@ -87,10 +87,10 @@ const Services = ({ service }) => {
           {" "}
           <div className="wrapper">
             <div className="card front-face">
-              <img src={service5} />
+              <img data-sizes="auto" data-src={service5} class="lazyload"  />
             </div>
             <div className="card back-face">
-              <img src={service6} />
+              <img data-sizes="auto" data-src={service6} class="lazyload"  />
               <div className="info">
                 <div className="title">Alienware</div>
                 <p>
@@ -106,10 +106,10 @@ const Services = ({ service }) => {
           {" "}
           <div className="wrapper">
             <div className="card front-face">
-              <img src={service7} />
+              <img data-sizes="auto" data-src={service7} class="lazyload"  />
             </div>
             <div className="card back-face">
-              <img src={service8} />
+              <img data-sizes="auto" data-src={service8} class="lazyload"  />
               <div className="info">
                 <div className="title">Bmax</div>
                 <p>
@@ -124,10 +124,10 @@ const Services = ({ service }) => {
           {" "}
           <div className="wrapper">
             <div className="card front-face">
-              <img src={service9} />
+              <img data-sizes="auto" data-src={service9} class="lazyload"  />
             </div>
             <div className="card back-face">
-              <img src={service10} />
+              <img data-sizes="auto" data-src={service10} class="lazyload"  />
               <div className="info">
                 <div className="title">Eluktronics</div>
                 <p>
@@ -143,10 +143,10 @@ const Services = ({ service }) => {
           {" "}
           <div className="wrapper">
             <div className="card front-face">
-              <img src={service11} />
+              <img data-sizes="auto" data-src={service11} class="lazyload"  />
             </div>
             <div className="card back-face">
-              <img src={service12} />
+              <img data-sizes="auto" data-src={service12} class="lazyload"  />
               <div className="info">
                 <div className="title">Hyundai Technology</div>
                 <p>
