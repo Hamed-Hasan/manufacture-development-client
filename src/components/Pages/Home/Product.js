@@ -1,4 +1,7 @@
 import React from "react";
+import 'lazysizes';
+// import a plugin
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 import { useNavigate } from "react-router-dom";
 import "./product.css";
 const Product = ({ service }) => {
@@ -13,7 +16,7 @@ const Product = ({ service }) => {
       <div className="card-wrapper" data-aos="zoom-in">
         <div className="img-area">
           <div className="inner-area">
-            <img src={img} alt="area" />
+            <img data-sizes="auto" data-src={img} alt="area" class="lazyload" />
           </div>
         </div>
         <div className="icon arrow">
