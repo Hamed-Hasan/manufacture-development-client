@@ -33,7 +33,7 @@ const AddOrder = () => {
     const description = event.target.description.value;
     const user = { name, email, img, quantity, price, description };
     console.log(user);
-    const url = `https://agile-castle-61471.herokuapp.com/addNewOrder`;
+    const url = `https://manufacture-developement-server.onrender.com/addNewOrder`;
     fetch(url, {
       method: "POST",
       headers: {

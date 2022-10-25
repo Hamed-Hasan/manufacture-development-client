@@ -4,7 +4,7 @@ const useServiceDetail = (serviceId) => {
   const [service, setService] = useState({});
 
   useEffect(() => {
-    const url = `https://agile-castle-61471.herokuapp.com/product/${serviceId}`;
+    const url = `https://manufacture-developement-server.onrender.com/product/${serviceId}`;
 
     fetch(url)
       .then((res) => res.json())

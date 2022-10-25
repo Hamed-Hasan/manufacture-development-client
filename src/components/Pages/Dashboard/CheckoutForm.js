@@ -13,7 +13,7 @@ const CheckoutForm = ({ order }) => {
   const { _id, price, userName,  user, productName } = order;
   console.log(order)
   useEffect(() => {
-    fetch("https://agile-castle-61471.herokuapp.com/create-payment-intent", {
+    fetch("https://manufacture-developement-server.onrender.com/create-payment-intent", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -76,7 +76,7 @@ const CheckoutForm = ({ order }) => {
         appointment: _id,
         transactionId: paymentIntent.id,
       };
-      fetch(`https://agile-castle-61471.herokuapp.com/order/${_id}`, {
+      fetch(`https://manufacture-developement-server.onrender.com/order/${_id}`, {
         method: "PATCH",
         headers: {
           "content-type": "application/json",
