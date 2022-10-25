@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import ReactHelmet from "../Shared/ReactHelmet/ReactHelmet";
-import blog1 from "../../assets/blog/blog1.png"
-import blog2 from "../../assets/blog/blog2.png"
-import blog3 from "../../assets/blog/blog3.png"
-import blog4 from "../../assets/blog/blog4.png"
-import blog5 from "../../assets/blog/blog5.jpg"
+import blog1 from "../../assets/blog/blog1.webp"
+import blog2 from "../../assets/blog/blog2.webp"
+import blog3 from "../../assets/blog/blog3.webp"
+import blog4 from "../../assets/blog/blog4.webp"
+import blog5 from "../../assets/blog/blog5.webp"
 
 const Blog = () => {
   return (

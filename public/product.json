@@ -3,7 +3,7 @@
     {
       "name": "Car Wheel",
       "price": 400,
-      "img": "https://i.ibb.co/K6sx9G5/carweel1.png",
+      "img": "https://i.ibb.co/VvZ6bhY/carweel1.webp",
       "minimumQuantity": 100,
       "quantity":400,
       "description": "The chassis of an automobile has the frame, suspension system, axles, and wheel as the main compoents. The frame could be in the form of a conventional chassis or unit construction may be adopted main"
@@ -11,14 +11,14 @@
     {
       "name": "Auto Parts",
       "price": 700,
-      "img": "https://i.ibb.co/9qKkG3h/autoparts2.png",
+      "img": "https://i.ibb.co/5YCCJPm/autoparts2.webp",
       "minimumQuantity": 100,
       "quantity": 200,
        "description": "The automobile frame is usually made up of a number of members welded or riveted together to give the final shape. The engine is mounted on the frame with rubber pads which absorb vibrations and also "
     },
     {
       "name": "Bettary Cartoon",
-       "img": "https://i.ibb.co/Gx7xWKc/bettarycartoon3.png",
+       "img": "https://i.ibb.co/2ZWxDJw/bettarycartoon3.webp",
        "price": 240,
        "minimumQuantity": 100,
        "quantity": 190,
@@ -26,7 +26,7 @@
     },
     {
       "name": " Car Background Spanner",
-      "img": "https://i.ibb.co/YTm8gQr/backgroundspanner4.png",
+      "img": "https://i.ibb.co/NxCpHTD/backgroundspanner4.webp",
       "price": 1199,
       "minimumQuantity": 100,
       "quantity":500,
@@ -34,7 +34,7 @@
     },
     {
       "name": "Gear Spare Parts",
-      "img": "https://i.ibb.co/bsFbNpY/gearspareparts5.png",
+      "img": "https://i.ibb.co/pbBzwvR/gearspareparts5.webp",
       "price": 1999,
       "minimumQuantity": 100,
       "quantity": 800,
@@ -42,7 +42,7 @@
     },
     {
       "name": "Auto Oil",
-      "img": "https://i.ibb.co/Q8Y29pw/autooil6.png",
+      "img": "https://i.ibb.co/h1xCNkQ/autooil6.webp",
        "price": 280,
        "minimumQuantity": 100,
     "quantity": 100,

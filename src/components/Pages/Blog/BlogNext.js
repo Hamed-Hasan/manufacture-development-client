@@ -1,6 +1,6 @@
 import React from "react";
-import blog6 from "../../assets/blog/blog6.jpg"
-import blog7 from "../../assets/blog/blog7.jpg"
+import blog6 from "../../assets/blog/blog6.webp"
+import blog7 from "../../assets/blog/blog7.webp"
 
 const BlogNext = () => {
   return (
