@@ -1,7 +1,9 @@
 import React from "react";
 import "./Services.css";
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import 'lazysizes';
+// import a plugin
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
