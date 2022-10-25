@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import banner from "../../assets/images/banner-bg.png.png"
-import bannerMan from "../../assets/images/banner-man.png"
+import banner from "../../assets/images/banner-bg.webp"
+import bannerMan from "../../assets/images/bannerMan.webp"
 
 const Banner = () => {
   return (

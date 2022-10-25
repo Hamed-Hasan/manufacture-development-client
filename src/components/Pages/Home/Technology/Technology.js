@@ -1,5 +1,5 @@
 import React from "react";
-import tech from "../../../assets/images/tech.png"
+import tech from "../../../assets/images/tech.webp"
 const Technology = () => {
   return (
     <div class="py-16 bg-white">  

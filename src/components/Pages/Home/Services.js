@@ -9,18 +9,18 @@ import "swiper/css/pagination";
 // import required modules
 import { Autoplay, Navigation, Pagination } from "swiper";
 
-import service1 from "../../assets/services/service1.png"
-import service2 from "../../assets/services/service2.png"
-import service3 from "../../assets/services/service3.png"
-import service4 from "../../assets/services/service4.png"
-import service5 from "../../assets/services/service5.png"
-import service6 from "../../assets/services/service6.png"
-import service7 from "../../assets/services/service7.png"
-import service8 from "../../assets/services/service8.png"
-import service9 from "../../assets/services/service9.png"
-import service10 from "../../assets/services/service10.png"
-import service11 from "../../assets/services/service11.png"
-import service12 from "../../assets/services/service12.png"
+import service1 from "../../assets/services/service1.webp"
+import service2 from "../../assets/services/service2.webp"
+import service3 from "../../assets/services/service3.webp"
+import service4 from "../../assets/services/service4.webp"
+import service5 from "../../assets/services/service5.webp"
+import service6 from "../../assets/services/service6.webp"
+import service7 from "../../assets/services/service7.webp"
+import service8 from "../../assets/services/service8.webp"
+import service9 from "../../assets/services/service9.webp"
+import service10 from "../../assets/services/service10.webp"
+import service11 from "../../assets/services/service11.webp"
+import service12 from "../../assets/services/service12.webp"
 
 const Services = ({ service }) => {
   return (
