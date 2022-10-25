@@ -4,6 +4,7 @@ import 'lazysizes';
 import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 import { useNavigate } from "react-router-dom";
 import "./product.css";
+
 const Product = ({ service }) => {
   const navigate = useNavigate();
   const { _id, name, img, description, price, quantity } = service;
