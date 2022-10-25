@@ -7,7 +7,7 @@ const ManageAllOrders = () => {
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     setLoading(true);
-    fetch("https://agile-castle-61471.herokuapp.com/product")
+    fetch("https://manufacture-developement-server.onrender.com/product")
       .then((res) => res.json())
       .then((data) => {
         setServices(data);

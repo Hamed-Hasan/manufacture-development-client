@@ -5,7 +5,7 @@ const DeleteConfirmModal = ({ deletingOrder, refetch, setDeletingOrder }) => {
   const { productName, user } = deletingOrder;
   console.log(user);
   const handleDelete = () => {
-    fetch(`https://agile-castle-61471.herokuapp.com/order/${user}`, {
+    fetch(`https://manufacture-developement-server.onrender.com/order/${user}`, {
       method: "DELETE",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
