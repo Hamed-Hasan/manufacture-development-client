@@ -5,10 +5,9 @@ import { useQuery } from "react-query";
 import { Link, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
 import ReactHelmet from "../Shared/ReactHelmet/ReactHelmet";
-import DeleteConfirmModal from "./DeleteConfirmModal"
-import Loading from "../Shared/Loading"
-// import Loading from "../Shared/Loading";  
-// const DeleteConfirmModal = lazy(() => import('./DeleteConfirmModal'));  
+// import DeleteConfirmModal from "./DeleteConfirmModal"
+import Loading from "../Shared/Loading" 
+const DeleteConfirmModal = React.lazy(() => import('./DeleteConfirmModal'));  
 const MyOrders = () => {
   const [deletingOrder, setDeletingOrder] = useState(null);
   // const [order, setOrder] = useState([]);
@@ -43,7 +42,8 @@ const MyOrders = () => {
       <h2 className="text-left bg-slate-500 rounded-lg py-2 px-4 w-36 text-white">
         My Order: {order.length}
       </h2>
-      <div className="overflow-x-auto">
+          <React.Suspense fallback={<Loading/>}>
+          <div className="overflow-x-auto">
         <table className="table w-full">
           <thead>
             <tr>
@@ -102,6 +102,7 @@ const MyOrders = () => {
           setDeletingOrder={setDeletingOrder}
         ></DeleteConfirmModal>
       )}
+          </React.Suspense>
     </div>
   );
 };

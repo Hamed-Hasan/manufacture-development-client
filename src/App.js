@@ -9,7 +9,6 @@ import { useEffect } from 'react';
 
 import Navbar from './components/Pages/Shared/Navbar';
 import Loading from './components/Pages/Shared/Loading';
-
 const AddOrder = React.lazy(() => import('./components/Pages/Dashboard/AddOrder'));
 const Purchase = React.lazy(() => import('./components/Pages/purchase/Purchase'));
 const Blog = React.lazy(() => import('./components/Pages/Blog/Blog'));

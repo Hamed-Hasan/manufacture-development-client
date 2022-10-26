@@ -1,8 +1,8 @@
 import React, { useEffect, useState, lazy} from "react";
 import { useQuery } from "react-query";
 import Loading from "../Shared/Loading";
-import Product from "./Product";
-// const Product = lazy(() => import('../Home/Product'));
+// import Product from "./Product";
+const Product = React.lazy(() => import('../Home/Product'));
 
 const Products = () => {
   const [loading, setLoading] = useState(false);
@@ -36,9 +36,11 @@ const Products = () => {
       <div className="pt-11">
 
     <div className="grid grid-cols-1 md:grid-cols-3 gap-20">
-                {services?.map((service) => (
+          <React.Suspense fallback={<Loading/>}>
+          {services?.map((service) => (
                   <Product key={service._id} service={service} />
                 ))}
+          </React.Suspense>
               </div>
           </div>
         </div>

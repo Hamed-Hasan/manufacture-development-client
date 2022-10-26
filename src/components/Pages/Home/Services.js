@@ -10,7 +10,6 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Autoplay, Navigation, Pagination } from "swiper";
-
 import service1 from "../../assets/services/service1.webp"
 import service2 from "../../assets/services/service2.webp"
 import service3 from "../../assets/services/service3.webp"

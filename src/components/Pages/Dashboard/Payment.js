@@ -4,9 +4,9 @@ import { loadStripe } from "@stripe/stripe-js";
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 import ReactHelmet from "../Shared/ReactHelmet/ReactHelmet";
-import CheckoutForm from "./CheckoutForm"
+// import CheckoutForm from "./CheckoutForm"
 import Loading from "../Shared/Loading"
-// const CheckoutForm = lazy(() => import('./CheckoutForm'));
+const CheckoutForm = React.lazy(() => import('./CheckoutForm'));
 // import Loading from "../Shared/Loading";
 
 
@@ -62,7 +62,9 @@ const Payment = () => {
         <div className="card w-full shadow-2xl bg-base-100">
           <div className="card-body">
             <Elements stripe={stripePromise}>
+              <React.Suspense fallback={<Loading/>}>
               <CheckoutForm order={order} />
+              </React.Suspense>
             </Elements>
           </div>
         </div>
