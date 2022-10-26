@@ -12,8 +12,8 @@ import facebook from "../../assets/icons/facebook.svg";
 import auth from "../../../firebase.init";
 import signup from "../../assets/icons/signup.svg";
 import useToken from "../../hooks/useToken";
-const Loading = lazy(() => import('../Shared/Loading'));
-
+// import Loading from "../Shared/Loading";
+import Loading from "../Shared/Loading"
 
 const SignUp = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);

@@ -1,7 +1,8 @@
 import React, { useEffect, useState, lazy} from "react";
 import { useQuery } from "react-query";
-const Loading = lazy(() => import('../Shared/Loading'));
-const Product = lazy(() => import('../Home/Product'));
+import Loading from "../Shared/Loading";
+import Product from "./Product";
+// const Product = lazy(() => import('../Home/Product'));
 
 const Products = () => {
   const [loading, setLoading] = useState(false);

@@ -5,8 +5,10 @@ import { useQuery } from "react-query";
 import { Link, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
 import ReactHelmet from "../Shared/ReactHelmet/ReactHelmet";
-const Loading = lazy(() => import('../Shared/Loading'));  
-const DeleteConfirmModal = lazy(() => import('./DeleteConfirmModal'));  
+import DeleteConfirmModal from "./DeleteConfirmModal"
+import Loading from "../Shared/Loading"
+// import Loading from "../Shared/Loading";  
+// const DeleteConfirmModal = lazy(() => import('./DeleteConfirmModal'));  
 const MyOrders = () => {
   const [deletingOrder, setDeletingOrder] = useState(null);
   // const [order, setOrder] = useState([]);

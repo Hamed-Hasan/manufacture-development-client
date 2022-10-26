@@ -2,7 +2,8 @@ import React, { lazy } from 'react';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import useReviews from "../../hooks/useReviews";
-const ManagesReviews = lazy(() => import('./ManagesReviews'));
+// const ManagesReviews = lazy(() => import('./ManagesReviews'));
+import ManagesReviews from "./ManagesReviews"
 const ReviewSec = () => {
   const [reviews, setReviews] = useReviews();
   return (

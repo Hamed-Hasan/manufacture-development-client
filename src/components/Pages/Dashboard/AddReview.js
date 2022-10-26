@@ -5,8 +5,8 @@ import { useForm } from "react-hook-form";
 import { FaStar } from "react-icons/fa";
 import { toast } from "react-toastify";
 import ReactHelmet from "../Shared/ReactHelmet/ReactHelmet";
-const Loading = lazy(() => import('../Shared/Loading'));
-
+// import Loading from "../Shared/Loading";
+import Loading from "../Shared/Loading"
 const colors = {
   orange: "#FFBA5A",
   grey: "#a9a9a9",

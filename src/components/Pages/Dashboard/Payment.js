@@ -4,8 +4,10 @@ import { loadStripe } from "@stripe/stripe-js";
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 import ReactHelmet from "../Shared/ReactHelmet/ReactHelmet";
-const CheckoutForm = lazy(() => import('./CheckoutForm'));
-const Loading = lazy(() => import('../Shared/Loading'));
+import CheckoutForm from "./CheckoutForm"
+import Loading from "../Shared/Loading"
+// const CheckoutForm = lazy(() => import('./CheckoutForm'));
+// import Loading from "../Shared/Loading";
 
 
 const stripePromise = loadStripe(

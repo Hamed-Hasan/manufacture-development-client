@@ -15,8 +15,8 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import auth from "../../../firebase.init";
 import useToken from "../../hooks/useToken";
 import { toast } from "react-toastify";
-const Loading = lazy(() => import('../Shared/Loading'));
-
+// import Loading from "../Shared/Loading";
+import Loading from "../Shared/Loading"
 const Login = () => {
   const [email, setEmail] = useState("");
 

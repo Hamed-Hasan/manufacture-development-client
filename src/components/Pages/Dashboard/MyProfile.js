@@ -4,7 +4,8 @@ import auth from "../../../firebase.init";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import ReactHelmet from "../Shared/ReactHelmet/ReactHelmet";
-const Loading = lazy(() => import('../Shared/Loading'));
+// import Loading from "../Shared/Loading";
+import Loading from "../Shared/Loading"
 const MyProfile = () => {
   const [user, loading, error] = useAuthState(auth);
   const [userInfo, setUserInfo] = useState({});

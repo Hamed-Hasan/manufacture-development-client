@@ -2,8 +2,8 @@ import React, { lazy } from 'react';
 import { Link, Outlet } from "react-router-dom";
 import useAdmin from "../../hooks/useAdmin";
 import ReactHelmet from "../Shared/ReactHelmet/ReactHelmet";
-const Loading = lazy(() => import('../Shared/Loading'));
-
+// import Loading from "../Shared/Loading";
+import Loading from "../Shared/Loading"
 const Dashboard = () => {
   const [admin, adminLoading] = useAdmin();
   if (adminLoading) {
