@@ -15,8 +15,7 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import auth from "../../../firebase.init";
 import useToken from "../../hooks/useToken";
 import { toast } from "react-toastify";
-// import Loading from "../Shared/Loading";
-import Loading from "../Shared/Loading"
+const Loading = React.lazy(() => import('../Shared/Loading'));
 const Login = () => {
   const [email, setEmail] = useState("");
 
@@ -45,7 +44,7 @@ const Login = () => {
   }, [token, from, navigate]);
 
   if (loading || gLoading || fLoading || sending) {
-    return <Loading></Loading>;
+    return <React.Suspense fallback={<Loading/>}/>
   }
 
   if (error || gError || fError) {

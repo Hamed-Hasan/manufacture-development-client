@@ -5,8 +5,7 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import ReactHelmet from "../Shared/ReactHelmet/ReactHelmet";
 // import Loading from "../Shared/Loading";
-import Loading from "../Shared/Loading"
-const MyProfile = () => {
+const Loading = React.lazy(() => import('../Shared/Loading'));const MyProfile = () => {
   const [user, loading, error] = useAuthState(auth);
   const [userInfo, setUserInfo] = useState({});
   const [isEdit, setIsEdit] = useState(false);
@@ -14,8 +13,7 @@ const MyProfile = () => {
   const { register, handleSubmit, errors } = useForm();
 
   if (loading) {
-    return <Loading />;
-  }
+    return <React.Suspense fallback={<Loading/>}/>  }
   if (user) {
     const email = user.email;
     fetch(`https://manufacture-developement-server.onrender.com/userInfo/${email}`)

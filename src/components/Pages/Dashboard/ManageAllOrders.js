@@ -3,8 +3,7 @@ import Product from "../Home/Product";
 import ReactHelmet from "../Shared/ReactHelmet/ReactHelmet";
 // import Loading from "../Shared/Loading";
 // const Product = lazy(() => import('../Home/Product'));
-import Loading from "../Shared/Loading"
-const ManageAllOrders = () => {
+const Loading = React.lazy(() => import('../Shared/Loading'));const ManageAllOrders = () => {
   const [services, setServices] = useState([]);
   const [loading, setLoading] = useState(false);
   useEffect(() => {

@@ -33,7 +33,7 @@ const MyOrders = () => {
   );
 
   if (isLoading) {
-    return <Loading></Loading>;
+    return<React.Suspense fallback={<Loading/>}/>;
   }
 
   return (

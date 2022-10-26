@@ -5,8 +5,7 @@ import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 import ReactHelmet from "../Shared/ReactHelmet/ReactHelmet";
 // import CheckoutForm from "./CheckoutForm"
-import Loading from "../Shared/Loading"
-const CheckoutForm = React.lazy(() => import('./CheckoutForm'));
+const Loading = React.lazy(() => import('../Shared/Loading'));const CheckoutForm = React.lazy(() => import('./CheckoutForm'));
 // import Loading from "../Shared/Loading";
 
 
@@ -29,7 +28,7 @@ const Payment = () => {
   console.log(order)
 
   if (isLoading) {
-    return <Loading></Loading>;
+    return<React.Suspense fallback={<Loading/>}/>;
   }
 
   return (

@@ -3,12 +3,10 @@ import { Link, Outlet } from "react-router-dom";
 import useAdmin from "../../hooks/useAdmin";
 import ReactHelmet from "../Shared/ReactHelmet/ReactHelmet";
 // import Loading from "../Shared/Loading";
-import Loading from "../Shared/Loading"
-const Dashboard = () => {
+const Loading = React.lazy(() => import('../Shared/Loading'));const Dashboard = () => {
   const [admin, adminLoading] = useAdmin();
   if (adminLoading) {
-    return <Loading />;
-  }
+    return <React.Suspense fallback={<Loading/>}/>  }
   return (
     <div className="drawer drawer-mobile">
       <ReactHelmet title="Dashboard"></ReactHelmet>

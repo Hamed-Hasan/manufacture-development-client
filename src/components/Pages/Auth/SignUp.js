@@ -13,8 +13,7 @@ import auth from "../../../firebase.init";
 import signup from "../../assets/icons/signup.svg";
 import useToken from "../../hooks/useToken";
 // import Loading from "../Shared/Loading";
-import Loading from "../Shared/Loading"
-
+const Loading = React.lazy(() => import('../Shared/Loading'));
 const SignUp = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
   const [signInWithFacebook, fUser, fLoading, fError] =
@@ -36,7 +35,7 @@ const SignUp = () => {
   let signInError;
 
   if (loading || gLoading || updating) {
-    return <Loading></Loading>;
+    return<React.Suspense fallback={<Loading/>}/>;
   }
 
   if (error || gError || updateError) {

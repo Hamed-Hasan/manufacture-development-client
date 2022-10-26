@@ -6,13 +6,11 @@ import useUsers from "../../hooks/useUsers";
 import auth from "../../../firebase.init";
 import ReactHelmet from "../Shared/ReactHelmet/ReactHelmet";
 // import Loading from "../Shared/Loading";
-import Loading from "../Shared/Loading"
-const MakeAdmin = () => {
+const Loading = React.lazy(() => import('../Shared/Loading'));const MakeAdmin = () => {
   const [user, loading] = useAuthState(auth);
   const [users, setUsers] = useUsers();
   if (loading || !users.length) {
-    return <Loading />;
-  }
+    return <React.Suspense fallback={<Loading/>}/>  }
 
   const createAdmin = (email) => {
     const user = { isAdmin: true };

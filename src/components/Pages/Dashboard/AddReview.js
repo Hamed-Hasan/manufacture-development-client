@@ -6,8 +6,7 @@ import { FaStar } from "react-icons/fa";
 import { toast } from "react-toastify";
 import ReactHelmet from "../Shared/ReactHelmet/ReactHelmet";
 // import Loading from "../Shared/Loading";
-import Loading from "../Shared/Loading"
-const colors = {
+const Loading = React.lazy(() => import('../Shared/Loading'));const colors = {
   orange: "#FFBA5A",
   grey: "#a9a9a9",
 };
@@ -35,8 +34,7 @@ const AddReview = () => {
   // rating end
 
   if (loading) {
-    return <Loading />;
-  }
+    return <React.Suspense fallback={<Loading/>}/>  }
   const imageStorageKey = "0a489a5f81e1a77f2b17492e627939c3";
   const onSubmit = (data) => {
     const email = user.email;
