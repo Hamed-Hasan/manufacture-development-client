@@ -1,13 +1,12 @@
+import React, { lazy } from 'react';
 import { updateProfile } from "firebase/auth";
-import React from "react";
 import {
   useCreateUserWithEmailAndPassword,
   useSignInWithEmailAndPassword,
 } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
 import useToken from "../../hooks/useToken";
-import TypeWriterForm from "../TypeWriterForm/TypeWriterForm";
-
+const TypeWriterForm = lazy(() => import('../TypeWriterForm/TypeWriterForm'));
 const ContactUs = () => {
   const [token] = useToken();
   const [createUserWithEmailAndPassword, user, loading, error] =

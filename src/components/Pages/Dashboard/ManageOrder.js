@@ -1,13 +1,7 @@
 import React, { useState } from "react";
-
-import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import useService from "../../hooks/useService";
 import ReactHelmet from "../Shared/ReactHelmet/ReactHelmet";
-
-// import React, { useState } from 'react';
-
-// import ReactHelmet from "../../../ReactHelmet/ReactHelmet";
 
 const ManageService = () => {
   const [services, setServices] = useService();

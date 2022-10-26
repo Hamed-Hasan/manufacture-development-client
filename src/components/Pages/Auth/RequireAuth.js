@@ -1,9 +1,9 @@
-import React from "react";
+import React, { lazy } from 'react';
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Navigate, useLocation } from "react-router-dom";
 import auth from "../../../firebase.init";
+const Loading = lazy(() => import('../Shared/Loading'));
 
-import Loading from "../Shared/Loading";
 
 const RequireAuth = ({ children }) => {
   const [user, loading] = useAuthState(auth);

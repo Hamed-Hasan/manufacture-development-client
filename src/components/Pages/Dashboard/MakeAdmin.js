@@ -1,12 +1,12 @@
-import React from "react";
+import React, { lazy } from 'react';
 import { toast } from "react-toastify";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { Link } from "react-router-dom";
 import { FaFacebook, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import useUsers from "../../hooks/useUsers";
 import auth from "../../../firebase.init";
-import Loading from "../Shared/Loading";
 import ReactHelmet from "../Shared/ReactHelmet/ReactHelmet";
+const Loading = lazy(() => import('../Shared/Loading'));
+
 const MakeAdmin = () => {
   const [user, loading] = useAuthState(auth);
   const [users, setUsers] = useUsers();

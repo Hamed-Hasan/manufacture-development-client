@@ -1,35 +1,11 @@
 import React, { lazy } from 'react';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
-// import Navbar from './components/Pages/Shared/Navbar';
-// import Home from './components/Pages/Home/Home';
-// import Blog from './components/Pages/Blog/Blog';
-// import Dashboard from './components/Pages/Dashboard/Dashboard';
-// import Footer from './components/Pages/Shared/Footer';
-// import NotFound from './components/Pages/Shared/NotFound/NotFound';
-// import Login from './components/Pages/Auth/Login';
-// import SignUp from './components/Pages/Auth/SignUp';
-// import RequireAuth from './components/Pages/Auth/RequireAuth';
-
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-// import MyOrders from './components/Pages/Dashboard/MyOrders';
-// import AddReview from './components/Pages/Dashboard/AddReview';
-// import MyProfile from './components/Pages/Dashboard/MyProfile';
-// import Payment from './components/Pages/Dashboard/Payment';
-// import MakeAdmin from './components/Pages/Dashboard/MakeAdmin';
-// import AddOrder from './components/Pages/Dashboard/AddOrder';
-// import ManageOrder from './components/Pages/Dashboard/ManageOrder';
-// import ManageAllOrders from './components/Pages/Dashboard/ManageAllOrders';
-
-// import RequireNonAdmin from './components/Pages/Auth/RequireNonAdmin';
-// import BlogNext from './components/Pages/Blog/BlogNext';
-// import MyPortfolio from './components/Pages/MyPortfolio/MyPortfolio'
-// import ScrollToTop from './components/Pages/Shared/ScrollToTop/ScrollToTop';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
-// import Purchase from './components/Pages/purchase/Purchase';
 
 const AddOrder = lazy(() => import('./components/Pages/Dashboard/AddOrder'));
 const Blog = lazy(() => import('./components/Pages/Blog/Blog'));

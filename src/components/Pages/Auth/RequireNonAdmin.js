@@ -1,9 +1,10 @@
+import React, { lazy } from 'react';
 import { signOut } from "firebase/auth";
-import React from "react";
 import { Navigate, useLocation } from "react-router-dom";
 import auth from "../../../firebase.init";
 import useAdmin from "../../hooks/useAdmin";
-import Loading from "../Shared/Loading";
+const Loading = lazy(() => import('../Shared/Loading'));
+
 
 const RequireNonAdmin = ({ children }) => {
   const [admin, adminLoading] = useAdmin();

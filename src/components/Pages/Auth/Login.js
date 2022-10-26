@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, lazy } from "react";
 import google from "../../assets/icons/google.svg";
 import facebook from "../../assets/icons/facebook.svg";
 import login from "../../assets/icons/login-draw.svg";
@@ -11,11 +11,12 @@ import {
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
-import Loading from "../Shared/Loading";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import auth from "../../../firebase.init";
 import useToken from "../../hooks/useToken";
 import { toast } from "react-toastify";
+const Loading = lazy(() => import('../Shared/Loading'));
+
 const Login = () => {
   const [email, setEmail] = useState("");
 
@@ -176,7 +177,7 @@ const Login = () => {
               </div>
 
               {signInError}
-              {/* <input className='btn w-full max-w-xs text-white' type="submit" value="Login" /> */}
+              
               <button
                 type="submit"
                 className="w-full max-w-xs flex justify-center bg-gradient-to-r from-indigo-500 to-blue-600  hover:bg-gradient-to-l hover:from-blue-500 hover:to-indigo-600 text-gray-100 p-4  rounded-full tracking-wide font-semibold  shadow-lg cursor-pointer transition ease-in duration-500"

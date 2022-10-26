@@ -1,13 +1,12 @@
+import React, { useEffect, useState, lazy} from "react";
 import { signOut } from "firebase/auth";
-import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useQuery } from "react-query";
 import { Link, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
-import Loading from "../Shared/Loading";
 import ReactHelmet from "../Shared/ReactHelmet/ReactHelmet";
-import DeleteConfirmModal from "./DeleteConfirmModal";
-
+const Loading = lazy(() => import('../Shared/Loading'));  
+const DeleteConfirmModal = lazy(() => import('./DeleteConfirmModal'));  
 const MyOrders = () => {
   const [deletingOrder, setDeletingOrder] = useState(null);
   // const [order, setOrder] = useState([]);

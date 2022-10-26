@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, lazy } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
-import Loading from "./../Shared/Loading";
 import { useForm } from "react-hook-form";
 import { FaStar } from "react-icons/fa";
 import { toast } from "react-toastify";
 import ReactHelmet from "../Shared/ReactHelmet/ReactHelmet";
+const Loading = lazy(() => import('../Shared/Loading'));
+
 const colors = {
   orange: "#FFBA5A",
   grey: "#a9a9a9",
