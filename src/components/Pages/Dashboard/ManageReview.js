@@ -1,10 +1,8 @@
 import React, { lazy } from 'react';
-// import Carousel from "react-multi-carousel";
+import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import useReviews from "../../hooks/useReviews";
-import Loading from '../Shared/Loading';
-import ManagesReviews from "./ManagesReviews"
-const Carousel = React.lazy(() => import('react-multi-carousel'));
+const ManagesReviews = lazy(() => import('./ManagesReviews'));
 const ReviewSec = () => {
   const [reviews, setReviews] = useReviews();
   return (
@@ -17,8 +15,7 @@ const ReviewSec = () => {
           </h1>
         </div>
         <div className="w-full md:w-3/5">
-         <React.Suspense fallback={<Loading/>}>
-         <Carousel
+          <Carousel
             additionalTransfrom={0}
             arrows
             autoPlaySpeed={3000}
@@ -74,7 +71,6 @@ const ReviewSec = () => {
               );
             })}
           </Carousel>
-         </React.Suspense>
         </div>
       </div>
     </div>
