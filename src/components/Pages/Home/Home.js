@@ -21,7 +21,7 @@ const Home = () => {
       <Services />
       <BusinessSummery />
       <ManageReview />
-      <ContactUs />
+      <ContactUs />y
       </React.Suspense>
     </div>
   );

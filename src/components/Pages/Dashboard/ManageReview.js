@@ -2,9 +2,11 @@ import React, { lazy } from 'react';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import useReviews from "../../hooks/useReviews";
+import Loading from '../Shared/Loading';
 const ManagesReviews = lazy(() => import('./ManagesReviews'));
 const ReviewSec = () => {
   const [reviews, setReviews] = useReviews();
+
   return (
     <div>
       <div className=" grid grid-cols-1 gap-3 justify-items-center  items-center py-20 bg-slate-100 mx-auto">
@@ -15,6 +17,7 @@ const ReviewSec = () => {
           </h1>
         </div>
         <div className="w-full md:w-3/5">
+          <React.Suspense fallback={<Loading/>}>
           <Carousel
             additionalTransfrom={0}
             arrows
@@ -63,14 +66,16 @@ const ReviewSec = () => {
             slidesToSlide={1}
             swipeable
             data-aos="fade-up"
-     data-aos-duration="1000"
+            data-aos-duration="1000"
           >
             {reviews?.map((review) => {
+            
               return (
                 <ManagesReviews key={review._id} onePersonReview={review} />
               );
             })}
           </Carousel>
+          </React.Suspense>
         </div>
       </div>
     </div>

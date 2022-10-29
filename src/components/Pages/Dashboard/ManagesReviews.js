@@ -1,6 +1,7 @@
 import React from "react";
 import { FaStar } from "react-icons/fa";
 const ManagesReviews = ({ onePersonReview }) => {
+  
   const { displayName, email, photoURL, rating, review, _id } = onePersonReview;
   return (
     <div>
